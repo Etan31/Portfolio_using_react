@@ -5,7 +5,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef, resumeRef 
 
   return (
     <nav>
-      <h1 className="portfolio-name">Portfolio</h1>
+      <h1 className="portfolio-name start">Portfolio</h1>
       <ul>
         <li className="navMenu" onClick={() => handleClick(aboutRef)}>About</li>
         <li className="navMenu" onClick={() => handleClick(projectsRef)}>Projects</li>
