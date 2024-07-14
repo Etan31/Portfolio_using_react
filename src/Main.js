@@ -23,7 +23,9 @@ function Main() {
       
       
       <main className="home">
-        <h2>Hi!, I am <span>Tristan Ehron</span></h2>
+        <p className="paragraph highlight">Hi, my name is </p>
+        <p className="name">Tristan Tumbaga.</p>
+        <p className="paragraph name">I build things for the web.</p>
       </main>
 
 

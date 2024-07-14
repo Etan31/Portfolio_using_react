@@ -17,13 +17,34 @@
 @font-face {
    font-family: 'Tw Cen MT Condensed Extra Bold Regular';
    src: url('./../fonts/Tw Cen MT Condensed Extra Bold Regular.ttf') format('truetype');
+} 
+   
+@font-face {
+  font-family: 'BrixSans';
+  src: url('./../../public/fonts/BrixSans-Light.otf') format('opentype');
 } */
+
+@font-face {
+  font-family: 'SailecBold';
+  src: url('./../../public/fonts/Sailec-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IverseMono-Bold';
+  src: url('./../../public/fonts/IverseMono-Bold.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'IverseMono-Regular';
+  src: url('./../../public/fonts/IverseMono-Regular.ttf') format('opentype');
+}
 
 * {
    box-sizing: border-box;
    margin:0;
    padding:0;
    scroll-behavior: smooth;
+   font-family: 'IverseMono-regular', sans-serif;
 }
 
 
@@ -41,3 +62,17 @@ body {
 .home {
    height: 100vh;
 }
+
+.paragraph {
+   font-family: 'IverseMono-Bold', monospace;
+}
+
+.highlight {
+   color: var(--on-tertiary);
+}
+.name {
+   font-family: 'SailecBold', sans-serif;
+   font-weight: 900;
+   font-size: 60px;
+}
+
