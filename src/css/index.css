@@ -1,0 +1,43 @@
+:root {
+   --on-primary: #0E153A;
+   --on-secondary: #3D5AF1;
+   --on-tertiary: #22D1EE;
+   --on-tertiary-transparent: #22cfeeb5;
+   --white: #FFFFFF;
+   --font-family-bold: 'Tw Cen MT Condensed Extra Bold', sans-serif;
+   --font-family-bold-reg: 'Tw Cen MT Condensed Extra Bold Regular'  sans-serif; 
+}
+
+/* IMPORTED FONTS */
+/* @font-face {
+   font-family: 'Tw Cen MT Condensed Bold';
+   src: url('./../fonts/Tw Cen MT Condensed Bold.ttf') format('truetype');
+}
+
+@font-face {
+   font-family: 'Tw Cen MT Condensed Extra Bold Regular';
+   src: url('./../fonts/Tw Cen MT Condensed Extra Bold Regular.ttf') format('truetype');
+} */
+
+* {
+   box-sizing: border-box;
+   margin:0;
+   padding:0;
+   scroll-behavior: smooth;
+}
+
+
+/* ////////////HOME//////////////// */
+.Main {
+   height: 300vh;
+   scroll-behavior: smooth;
+}
+
+body {
+   background-color: var(--on-primary);
+   color: var(--white);
+}
+
+.home {
+   height: 100vh;
+}
