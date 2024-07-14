@@ -76,3 +76,6 @@ body {
    font-size: 60px;
 }
 
+.paragraph.name{
+   color: hsla(0, 0%, 100%, 0.6);
+}
