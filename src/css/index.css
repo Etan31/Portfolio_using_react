@@ -91,9 +91,11 @@ body {
   background-color: var(--on-primary); /* or any other background color */
 }
 
+
+/* //TODO: should be responsive */
 .loader-logo {
-  width: 200px; /* or any other width */
-  height: 200px; /* or any other height */
+  width: 550px; 
+  height: 550px; 
 }
 
 
