@@ -1,3 +1,5 @@
+import MyLogo from './../icons/myLogo.png';
+
 const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef, resumeRef }) => {
   const handleClick = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -5,7 +7,10 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef, resumeRef 
 
   return (
     <nav>
-      <h1 className="portfolio-name start">Portfolio</h1>
+      <h1 className="portfolio-name start">
+        <img src={MyLogo} className="t-logo" alt="T-logo" width="40" height="35"/>
+        
+      </h1>
       <ol>
         <li className="navMenu" onClick={() => handleClick(aboutRef)}>About</li>
         <li className="navMenu" onClick={() => handleClick(projectsRef)}>Projects</li>

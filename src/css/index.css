@@ -1,7 +1,8 @@
 :root {
    --on-primary: #0E153A;
    --on-secondary: #3D5AF1;
-   --on-tertiary: #22D1EE;
+   /* --on-tertiary: #22D1EE; */
+   --on-tertiary: #10e0e0;
    --on-tertiary-transparent: #22cfeeb5;
    --white: #FFFFFF;
 }
@@ -109,6 +110,10 @@ body {
 
 /*==================== Navigation ================= */
 
+.t-logo {
+   margin: 10px 15px;
+}
+
 ol {
   list-style: decimal;
 }
@@ -133,10 +138,12 @@ li.navMenu {
 }
 
 li.navMenu::before {
-   content:counter(list-item, decimal-leading-zero) '. ';
+   content:counter(list-item, decimal-leading-zero) '.';
    color: var(--on-tertiary);
    font-family: PTMono-Regular, monospace;
    font-weight: 650;
+   margin-right: 5px;
 }
+
 
 
