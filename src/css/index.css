@@ -79,3 +79,24 @@ body {
 .paragraph.name{
    color: hsla(0, 0%, 100%, 0.6);
 }
+
+
+/* asdkljfhkdjs */
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--on-primary); /* or any other background color */
+}
+
+.loader-logo {
+  width: 200px; /* or any other width */
+  height: 200px; /* or any other height */
+}
+
+
+.loader-logo {
+  mix-blend-mode: screen;
+}
