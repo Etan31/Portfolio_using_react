@@ -4,8 +4,6 @@
    --on-tertiary: #22D1EE;
    --on-tertiary-transparent: #22cfeeb5;
    --white: #FFFFFF;
-   --font-family-bold: 'Tw Cen MT Condensed Extra Bold', sans-serif;
-   --font-family-bold-reg: 'Tw Cen MT Condensed Extra Bold Regular'  sans-serif; 
 }
 
 /* IMPORTED FONTS */
@@ -39,6 +37,11 @@
   src: url('./../../public/fonts/IverseMono-Regular.ttf') format('opentype');
 }
 
+@font-face {
+  font-family: 'PTMono-Regular';
+  src: url('./../../public/fonts/PTMono-Regular.ttf') format('opentype');
+}
+
 * {
    box-sizing: border-box;
    margin:0;
@@ -64,12 +67,14 @@ body {
 }
 
 .paragraph {
-   font-family: 'IverseMono-Bold', monospace;
+   font-weight: 600;
+   font-family: PTMono-Regular, monospace;
 }
 
 .highlight {
    color: var(--on-tertiary);
 }
+
 .name {
    font-family: 'SailecBold', sans-serif;
    font-weight: 900;
@@ -81,7 +86,7 @@ body {
 }
 
 
-/* asdkljfhkdjs */
+/* ================ Loading animation ================ */
 
 .loader-container {
   display: flex;
@@ -91,14 +96,47 @@ body {
   background-color: var(--on-primary); /* or any other background color */
 }
 
-
 /* //TODO: should be responsive */
 .loader-logo {
   width: 550px; 
   height: 550px; 
 }
 
-
 .loader-logo {
   mix-blend-mode: screen;
 }
+
+
+/*==================== Navigation ================= */
+
+ol {
+  list-style: decimal;
+}
+
+nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+
+li.navMenu {
+   counter-increment: list-item;
+   margin: auto 20px;
+   cursor: pointer;
+}
+
+li.navMenu::before {
+   content:counter(list-item, decimal-leading-zero) '. ';
+   color: var(--on-tertiary);
+   font-family: PTMono-Regular, monospace;
+   font-weight: 650;
+}
+
+
