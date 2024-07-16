@@ -154,6 +154,7 @@ li.navMenu::before {
    /* font-family: PTMono-Regular, monospace; */
    font-weight: 650;
    margin-right: 4px;
+   font-family: Inter;
 }
 
 button.navMenu{
