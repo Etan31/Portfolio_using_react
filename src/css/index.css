@@ -1,10 +1,20 @@
 :root {
    --on-primary: #0E153A;
+   --on-primary-bg: #0f0c29;
    --on-secondary: #3D5AF1;
    /* --on-tertiary: #22D1EE; */
    --on-tertiary: #10e0e0;
    --on-tertiary-transparent: #22cfeeb5;
    --white: #FFFFFF;
+   --white-60: hsla(0, 0%, 100%, 0.6);
+   --white-40: hsla(0, 0%, 100%, 0.4); 
+
+   
+   --main-bg: linear-gradient(90deg, rgba(14,21,58,1) 0%, rgba(15,74,101,1) 26%, rgba(15,108,129,1) 43%, rgba(16,224,224,1) 100%);
+   --bg2: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+   --bg3: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+   --bg3-1: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 /* IMPORTED FONTS */
@@ -23,7 +33,7 @@
   src: url('./../../public/fonts/BrixSans-Light.otf') format('opentype');
 } */
 
-@font-face {
+/* @font-face {
   font-family: 'SailecBold';
   src: url('./../../public/fonts/Sailec-Bold.ttf') format('truetype');
 }
@@ -41,14 +51,14 @@
 @font-face {
   font-family: 'PTMono-Regular';
   src: url('./../../public/fonts/PTMono-Regular.ttf') format('opentype');
-}
+} */
 
 * {
    box-sizing: border-box;
    margin:0;
    padding:0;
    scroll-behavior: smooth;
-   font-family: 'IverseMono-regular', sans-serif;
+   /* font-family: 'IverseMono-regular', sans-serif; */
    font-size: 12px;
 }
 
@@ -70,7 +80,7 @@ body {
 
 .paragraph {
    font-weight: 600;
-   font-family: PTMono-Regular, monospace;
+   /* font-family: PTMono-Regular, monospace; */
 }
 
 .highlight {
@@ -78,13 +88,13 @@ body {
 }
 
 .name {
-   font-family: 'SailecBold', sans-serif;
+   /* font-family: 'SailecBold', sans-serif; */
    font-weight: 900;
    font-size: 60px;
 }
 
 .paragraph.name{
-   color: hsla(0, 0%, 100%, 0.6);
+   color: var(--white-60);
 }
 
 
@@ -141,7 +151,7 @@ li.navMenu {
 li.navMenu::before {
    content:counter(list-item, decimal-leading-zero) '.';
    color: var(--on-tertiary);
-   font-family: PTMono-Regular, monospace;
+   /* font-family: PTMono-Regular, monospace; */
    font-weight: 650;
    margin-right: 4px;
 }
@@ -160,6 +170,55 @@ button.navMenu{
 /*==================== Socials ================= */
 
 main {
-   display: flex;
+  display: flex;
 }
 
+aside.left {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px; 
+}
+
+aside.left a {
+   padding-bottom: 10px;
+}
+
+div.vertical {
+  height: 50px;
+  margin-top: 10px;
+  border-left: 1px solid var(--on-tertiary);
+}
+
+section.main_section {
+  margin-inline: 50px;  
+  margin-top: 20px; 
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+section.home {
+   margin: auto;
+   display: flex;
+   padding: 100px 200px 0 0;
+   flex-direction: column;
+   position: relative;
+}
+
+p.short-intro {
+   /* font-family: IverseMono-Regular, sans-serif; */
+   color:var(--white-60);
+   font-size: 14px;
+   padding-block: 20px;
+   word-spacing: 0.1px;
+   line-height: 1.5;
+}
+
+button.get-in-touch {
+   
+}
