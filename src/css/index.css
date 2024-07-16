@@ -49,6 +49,7 @@
    padding:0;
    scroll-behavior: smooth;
    font-family: 'IverseMono-regular', sans-serif;
+   font-size: 12px;
 }
 
 
@@ -133,7 +134,7 @@ ol {
 
 li.navMenu {
    counter-increment: list-item;
-   margin: auto 20px;
+   margin: auto 10px;
    cursor: pointer;
 }
 
@@ -142,8 +143,23 @@ li.navMenu::before {
    color: var(--on-tertiary);
    font-family: PTMono-Regular, monospace;
    font-weight: 650;
-   margin-right: 5px;
+   margin-right: 4px;
+}
+
+button.navMenu{
+   margin-inline: 10px;
+   background-color: #0E153A;
+   border: 1px solid var(--on-tertiary);
+   padding:5px 20px; /* Todo: responsive*/
+   color: var(--white);
+   border-radius: 5px;
 }
 
 
+
+/*==================== Socials ================= */
+
+main {
+   display: flex;
+}
 

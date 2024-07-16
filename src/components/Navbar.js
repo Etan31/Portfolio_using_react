@@ -1,6 +1,6 @@
 import MyLogo from './../icons/myLogo.png';
 
-const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef, resumeRef }) => {
+const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
   const handleClick = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   };
@@ -16,7 +16,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef, resumeRef 
         <li className="navMenu" onClick={() => handleClick(projectsRef)}>Projects</li>
         <li className="navMenu" onClick={() => handleClick(testimonialsRef)}>Testimonials</li>
         <li className="navMenu" onClick={() => handleClick(contactRef)}>Contact</li>
-        <button className="navMenu" onClick={() => handleClick(resumeRef)}>Resume</button>
+        <button className="navMenu" >Resume</button>
       </ol>
     </nav>
   );
