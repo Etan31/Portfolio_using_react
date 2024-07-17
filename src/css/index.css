@@ -3,6 +3,7 @@
 
 :root {
    --on-primary: #0E153A;
+   --on-primary: #0E153A;
    --on-primary-bg: #0f0c29;
    --on-secondary: #3D5AF1;
    /* --on-tertiary: #22D1EE; */
@@ -68,6 +69,7 @@
 
 
 /* ////////////HOME//////////////// */
+
 .Main {
    height: 300vh;
    scroll-behavior: smooth;
@@ -96,7 +98,7 @@ body {
    /* font-family: 'SailecBold', sans-serif; */
    font-family: Calibre, Inter, "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
    font-weight:800;
-   font-size:65px;
+   font-size:55px;
    line-height: 88px;
    text-decoration: none solid var(--gray);
    word-spacing: 2px;
@@ -131,6 +133,41 @@ body {
 
 /*==================== Navigation ================= */
 
+
+header {
+   display: flex;
+   -webkit-box-pack: justify;
+   justify-content: space-between;
+   -webkit-box-align: center;
+   align-items: center;
+   position: fixed;
+   top: 0px;
+   z-index: 11;
+   padding: 0px 50px;
+   width: 100%;
+   height: var(--nav-height);
+   background-color: var(--main-bg);
+   backdrop-filter: blur(10px);
+   transition: var(--transition);
+   filter: none !important;
+   pointer-events: auto !important;
+   user-select: auto !important;
+}
+
+nav {
+   display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    color: var(--lightest-slate);
+    font-family: var(--font-mono);
+    counter-reset: item 0;
+    z-index: 12;
+}
+
 .t-logo {
    margin: 10px 15px;
 }
@@ -139,12 +176,6 @@ ol {
   list-style: decimal;
 }
 
-nav {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 0 50px;
-}
 
 ol {
   display: flex;
@@ -189,13 +220,13 @@ main {
 }
 
 aside.left {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50px; 
+   width: 40px;
+   position: fixed;
+   bottom: 0px;
+   left: 40px;
+   right: auto;
+   z-index: 10;
+   color: var(--light-slate);
 }
 
 aside.left a {
@@ -209,12 +240,17 @@ div.vertical {
 }
 
 section.main_section {
-  margin-inline: 50px;  
+  /* margin-inline: 50px;  
   margin-top: 20px; 
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; */
+   margin: 0px 20px 0px auto;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    padding: 20px 150px 200px;
 }
 
 section.home {
@@ -226,22 +262,37 @@ section.home {
 }
 
 p.short-intro {
-   /* font-family: IverseMono-Regular, sans-serif; */
    color:var(--slate);
-   font-family: Calibre, Inter, "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
+   font-family: var(--font-sans);
    font-size: var(--fz-xl);
    line-height: 20px;
    word-spacing: 0px;
    color: var(--slate);
-   font-family: var(--font-sans);
+   
 }
 
-/* button.get-in-touch {
-   
-} */
+button.get-in-touch {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 45px;
+   width: 200px;
+   border: 1px solid  var(--on-tertiary);
+   margin: 50px 0 0 0;
+   padding: 18px 25px;
+   background-color: var(--main-bg);
+   color:var(--on-tertiary);
+   cursor: pointer;
+   border-radius: var(--border-radius);
+   font-family: var(--font-mono);
+}
 
-
-
+button.get-in-touch:hover {
+   /* transform:matrix(1, 0, 0, 1, 0, 0); */
+   transition: var(--transition);
+   box-shadow: 4px 4px 0 0 var(--on-tertiary);
+   transform: translate(-5px, -5px);
+}
 
 
 
