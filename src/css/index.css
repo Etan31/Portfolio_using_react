@@ -315,15 +315,7 @@ nav {
     margin-top: 10px;
     border-left: 1px solid var(--on-tertiary);
 }
-/* 
-.right-mailto::after {
-   content: "";
-   display: block;
-   width: 1px;
-   height: 90px;
-   margin: 0px auto;
-   background-color: var(--light-slate);
-} */
+
 
 .t-logo {
    margin: 10px 15px;
