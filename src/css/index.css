@@ -46,6 +46,7 @@
 
 
    --animation-times: 100ms;
+   --animation-fast: 50ms;
    --animation-listnav: 500ms;
 
    --fz-xxs: 12px;
@@ -106,6 +107,7 @@
     background: radial-gradient(46.73% 46.73% at 50.03% 53.27%, rgba(34, 209, 238, 0.10) 0%, rgba(34, 209, 238, 0.00) 100%);
     filter: blur(39px);
     transform: translate(-50%, -50%);
+    pointer-events: none;
     /* transition: top 0.1s ease, left 0.1s ease; */
 }
 
@@ -347,7 +349,7 @@ li.navMenu {
    font-size: 13px;
    line-height: 16.9px;
    color: var(--gray);
-   animation-name: navLoad;
+   animation-name: onLoad;
    animation-duration: var(--animation-listnav);
    animation-timing-function: var(--transition);
    animation-delay: var(--animation-times);
@@ -371,7 +373,7 @@ li.navMenu:nth-child(4) {
 }
 
 li.navMenu:nth-child(5) {
-    animation-delay: calc(var(--animation-times) * 3);
+    animation-delay: calc(var(--animation-times) * 4);
 }
 
 li.navMenu:hover {
@@ -394,13 +396,17 @@ button.navMenu{
    padding: 0.75rem 1rem;
    font-family: var(--font-mono);
    line-height: 1;
+   opacity: 0;
    text-decoration: none;
    transition: var(--transition);
    margin-left: 15px;
    font-size: var(--fz-xs);
-   /* animation: onLoad 300ms;
-   transition: var(--transition);
-   animation-delay: calc(0.3s * var(--i)); */
+   animation-name: onLoad;
+   animation-duration: var(--animation-listnav);
+   animation-timing-function: var(--transition);
+   animation-delay: var(--animation-times);
+   animation-fill-mode:forwards;
+    animation-delay: calc(var(--animation-times) * 5);
 }
 
 button.navMenu:hover {
@@ -516,6 +522,36 @@ section.home {
    position: relative;
 }
 
+div.fadeup-enter-done {
+   animation: onLoadhome;
+   opacity: 0;
+   animation-duration: var(--animation-listnav);
+   animation-timing-function: var(--transition);
+   animation-timing-function:  all 0s ease 0.1s;
+   animation-delay: var(--animation-times);
+   animation-fill-mode:forwards;
+} 
+
+div.fadeup-enter-done:nth-child(1) {
+   animation-delay: calc(var(--animation-times) * 8);
+}
+
+div.fadeup-enter-done:nth-child(2) {
+   animation-delay: calc(var(--animation-times) * 9);
+}
+
+div.fadeup-enter-done:nth-child(3) {
+   animation-delay: calc(var(--animation-times) * 10);
+}
+
+div.fadeup-enter-done:nth-child(4) {
+   animation-delay: calc(var(--animation-times) * 11);
+}
+
+div.fadeup-enter-done:nth-child(5) {
+   animation-delay: calc(var(--animation-times) * 12);
+}
+
 p.short-intro {
    color:var(--slate);
    font-family: var(--font-sans);
@@ -548,6 +584,9 @@ button.get-in-touch:hover {
    box-shadow: 4px 4px 0 0 var(--on-tertiary);
    transform: translate(-5px, -5px);
 }
+
+/* ===================== About =================== */
+
 
 
 
@@ -605,7 +644,7 @@ button.get-in-touch:hover {
    }
 }
 
-@keyframes navLoad {
+@keyframes onLoad {
    0% {
       opacity: 0; 
       transform: translateY(-100%);
@@ -615,3 +654,16 @@ button.get-in-touch:hover {
       transform: translateY(0);
    }
 }
+
+
+@keyframes onLoadhome {
+   0% {
+      opacity: 0; 
+      transform: translateY(50%);
+   }
+   100% {
+      opacity: 100%;
+      transform: translateY(0);
+   }
+}
+
