@@ -15,7 +15,6 @@ function Main() {
   const projectsRef = useRef(null);
   const testimonialsRef = useRef(null);
   const contactRef = useRef(null);
-  // const resumeRef = useRef(null);
   const cursorRef = useRef(null);
 
   useEffect(() => {
