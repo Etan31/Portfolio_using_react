@@ -6,7 +6,6 @@ const Socials = () => {
    return ( 
       <aside className="left">
          <a target="_blank" rel="noreferrer" href="https://github.com/Etan31">
-            {/* <img className="social_ic" src={Github} alt="Github icon" /> */}
             <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-github">
                <title>GitHub</title>
@@ -17,7 +16,6 @@ const Socials = () => {
          </a>
 
          <a target="_blank" rel="noreferrer" href="https://twitter.com/">
-   {/* <img className="social_ic" src={Twitter} alt="Twitter icon" /> */}
    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter-x"
       viewBox="0 0 16 16">
       <path
@@ -26,7 +24,6 @@ const Socials = () => {
 </a>
 
          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tristan-tumbaga-b42478175/">
-            {/* <img className="social_ic" src={LinkedIn} alt="LinkedIn icon" /> */}
             <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-linkedin">
                <title>LinkedIn</title>
