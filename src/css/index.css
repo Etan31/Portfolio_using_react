@@ -45,7 +45,7 @@
    --bg3-1: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
-   --animation-times: 140ms;
+   --animation-times: 100ms;
    --animation-listnav: 500ms;
 
    --fz-xxs: 12px;
@@ -269,6 +269,60 @@ nav {
     z-index: 12;
 }
 
+.right a {
+    margin: 20px auto;
+    padding: 10px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    line-height: var(--fz-lg);
+    letter-spacing: 0.1em;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    color: var(--light-slate);
+    text-decoration: none;
+}
+
+.right:hover a {
+   transform: translateY(-3px);
+   color:var(--on-tertiary);
+   filter: drop-shadow(0 0 1px var(--tertiary-25))
+           drop-shadow(0 0 1px var(--tertiary-25))
+           drop-shadow(0 0 1px var(--tertiary-25))
+           drop-shadow(0 0 1px var(--tertiary-25));
+}
+
+.emai-div {
+   display: flex;
+   flex-direction: column;
+   -webkit-box-align: center;
+   align-items: center;
+   position: relative;
+}
+
+.email-div::after {
+   content: "";
+   display: block;
+   width: 1px;
+   height: 90px;
+   margin: 0px auto;
+   background-color: var(--light-slate);
+}
+
+.email-div.vertical-left {
+       height: 50px;
+    margin-top: 10px;
+    border-left: 1px solid var(--on-tertiary);
+}
+/* 
+.right-mailto::after {
+   content: "";
+   display: block;
+   width: 1px;
+   height: 90px;
+   margin: 0px auto;
+   background-color: var(--light-slate);
+} */
+
 .t-logo {
    margin: 10px 15px;
 }
@@ -393,13 +447,27 @@ aside.left {
    z-index: 10;
    color: var(--light-slate);
 }
+aside.right {
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+
+   bottom: 0px;
+   left: auto;
+   right: 40px;
+    position: fixed;
+    z-index: 10;
+    color: var(--light-slate);
+}
 
 aside.left a {
    padding: 10px; 
 }
 
 aside.left a:hover,
-aside.left a:focus {
+aside.left a:focus,
+.jSIwrL {
    transform: translateY(-3px);
    color: var(--on-tertiary);
    transition: var(--transition);
@@ -499,6 +567,11 @@ button.get-in-touch:hover {
    aside.left {
       left: 20px;
       right: auto;
+   }
+
+   aside.right {
+      left: auto;
+      right: 20px;
    }
 }
 

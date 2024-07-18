@@ -7,6 +7,7 @@ import Testimonials from './Testimonials';
 import Contact from './Contact';
 
 import Socials from './components/Socials';
+import Mailto from './components/mailto';
 
 function Main() {
 
@@ -46,6 +47,9 @@ function Main() {
       
       <main>
         < Socials />
+
+        < Mailto />
+
 
         <section className="main_section">
           <section className="home">
