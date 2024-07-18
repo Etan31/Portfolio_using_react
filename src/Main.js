@@ -19,16 +19,11 @@ function Main() {
   const cursorRef = useRef(null);
 
   useEffect(() => {
-    const cursor = cursorRef.current;
-
-    const handleMouseMove = (e) => {
-      if (cursor) {
-        let x = e.pageX;
-        let y = e.pageY;
-
-        cursor.style.top = y + 'px';
-        cursor.style.left = x + 'px';
-      }
+    const handleMouseMove = (event) => {
+      const { clientX, clientY } = event;
+      const cursor = cursorRef.current;
+      cursor.style.left = `${clientX}px`;
+      cursor.style.top = `${clientY}px`;
     };
 
     document.addEventListener('mousemove', handleMouseMove);

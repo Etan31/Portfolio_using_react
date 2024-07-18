@@ -587,6 +587,13 @@ button.get-in-touch:hover {
 
 /* ===================== About =================== */
 
+section.About,
+section.Contact,
+section.Projects,
+section.Testimonials {
+   border: 1px solid red;
+}
+
 
 
 
