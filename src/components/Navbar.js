@@ -1,4 +1,5 @@
-import MyLogo from './../icons/myLogo.svg';
+// import MyLogo from './../icons/myLogo.svg';
+import MyLogo from './../components/Logo';
 
 const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
   const handleClick = (ref) => {
@@ -8,8 +9,10 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
   return (
     <nav>
       <h1 className="portfolio-name start">
-        <img src={MyLogo} className="t-logo" alt="T-logo" width="40" height="35"/>  
-
+        {/* <img src={MyLogo} className="t-logo" alt="T-logo" width="40" height="35"/> */}
+        
+        <MyLogo className="t-logo" />
+        
         
       </h1>
       <ol>

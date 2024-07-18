@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 import About from './About';
 import Projects from './Projects';
@@ -15,17 +15,34 @@ function Main() {
   const testimonialsRef = useRef(null);
   const contactRef = useRef(null);
   // const resumeRef = useRef(null);
+  const cursorRef = useRef(null);
+
+  useEffect(() => {
+    const cursor = cursorRef.current;
+
+    const handleMouseMove = (e) => {
+      if (cursor) {
+        let x = e.pageX;
+        let y = e.pageY;
+
+        cursor.style.top = y + 'px';
+        cursor.style.left = x + 'px';
+      }
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   return (
     <div className="Main">
-      {/* resumeRef={resumeRef} */}
-      {/* Header */}
+      <div className="cursor" ref={cursorRef}></div>
       <header>
         <Navbar aboutRef={aboutRef} projectsRef={projectsRef} testimonialsRef={testimonialsRef} contactRef={contactRef} />
       </header>
-
-        {/* <Resume ref={resumeRef} /> */}
-      
       
       <main>
         < Socials />

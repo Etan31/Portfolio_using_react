@@ -92,6 +92,19 @@
     scrollbar-color: var(--dark-slate) var(--navy);
 } */
 
+.cursor {
+    position: fixed;
+    width: 1100px;
+    height: 1100.02px;
+    color: var(--on-tertiary);
+    z-index: -99;
+    left:0;
+    top: 0;
+    background: radial-gradient(46.73% 46.73% at 50.03% 53.27%, rgba(34, 209, 238, 0.10) 0%, rgba(34, 209, 238, 0.00) 100%);
+    filter: blur(39px);
+    transform: translate(-50%, -50%);
+    transition: top 0.1s ease, left 0.1s ease;
+}
 
 
 ::-webkit-scrollbar {
@@ -105,7 +118,6 @@
 
 }
 
-/* Make scrollbar handle transparent and cover external space */
 ::-webkit-scrollbar-thumb {
     background: transparent;
     box-shadow: 0px 0px 0px 100000vh black;
@@ -173,8 +185,48 @@ body {
   mix-blend-mode: screen;
 }
 
+svg#Layer_1 {
+    height: 40px;
+}
+
+/* svg#Layer_1:hover path {
+    transition: var(--transition);
+    box-shadow: 4px 4px 0 0 var(--on-tertiary);
+    transform: translate(-5px, -5px);
+    cursor: pointer;
+}
+
+svg#Layer_1:hover text {
+    transition: var(--transition);
+    box-shadow: 4px 4px 0 0 var(--on-tertiary);
+    transform: translate(0.1px, 0.1px);
+    cursor: pointer;
+} */
+
+svg#Layer_1 {
+  height: 40px;
+}
+
+/* svg#Layer_1:hover g {
+  transition: var(--transition);
+  box-shadow: 4px 4px 0 0 var(--on-tertiary);
+  transform: translate(-5px, -5px);
+  cursor: pointer;
+} */
+
 
 /*==================== Navigation ================= */
+
+.st0 {
+  fill: #10E0E0;
+}
+.st1 {
+  font-family: monospace;
+}
+.st2 {
+  font-size: 55px;
+  font-weight: 600;
+}
 
 
 header {
