@@ -16,11 +16,11 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
         
       </h1>
       <ol>
-        <li className="navMenu" onClick={() => handleClick(aboutRef)}>About</li>
-        <li className="navMenu" onClick={() => handleClick(projectsRef)}>Projects</li>
-        <li className="navMenu" onClick={() => handleClick(testimonialsRef)}>Testimonials</li>
-        <li className="navMenu" onClick={() => handleClick(contactRef)}>Contact</li>
-        <button className="navMenu" >Resume</button>
+        <li className="navMenu"  onClick={() => handleClick(aboutRef)}>About</li>
+        <li className="navMenu"  onClick={() => handleClick(projectsRef)}>Projects</li>
+        <li className="navMenu"  onClick={() => handleClick(testimonialsRef)}>Testimonials</li>
+        <li className="navMenu"  onClick={() => handleClick(contactRef)}>Contact</li>
+        <button className="navMenu" style={{ '--i': 5 }} >Resume</button>
       </ol>
     </nav>
   );
