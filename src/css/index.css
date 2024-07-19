@@ -193,8 +193,20 @@ body {
 
 svg#Layer_1 {
    height: 40px;
-   opacity: 50;
+   opacity: 0;
    animation: onLoad var(--animation-times) forwards 0ms;
+   animation-timing-function: var(--transition);
+}
+
+svg#Layer_1:hover {
+   background-color: var(--main-bg);
+   filter: drop-shadow(0 0 3px var(--tertiary-25))
+           drop-shadow(0 0 3px var(--tertiary-25))
+           drop-shadow(0 0 3px var(--tertiary-25))
+           drop-shadow(0 0 3px var(--tertiary-25));
+   transform: translate(-5px, -5px);
+   cursor: pointer;
+
 }
 
 /* svg#Layer_1:hover path {
@@ -514,7 +526,7 @@ aside.left a:focus svg {
 div.vertical {
   height: 50px;
   margin-top: 10px;
-  border-left: 1px solid var(--on-tertiary);
+  border-left: 1px solid var(--light-slate);;
 }
 
 section.main_section {

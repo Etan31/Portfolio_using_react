@@ -10,7 +10,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
     <nav>
       <h1 className="portfolio-name start">
         {/* <img src={MyLogo} className="t-logo" alt="T-logo" width="40" height="35"/> */}
-        
+        {/* Todo: should refresh back to the home page */}
         <MyLogo className="t-logo" />
         
         
