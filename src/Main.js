@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import { useRef, useEffect } from 'react';
+import ScrollReveal from 'scrollreveal';
 
 import About from './About';
 import Projects from './Projects';
@@ -16,6 +17,45 @@ function Main() {
   const testimonialsRef = useRef(null);
   const contactRef = useRef(null);
   const cursorRef = useRef(null);
+  const headerRef = useRef(null);
+
+  // useEffect(() => {
+  //   const handleMouseMove = (event) => {
+  //     const { clientX, clientY } = event;
+  //     const cursor = cursorRef.current;
+  //     cursor.style.left = `${clientX}px`;
+  //     cursor.style.top = `${clientY}px`;
+  //   };
+  //   document.addEventListener('mousemove', handleMouseMove);
+    
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 0) {
+  //       headerRef.current.classList.add('scrolled');
+  //     } else {
+  //       headerRef.current.classList.remove('scrolled');
+  //     }
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+
+  //   const sr = ScrollReveal({
+  //     origin:'bottom',
+  //     distance: '20px', 
+  //     duration: 500,
+  //     delay:100,
+  //     reset:false
+  //   });
+
+  //   sr.reveal('.About', {delay: 100});
+  //   sr.reveal('.Projects', {delay: 200});
+  //   sr.reveal('.Testimonials', {delay: 300});
+  //   sr.reveal('.Contact', {delay: 400});
+
+  //   return () => {
+  //     document.removeEventListener('mousemove', handleMouseMove);
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -25,18 +65,45 @@ function Main() {
       cursor.style.top = `${clientY}px`;
     };
 
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        headerRef.current.classList.add('scrolled');
+      } else {
+        headerRef.current.classList.remove('scrolled');
+      }
+    };
+
     document.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
+
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '20px',
+      duration: 500,
+      delay: 100,
+      reset: false,
+    });
+
+    sr.reveal(aboutRef.current, { delay: 100 });
+    sr.reveal(projectsRef.current, { delay: 200 });
+    sr.reveal(testimonialsRef.current, { delay: 300 });
+    sr.reveal(contactRef.current, { delay: 400 });
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   return (
     <div className="Main">
       <div className="cursor" ref={cursorRef}></div>
-      <header>
-        <Navbar aboutRef={aboutRef} projectsRef={projectsRef} testimonialsRef={testimonialsRef} contactRef={contactRef} />
+      <header className="heading-nav" ref={headerRef}>
+        <Navbar 
+          aboutRef={aboutRef}
+          projectsRef={projectsRef}
+          testimonialsRef={testimonialsRef}
+          contactRef={contactRef} 
+        />
       </header>
       
       <main>
@@ -62,7 +129,11 @@ function Main() {
             </div> */}
             <div className="fadeup-enter-done">
               <p className="short-intro">
-                I work as a backend developer full-time, and capable of creating <br />
+                {/* I work as a backend developer full-time, and capable of creating <br />
+                solid server-side solutions as well as exceptional websites. Building scalable, <br />
+                 effective, and high-quality applications br is my area of expertise, <br />
+                 and I constantly provide amazing online experiences. */}
+                 I am a junior software developer who specializes in creating <br />
                 solid server-side solutions as well as exceptional websites. Building scalable, <br />
                  effective, and high-quality applications br is my area of expertise, <br />
                  and I constantly provide amazing online experiences.
@@ -71,7 +142,7 @@ function Main() {
             <div className="fadeup-enter-done"><button className="get-in-touch">Get In Touch</button></div>
           </section>
 
-                  {/* Pages */}
+          {/* Pages */}
           <About ref={aboutRef} /> 
           <Projects ref={projectsRef} />
           <Testimonials ref={testimonialsRef} />

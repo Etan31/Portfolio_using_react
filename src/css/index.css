@@ -257,6 +257,14 @@ header {
    user-select: auto !important;
 }
 
+header.heading-nav.scrolled {
+    height: var(--nav-scroll-height);
+    background-color: var(--main-bg);
+    opacity: 85%;
+    box-shadow: 0 10px 30px -10px var(--navy-shadow);
+    transform: translateY(0);
+}
+
 nav {
    display: flex;
     -webkit-box-pack: justify;
@@ -590,11 +598,24 @@ button.get-in-touch:hover {
 
 /* ===================== About =================== */
 
+/* Todo  change this later */
 section.About,
 section.Contact,
 section.Projects,
 section.Testimonials {
    border: 1px solid red;
+}
+
+section {
+       margin: 0px auto;
+    padding: 100px 0px;
+}
+
+section.about {
+   visibility: visible;
+   opacity: 1; 
+   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+   transition:opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
 }
 
 
@@ -609,6 +630,11 @@ section.Testimonials {
 
 /* ===================== Media queries =================== */
 @media (max-width: 1080px) {
+
+   .heading-nav {
+      padding: 0px 40px;
+   }
+
    nav{
         padding: 0px 40px ;
    }
