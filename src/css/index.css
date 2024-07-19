@@ -445,6 +445,7 @@ aside.left {
    z-index: 10;
    color: var(--light-slate);
 }
+
 aside.right {
    display: flex;
     flex-direction: column;
@@ -457,6 +458,16 @@ aside.right {
     position: fixed;
     z-index: 10;
     color: var(--light-slate);
+}
+
+aside.left, 
+aside.right {
+   opacity: 0;
+   animation-name: onLoadhome;
+   animation-duration: var(--animation-times);
+   animation-timing-function: ease-in;
+   animation-fill-mode: forwards;
+   animation-delay: calc(var(--animation-times) * 16);
 }
 
 aside.left a {
@@ -654,15 +665,12 @@ section.Testimonials {
    }
 }
 
-
 @keyframes onLoadhome {
    0% {
       opacity: 0; 
-      transform: translateY(50%);
    }
    100% {
       opacity: 100%;
-      transform: translateY(0);
    }
 }
 
