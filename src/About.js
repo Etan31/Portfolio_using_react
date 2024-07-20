@@ -27,7 +27,17 @@ const About = React.forwardRef((props, ref) => {
         </div>
         <div className="about-me-pic">
           <div className="wrapper"> {/**this image should change it's color  */}
-            <img src="./imgs/profile-white-bg.jpg" alt="P" />
+            <div className=" image-wrapper img">
+              <div>
+                <img role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='500' width='500' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" alt="" />
+              </div>
+
+              <div></div>
+
+              <picture>
+                <img src="./imgs/profile-white-bg.jpg" alt="Profile headshot" />
+              </picture>
+            </div>
           </div>
         </div>
       </div>
