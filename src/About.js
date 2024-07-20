@@ -26,7 +26,7 @@ const About = React.forwardRef((props, ref) => {
           </ul>
         </div>
         <div className="about-me-pic">
-          <div className="wrapper">
+          <div className="wrapper"> {/**this image should change it's color  */}
             <img src="./imgs/profile-white-bg.jpg" alt="P" />
           </div>
         </div>
