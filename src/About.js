@@ -10,7 +10,7 @@ const About = React.forwardRef((props, ref) => {
             the internet. My interest in web development began when I chose to explore the world of online technologies;
             playing with various projects taught me a lot about HTML, CSS, and JavaScript!
             Fast forward to now, and I've had the opportunity to work for <span className="highlight">Bytewise Information Technology Solutions</span> and
-            <span className="highlight">Department of Science and Technology(DOST) PSTO-Eastern Samar</span> in Borongan, Eastern Samar. These days, my major focus is on developing
+            <span className="highlight"> DOST PSTO-Eastern Samar</span> in Borongan, Eastern Samar. These days, my major focus is on developing
             user-friendly products and experiences.
             While I am not currently employed, I'm constantly developing my skills and working on projects to keep up
             with the latest technology advancements.
@@ -28,15 +28,10 @@ const About = React.forwardRef((props, ref) => {
         <div className="about-me-pic">
           <div className="wrapper"> {/**this image should change it's color  */}
             <div className=" image-wrapper img">
-              <div>
-                <img role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='500' width='500' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" alt="" />
-              </div>
-
-              <div></div>
-
-              <picture>
+              {/* <picture>
+              </picture> */}
                 <img src="./imgs/profile-white-bg.jpg" alt="Profile headshot" />
-              </picture>
+
             </div>
           </div>
         </div>
