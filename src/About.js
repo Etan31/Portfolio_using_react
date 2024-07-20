@@ -26,7 +26,9 @@ const About = React.forwardRef((props, ref) => {
           </ul>
         </div>
         <div className="about-me-pic">
-          <div className="wrapper"></div>
+          <div className="wrapper">
+            <img src="./imgs/profile-white-bg.jpg" alt="P" />
+          </div>
         </div>
       </div>
     </section>
