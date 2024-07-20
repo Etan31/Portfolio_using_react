@@ -25,7 +25,9 @@ const About = React.forwardRef((props, ref) => {
             <li>Git</li>
           </ul>
         </div>
-        <div className="about-me-pic"></div>
+        <div className="about-me-pic">
+          <div className="wrapper"></div>
+        </div>
       </div>
     </section>
   );
