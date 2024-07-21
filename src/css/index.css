@@ -96,11 +96,36 @@ section.Testimonials {
    scroll-behavior: smooth;
 }
 
+p > a {
+    display: inline-block;
+    position: relative;
+    color: var(--green);
+    transition: var(--transition);
+}
+
 p {
    margin: 0 0 15px;
    font-size: 18px;
 }
 
+a {
+   display: inline-block;
+   text-decoration: none;
+   text-decoration-skip-ink: auto;
+   color: inherit;
+   position: relative;
+   transition: var(--transition);
+}
+
+p > a:hover, p > a:focus-visible {
+   color: var(--on-tertiary);
+   text-decoration: underline;
+}
+
+a:hover, a:focus {
+   color: var(--on-tertiary);
+   text-decoration: underline;
+}
 
 img, 
 svg, 
