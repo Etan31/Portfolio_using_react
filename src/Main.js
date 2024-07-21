@@ -79,9 +79,10 @@ function Main() {
     const sr = ScrollReveal({
       origin: 'bottom',
       distance: '20px',
-      duration: 500,
+      duration:500,
       delay: 100,
       reset: false,
+      viewFactor: 0.2,
     });
 
     sr.reveal(aboutRef.current, { delay: 100 });
@@ -143,7 +144,7 @@ function Main() {
           </section>
 
           {/* Pages */}
-          <About ref={aboutRef} /> 
+          <About ref={(element) => aboutRef.current = element} /> 
           <Projects ref={projectsRef} />
           <Testimonials ref={testimonialsRef} />
           <Contact ref={contactRef} />
