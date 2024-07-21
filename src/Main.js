@@ -19,48 +19,12 @@ function Main() {
   const cursorRef = useRef(null);
   const headerRef = useRef(null);
 
-  // useEffect(() => {
-  //   const handleMouseMove = (event) => {
-  //     const { clientX, clientY } = event;
-  //     const cursor = cursorRef.current;
-  //     cursor.style.left = `${clientX}px`;
-  //     cursor.style.top = `${clientY}px`;
-  //   };
-  //   document.addEventListener('mousemove', handleMouseMove);
-    
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 0) {
-  //       headerRef.current.classList.add('scrolled');
-  //     } else {
-  //       headerRef.current.classList.remove('scrolled');
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   const sr = ScrollReveal({
-  //     origin:'bottom',
-  //     distance: '20px', 
-  //     duration: 500,
-  //     delay:100,
-  //     reset:false
-  //   });
-
-  //   sr.reveal('.About', {delay: 100});
-  //   sr.reveal('.Projects', {delay: 200});
-  //   sr.reveal('.Testimonials', {delay: 300});
-  //   sr.reveal('.Contact', {delay: 400});
-
-  //   return () => {
-  //     document.removeEventListener('mousemove', handleMouseMove);
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
-
   useEffect(() => {
+
     const handleMouseMove = (event) => {
       const { clientX, clientY } = event;
       const cursor = cursorRef.current;
+      // to determine the cursor location and follow the circle to it's location 
       cursor.style.left = `${clientX}px`;
       cursor.style.top = `${clientY}px`;
     };
@@ -76,12 +40,14 @@ function Main() {
     document.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('scroll', handleScroll);
 
+    // to set the animation when scrolling 
     const sr = ScrollReveal({
       origin: 'bottom',
       distance: '20px',
-      duration: 500,
+      duration:500,
       delay: 100,
       reset: false,
+      viewFactor: 0.2,
     });
 
     sr.reveal(aboutRef.current, { delay: 100 });
@@ -143,7 +109,7 @@ function Main() {
           </section>
 
           {/* Pages */}
-          <About ref={aboutRef} /> 
+          <About ref={(element) => aboutRef.current = element} /> 
           <Projects ref={projectsRef} />
           <Testimonials ref={testimonialsRef} />
           <Contact ref={contactRef} />
