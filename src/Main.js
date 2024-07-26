@@ -99,7 +99,7 @@ function Main() {
                 solid server-side solutions as well as exceptional websites. Building scalable, <br />
                  effective, and high-quality applications br is my area of expertise, <br />
                  and I constantly provide amazing online experiences. */}
-                 I am a junior software developer who specializes in creating <br />
+                 I am a junior web developer who specializes in creating <br />
                 solid server-side solutions as well as exceptional websites. Building scalable, <br />
                  effective, and high-quality applications br is my area of expertise, <br />
                  and I constantly provide amazing online experiences.
