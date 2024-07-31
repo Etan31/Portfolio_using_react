@@ -41,7 +41,16 @@ const Project = React.forwardRef((props, ref) => {
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">SchedBin</h3>
               <div className="project-description"></div>
-              <ul className="project-tech-list"></ul>
+              <ul className="project-tech-list">
+                <ul>
+                  <li class="tech-list">Java</li>
+                  <li class="tech-list">Firebase</li>
+                  <li class="tech-list">GCP</li>
+                  <li class="tech-list">Git</li>
+                  <li class="tech-list">Postman</li>
+                </ul>
+
+              </ul>
               <div className="project-links">
                 <a target="_blank" rel="noreferrer"
                   href="https://github.com/Etan31/SchedBin-Scheduler-for-Garbage-Collection-">
