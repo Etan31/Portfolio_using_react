@@ -31,7 +31,6 @@ const About = React.forwardRef((props, ref) => {
             <li>Node.js</li>
             <li>PostgreSQL</li>
             <li>Git</li>
-            <li>ChatGPT</li>
           </ul>
 
           
