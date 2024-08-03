@@ -3,7 +3,7 @@ import React from 'react';
 const Project = React.forwardRef((props, ref) => {
   return (
     <section className="Projects" ref={ref}>
-      <h1>hello Project</h1>
+      <h2 class="numbered-heading">Some Things I’ve Built</h2>
       <ul className="featured-projects">
 
         {/* project 1 */}
@@ -12,9 +12,11 @@ const Project = React.forwardRef((props, ref) => {
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">Skycast</h3>
-              <p className="project-description">SkyCast is a web project that offers real-time weather updates for
-                your current location or a searched location, featuring a 5-day forecast, air quality index, humidity,
-                pressure, and more.</p>
+              <div class="project-description">
+                <p >SkyCast is a web project that offers real-time weather updates for
+                  your current location or a searched location, featuring a 5-day forecast, air quality index, humidity,
+                  pressure, and more.</p>
+              </div>
               <ul className="project-tech-list">
                 <li>JavaScript (ES6+)</li>
                 <li>OpenWeatherMap API</li>
@@ -24,7 +26,7 @@ const Project = React.forwardRef((props, ref) => {
               <div className="project-links">
 
                 <a target="_blank" rel="noreferrer" href="https://github.com/Etan31/skycast">
-                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" role="img" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                     className="feather feather-github">
                     <title>GitHub</title>
@@ -34,10 +36,22 @@ const Project = React.forwardRef((props, ref) => {
                   </svg>
                 </a>
 
+                {/* Todo: change this when published */}
+                <a target="_blank" rel="noreferrer" href="https://etan31.github.io/skycast/">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="new" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="none" stroke="currentColor">
+                    <path
+                      d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
+                    </svg>
+                </a>
+
               </div>
             </div>
           </div> 
-          <div className="project-image"></div>
+          <div className="project-image">
+            <div class="windowPreview"></div>
+            <div class="mobilePreview"></div>
+          </div>
         </li>
 
         {/* project 2 */}
@@ -62,20 +76,17 @@ const Project = React.forwardRef((props, ref) => {
               <h3 className="project-title">SchedBin</h3>
               <div className="project-description"></div>
               <ul className="project-tech-list">
-                <ul>
-                  <li class="tech-list">Java</li>
-                  <li class="tech-list">Firebase</li>
-                  <li class="tech-list">GCP</li>
-                  <li class="tech-list">Git</li>
-                  <li class="tech-list">Postman</li>
-                </ul>
-
+                <li class="tech-list">Java</li>
+                <li class="tech-list">Firebase</li>
+                <li class="tech-list">GCP</li>
+                <li class="tech-list">Git</li>
+                <li class="tech-list">Postman</li>
               </ul>
               <div className="project-links">
                 <a target="_blank" rel="noreferrer"
                   href="https://github.com/Etan31/SchedBin-Scheduler-for-Garbage-Collection-">
                   <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                    stroke="currentColor" strokeWidth="2" height="24px" width="24px"  strokeLinecap="round" strokeLinejoin="round"
                     className="feather feather-github">
                     <title>GitHub</title>
                     <path
@@ -86,7 +97,9 @@ const Project = React.forwardRef((props, ref) => {
               </div>
             </div>
           </div>
-          <div className="project-image"></div>
+          <div className="project-image">
+
+          </div>
         </li>
 
         {/* project 4 /// Ongoing*/}

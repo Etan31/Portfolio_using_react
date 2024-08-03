@@ -95,6 +95,9 @@ section.Testimonials {
    padding:0;
    scroll-behavior: smooth;
 }
+::before, ::after {
+    box-sizing: inherit;
+}
 
 p > a {
     display: inline-block;
@@ -107,6 +110,11 @@ p {
    margin: 0 0 15px;
    font-size: 18px;
 }
+
+p:last-child, p:last-of-type {
+    margin: 0px;
+}
+
 
 a {
    display: inline-block;
@@ -127,14 +135,26 @@ a:hover, a:focus {
    text-decoration: underline;
 }
 
+a:hover svg, a:focus svg {
+   stroke: var(--on-tertiary); /* Ensure SVG stroke color changes on hover */
+}
+
 img, 
 svg, 
 .gatsby-image-wrapper {
     width: 100%;
     max-width: 100%;
     vertical-align: middle;
+    transition: var(--transition);
 }
 
+.new {
+   fill:var(--lightest-slate);
+}
+
+.new:hover {
+   fill:var(--on-tertiary)
+}
 
 /* ////////////HOME//////////////// */
 
@@ -695,9 +715,9 @@ img.img-pic {
 }
 
 h1, h2, h3, h4, h5, h6 {
-       font-weight: 600;
-    color: var(--lightest-slate);
-    line-height: 1.1;
+   font-weight: 600;
+   color: var(--lightest-slate);
+   line-height: 1.1;
 }
 
 
@@ -836,34 +856,121 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     /* overflow: hidden; */
 }
-/* .gatsby-image-wrapper [data-main-image] {
-    opacity: 0;
-    transform: translateZ(0);
-    transition: opacity .25s linear;
-    will-change: opacity;
-} */
 
-/* 
-.div-1 {
-   max-width: 500px; display: block;
+/* ===================== Projects =================== */
+/* .gvznfB  */
+.featured-projects {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
 }
 
-.div-2 {
-   opacity: 0;
-   transition: opacity 500ms linear 0s;
-   background-color: rgb(232, 232, 232);
-   position: absolute; inset: 0px; 
-   object-fit: cover;
+.projects:not(:last-of-type) {
+    margin-bottom: 100px;
 }
 
-.img-1 {
-   max-width: 100%;
-   display: block;
-   position: static;
-} */
+
+.projects {
+   position: relative;
+   display: grid;
+   gap: 10px;
+   grid-template-columns: repeat(12, 1fr);
+   -webkit-box-align: center;
+   align-items: center;
+}
+.project-overline {
+    margin: 10px 0px;
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    font-weight: 400;
+}
+
+.project-content {
+   position: relative;
+   grid-area: 1 / 1 / -1 / 7;
+}
+
+.project-title {
+   color: var(--lightest-slate);
+   font-size: clamp(24px, 5vw, 28px);
+}
+
+.project-description {
+   box-shadow: 0 10px 30px -15px var(--navy-shadow);
+   transition: var(--transition);
+   position: relative;
+   z-index: 2;
+   padding: 25px;
+   border-radius: var(--border-radius);
+   background-color: var(--light-navy);
+   color: var(--light-slate);
+   font-size: var(--fz-lg);
+}
+
+.project-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin: 25px 0px 10px;
+    padding: 0px;
+    list-style: none;
+}
+
+.project-tech-list li {
+    margin: 0px 20px 5px 0px;
+    color: var(--light-slate);
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    white-space: nowrap;
+}
+
+.project-links {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+    margin-left: -10px;
+    color: var(--lightest-slate);
+}
+
+.project-links a {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+.gvznfB .project-image {
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
+    grid-area: 1 / 6 / -1 / -1;
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===================== Media queries =================== */
 @media (max-width: 1080px) {
 
+   
    .heading-nav {
       padding: 0px 40px;
    }
@@ -885,12 +992,21 @@ h1, h2, h3, h4, h5, h6 {
    .numbered-heading::after {
       width: 200px;
    }
+
+   .project-content {
+        grid-column: 1 / 9;
+    }
 }
 
 /* The nav icon will be shown here */
 @media (max-width: 768px) {
    nav{
         padding: 0px 25px ; 
+   }
+
+    /* .gvznfB  */
+   .project-title {
+      margin: 0px 0px 20px;
    }
 }
 
