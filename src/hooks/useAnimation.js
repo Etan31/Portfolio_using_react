@@ -11,15 +11,15 @@ export const useAnimations = () => {
   const skycast3Ref = useRef(null);
 
   useEffect(() => {
-    gsap.set([skycast2Ref.current, skycast3Ref.current], { opacity: 0.7 });
+    gsap.set([skycast2Ref.current, skycast3Ref.current], { opacity: 0 });
 
     gsap.timeline({
       scrollTrigger: {
         trigger: '.windowPreview',
-        start: 'top 45%',
+        start: 'top center',
         end: 'bottom 80%',
         scrub: true,
-        markers: true,
+        markers: false,
       },
     }).to(skycast1Ref.current, { y: -100, duration: 3, ease: "expoScale(0.5, 7, none)" });
 
@@ -27,13 +27,13 @@ export const useAnimations = () => {
       scrollTrigger: {
         trigger: '.mobilePreview',
         start: 'top bottom',
-        end: 'bottom 90%',
+        end: 'top 75%',
         scrub: true,
-        markers: true,
+        markers: false,
       },
     })
-      .to(skycast2Ref.current, { y: -170, opacity: 1, duration: 2, ease: "power1.inOut" })
-      .to(skycast3Ref.current, { y: -200, opacity: 1, duration: 3, ease: "power1.inOut" });
+      .to(skycast2Ref.current, { y: -140, opacity: 1, duration: 2, ease: "power1.inOut" })
+      .to(skycast3Ref.current, { y: -180, opacity: 1, duration: 1, ease: "power1.inOut" });
 
   }, []);
 

@@ -107,12 +107,12 @@
    height: 300px;
 }
 
-.skycast2 {
+/* .skycast2 {
     transform: translate(0, 50px);
-}
+} */
 
 .skycast3 {
-    transform: translate(0, 50px);
+    transform: translate(0, -50px);
 }
 
 .mobilePreview {
