@@ -88,7 +88,10 @@ const Project = React.forwardRef((props, ref) => {
               <div className="project-links"></div>
             </div>
           </div>
-          <div className="project-image"></div>
+          <div className="project-image">
+            <div className="windowPreview"></div>
+            <div className="mobilePreview"></div>
+          </div>
         </li>
 
         {/* project 3 */}

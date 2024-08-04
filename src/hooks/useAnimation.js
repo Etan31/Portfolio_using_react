@@ -21,7 +21,7 @@ export const useAnimations = () => {
         scrub: true,
         markers: true,
       },
-    }).to(skycast1Ref.current, { y: -100, ease: "expoScale(0.5, 7, none)" });
+    }).to(skycast1Ref.current, { y: -100, duration: 3, ease: "expoScale(0.5, 7, none)" });
 
     gsap.timeline({
       scrollTrigger: {
@@ -32,8 +32,8 @@ export const useAnimations = () => {
         markers: true,
       },
     })
-      .to(skycast2Ref.current, { y: -170, opacity: 1, duration: 1, ease: "power1.inOut" })
-      .to(skycast3Ref.current, { y: -200, opacity: 1, duration: 1.5, ease: "power1.inOut" });
+      .to(skycast2Ref.current, { y: -170, opacity: 1, duration: 2, ease: "power1.inOut" })
+      .to(skycast3Ref.current, { y: -200, opacity: 1, duration: 3, ease: "power1.inOut" });
 
   }, []);
 
