@@ -1,22 +1,29 @@
-import React from 'react';
-import { gsap } from 'gsap';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import './css/project.css';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+import { useAnimations } from './hooks/useAnimation';
 
 
-// project preview img
+// Project preview images
 import skycastImage from './imgs/skycast/skycast1.png';
 import skycastImage2 from './imgs/skycast/skycast2.png';
 import skycastImage3 from './imgs/skycast/skycast3.png';
 
-
-
 const Project = React.forwardRef((props, ref) => {
+  const { 
+    skycast1Ref,
+    skycast2Ref,
+    skycast3Ref
+  } = useAnimations();
 
   return (
+
     <section className="Projects" ref={ref}>
 
 
-      <h2 class="numbered-heading">Some Things I’ve Built</h2>
+      <h2 className="numbered-heading">Some Things I’ve Built</h2>
       <ul className="featured-projects">
 
         {/* project 1 */}
@@ -25,7 +32,7 @@ const Project = React.forwardRef((props, ref) => {
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">Skycast</h3>
-              <div class="project-description">
+              <div className="project-description">
                 <p >SkyCast is a web project that offers real-time weather updates for
                   your current location or a searched location, featuring a 5-day forecast, air quality index, humidity,
                   pressure, and more.</p>
@@ -51,7 +58,7 @@ const Project = React.forwardRef((props, ref) => {
 
                 {/* Todo: change this when published */}
                 <a target="_blank" rel="noreferrer" href="https://etan31.github.io/skycast/">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="new" height="24px" viewBox="0 -960 960 960" width="24px"
+                  <svg xmlns="http://www.w3.org/2000/svg" className="new" height="24px" viewBox="0 -960 960 960" width="24px"
                     fill="none" stroke="currentColor">
                     <path
                       d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" />
@@ -62,10 +69,10 @@ const Project = React.forwardRef((props, ref) => {
             </div>
           </div> 
           <div className="project-image">
-            <div class="windowPreview"><img src={skycastImage} class="imgPreview skycast1" alt="skycast img preview"/></div>
-            <div class="mobilePreview">
-              <img src={skycastImage2} class="imgPreview skycast2" alt="skycast img preview"/>
-              <img src={skycastImage3} class="imgPreview skycast3" alt="skycast img preview"/>
+            <div className="windowPreview"><img src={skycastImage} ref={skycast1Ref} className="imgPreview skycast1" alt="skycast img preview"/></div>
+            <div className="mobilePreview">
+              <img  src={skycastImage2} ref={skycast2Ref} className="imgPreview skycast2" alt="skycast img preview"/>
+              <img src={skycastImage3} ref={skycast3Ref} className="imgPreview skycast3" alt="skycast img preview"/>
             </div>
           </div>
         </li>
@@ -92,11 +99,11 @@ const Project = React.forwardRef((props, ref) => {
               <h3 className="project-title">SchedBin</h3>
               <div className="project-description"></div>
               <ul className="project-tech-list">
-                <li class="tech-list">Java</li>
-                <li class="tech-list">Firebase</li>
-                <li class="tech-list">GCP</li>
-                <li class="tech-list">Git</li>
-                <li class="tech-list">Postman</li>
+                <li className="tech-list">Java</li>
+                <li className="tech-list">Firebase</li>
+                <li className="tech-list">GCP</li>
+                <li className="tech-list">Git</li>
+                <li className="tech-list">Postman</li>
               </ul>
               <div className="project-links">
                 <a target="_blank" rel="noreferrer"
@@ -134,6 +141,7 @@ const Project = React.forwardRef((props, ref) => {
 
       </ul>
     </section>
+
   );
 });
 

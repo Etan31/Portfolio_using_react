@@ -18,8 +18,9 @@
    -webkit-box-align: center;
    align-items: center;
 }
+
 .project-overline {
-    margin: 10px 0px;
+    margin: 10px 0px !important;
     color: var(--green);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
@@ -29,7 +30,7 @@
 .project-content {
    position: relative;
    grid-area: 1 / 1 / -1 / 7;
-   bottom:80px
+   bottom:130px
 }
 
 .project-title {
@@ -106,9 +107,22 @@
    height: 300px;
 }
 
+.skycast2 {
+    transform: translate(0, 50px);
+}
+
+.skycast3 {
+    transform: translate(0, 50px);
+}
 
 .mobilePreview {
    display: flex;
    justify-content: center;
    gap:30px;
+}
+
+@media (min-width: 768px) {
+    .project-title {
+        margin: 0px 0px 20px;
+    }
 }
