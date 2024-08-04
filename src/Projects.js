@@ -1,8 +1,21 @@
 import React from 'react';
+import { gsap } from 'gsap';
+import './css/project.css';
+
+
+// project preview img
+import skycastImage from './imgs/skycast/skycast1.png';
+import skycastImage2 from './imgs/skycast/skycast2.png';
+import skycastImage3 from './imgs/skycast/skycast3.png';
+
+
 
 const Project = React.forwardRef((props, ref) => {
+
   return (
     <section className="Projects" ref={ref}>
+
+
       <h2 class="numbered-heading">Some Things I’ve Built</h2>
       <ul className="featured-projects">
 
@@ -49,8 +62,11 @@ const Project = React.forwardRef((props, ref) => {
             </div>
           </div> 
           <div className="project-image">
-            <div class="windowPreview"></div>
-            <div class="mobilePreview"></div>
+            <div class="windowPreview"><img src={skycastImage} class="imgPreview skycast1" alt="skycast img preview"/></div>
+            <div class="mobilePreview">
+              <img src={skycastImage2} class="imgPreview skycast2" alt="skycast img preview"/>
+              <img src={skycastImage3} class="imgPreview skycast3" alt="skycast img preview"/>
+            </div>
           </div>
         </li>
 

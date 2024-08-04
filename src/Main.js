@@ -19,6 +19,8 @@ function Main() {
   const cursorRef = useRef(null);
   const headerRef = useRef(null);
 
+  
+
   useEffect(() => {
 
     const handleMouseMove = (event) => {
@@ -43,7 +45,7 @@ function Main() {
     // to set the animation when scrolling 
     const sr = ScrollReveal({
       origin: 'bottom',
-      distance: '20px',
+      distance: '50px',
       duration:500,
       delay: 100,
       reset: false,
