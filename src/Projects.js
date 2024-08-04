@@ -83,8 +83,13 @@ const Project = React.forwardRef((props, ref) => {
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">Speech2Text</h3>
-              <div className="project-description"></div>
-              <ul className="project-tech-list"></ul>
+              <div className="project-description">This project allows to your speech and convert it into text and can be saved as txt file.</div>
+              <ul className="project-tech-list">
+                <li>Nodejs</li>
+                <li>Postgres</li>
+                <li>Git</li>
+                <li>Ejs</li>
+              </ul>
               <div className="project-links"></div>
             </div>
           </div>
