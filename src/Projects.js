@@ -162,7 +162,7 @@ const Project = React.forwardRef((props, ref) => {
             </div>
           </div>
           <div className="project-image">
-
+            
           </div>
         </li>
 
