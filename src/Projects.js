@@ -94,7 +94,7 @@ const Project = React.forwardRef((props, ref) => {
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">Speech2Text</h3>
-              <div className="project-description">This project allows to your speech and convert it into text and can be saved as txt file.</div>
+              <div className="project-description">This project allows you to record your speech and convert it into text and can be saved as txt file.</div>
               <ul className="project-tech-list">
                 <li>Nodejs</li>
                 <li>Postgres</li>
@@ -142,7 +142,7 @@ const Project = React.forwardRef((props, ref) => {
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">SchedBin</h3>
               <div className="project-description">
-                SchedBin is a simple web app for garbage collection schedules. Admins set the collection dates, and users can view the schedule.
+                Designed to make managing garbage collection schedules easy, SchedBin is a straightforward web application. Waste management is made timely and organized with ease by admins setting collection dates and users viewing and updating the schedule readily.
               </div>
               <ul className="project-tech-list">
                 <li className="tech-list">Java</li>
@@ -186,7 +186,9 @@ const Project = React.forwardRef((props, ref) => {
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">TrackRecord</h3>
-              <div className="project-description"></div>
+              <div className="project-description">Simplifies your financial management by tracking your income, savings, and expenses with detailed analytics and graphs.
+                 Able to save and transfer your progress through your Google account(s).
+              </div>
               <ul className="project-tech-list"></ul>
               <div className="project-links"></div>
             </div>
