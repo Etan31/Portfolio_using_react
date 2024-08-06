@@ -624,22 +624,27 @@ div.fadeup-enter-done {
    animation-fill-mode:forwards;
 } 
 
+/* MayName is */
 div.fadeup-enter-done:nth-child(1) {
    animation-delay: calc(var(--animation-times) * 8);
 }
 
+/* Name */
 div.fadeup-enter-done:nth-child(2) {
    animation-delay: calc(var(--animation-times) * 9);
 }
 
+/* Build thing on the web */
 div.fadeup-enter-done:nth-child(3) {
    animation-delay: calc(var(--animation-times) * 10);
 }
 
+/* paragraph short intro */
 div.fadeup-enter-done:nth-child(4) {
    animation-delay: calc(var(--animation-times) * 11);
 }
 
+/* Get in Touch Btn */
 div.fadeup-enter-done:nth-child(5) {
    animation-delay: calc(var(--animation-times) * 12);
 }
