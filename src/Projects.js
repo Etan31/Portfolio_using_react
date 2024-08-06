@@ -15,15 +15,18 @@ import stt1 from './imgs/stt/stt1.png';
 import stt2 from './imgs/stt/stt2.png';
 import stt3 from './imgs/stt/stt3.png';
 
+import SchedBin1 from './imgs/schedBin/SchedBin1.png';
+import SchedBin2 from './imgs/schedBin/SchedBin2.png';
+import SchedBin3 from './imgs/schedBin/SchedBin3.png';
+import SchedBin4 from './imgs/schedBin/SchedBin4.png';
 
 const Project = React.forwardRef((props, ref) => {
   const { 
-    skycast1Ref,
-    skycast2Ref,
-    skycast3Ref,
-    stt1Ref,
-    stt2Ref,
-    stt3Ref
+    skycast1Ref, skycast2Ref, skycast3Ref,
+    
+    stt1Ref, stt2Ref, stt3Ref,
+
+    SchedBin1Ref, SchedBin2Ref, SchedBin3Ref, SchedBin4Ref
   } = useAnimations();
 
   return (
@@ -138,7 +141,9 @@ const Project = React.forwardRef((props, ref) => {
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">SchedBin</h3>
-              <div className="project-description"></div>
+              <div className="project-description">
+                SchedBin is a simple web app for garbage collection schedules. Admins set the collection dates, and users can view the schedule.
+              </div>
               <ul className="project-tech-list">
                 <li className="tech-list">Java</li>
                 <li className="tech-list">Firebase</li>
@@ -162,13 +167,22 @@ const Project = React.forwardRef((props, ref) => {
             </div>
           </div>
           <div className="project-image">
-            
+            <div className="mobilePreview schedBinMobilePreview">
+              <div class="imgAbove">
+                <img src={SchedBin1}  ref={SchedBin1Ref} className="imgPreview schedBin1" alt="SchedBin img preview"/>
+                <img src={SchedBin2}  ref={SchedBin2Ref} className="imgPreview schedBin2" alt="SchedBin img preview"/>
+              </div>
+              <div class="imgBelow">
+                <img src={SchedBin3}  ref={SchedBin3Ref} className="imgPreview schedBin3" alt="SchedBin img preview"/>
+                <img src={SchedBin4}  ref={SchedBin4Ref} className="imgPreview schedBin4" alt="SchedBin img preview"/>
+              </div>
+            </div>
           </div>
         </li>
 
         {/* project 4 /// Ongoing*/}
         <li className="projects">
-          <div className="project-content">
+          <div className="project-content project4Content">
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">TrackRecord</h3>

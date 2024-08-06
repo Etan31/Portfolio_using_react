@@ -133,7 +133,11 @@
 .skycast2,
 .skycast3,
 .stt2,
-.stt3{
+.stt3,
+.schedBin1,
+.schedBin2,
+.schedBin3,
+.schedBin4 {
    width: 150px;
    height: 300px;
    transition: var(--transition);
@@ -147,6 +151,10 @@
     transform: translate(0, -50px);
 }
 
+.stt3 {
+    transform: translate(0, 70px);
+}
+
 .mobilePreview {
    display: flex;
    justify-content: center;
@@ -157,6 +165,46 @@
     gap:70px;
     margin-bottom: 120px;
 }
+
+.mobilePreview.schedBinMobilePreview {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.project-content.project3Content {
+    bottom: 260px;
+}
+
+.project-content.project4Content {
+    margin-top: 150px;
+} 
+
+.schedBin1 {
+    transform: translate(0, -80px);
+}
+
+.schedBin2 {
+    transform: translate(0, 40px);
+}
+
+.schedBin3 {
+    /* transform: translate(0, 40px); */
+}
+
+.schedBin4 {
+    transform: translate(0, 80px);
+}
+
+.imgAbove, .imgBelow {
+    display: flex;
+    gap: 50px;
+} 
+
+.imgBelow {
+    transform: translate(-50px, -10px);
+}
+
 
 
 @media (max-width: 1080px) {
