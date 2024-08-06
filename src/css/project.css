@@ -154,7 +154,8 @@
 }
 
 .mobilePreview.sttMobilePreview {
-    gap:70px
+    gap:70px;
+    margin-bottom: 120px;
 }
 
 

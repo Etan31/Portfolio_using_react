@@ -50,8 +50,8 @@ export const useAnimations = () => {
         markers: false,
       },
     })
-      .to(stt2Ref.current, { y: -180, opacity: 1, duration: 2, ease: "power1.inOut" })
-      .to(stt3Ref.current, { y: -140, opacity: 1, duration: 1, ease: "power1.inOut" });
+      .to(stt2Ref.current, { y: -90, opacity: 1, duration: 2, ease: "power1.inOut" })
+      .to(stt3Ref.current, { y: -30, opacity: 1, duration: 1, ease: "power1.inOut" });
       
       
 
