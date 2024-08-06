@@ -45,11 +45,11 @@ function Main() {
     // to set the animation when scrolling 
     const sr = ScrollReveal({
       origin: 'bottom',
-      distance: '50px',
-      duration:500,
-      delay: 100,
+      distance: '70px',
+      duration: 500,
+      delay: 200,
       reset: false,
-      viewFactor: 0.2,
+      viewFactor: 0.05,
     });
 
     sr.reveal(aboutRef.current, { delay: 100 });
