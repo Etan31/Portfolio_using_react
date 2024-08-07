@@ -193,7 +193,9 @@ const Project = React.forwardRef((props, ref) => {
               <div className="project-links"></div>
             </div>
           </div>
-          <div className="project-image"></div>
+          <div className="project-image">
+            <img src={stt1} ref={stt1Ref} className="imgPreview stt1" alt="Speech-to-text img preview"/>
+          </div>
         </li>
 
       </ul>
