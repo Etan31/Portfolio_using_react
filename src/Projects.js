@@ -20,13 +20,19 @@ import SchedBin2 from './imgs/schedBin/SchedBin2.png';
 import SchedBin3 from './imgs/schedBin/SchedBin3.png';
 import SchedBin4 from './imgs/schedBin/SchedBin4.png';
 
+import trackRecord from './imgs/trackRecord/trackRecord.png';
+
+
+
 const Project = React.forwardRef((props, ref) => {
   const { 
     skycast1Ref, skycast2Ref, skycast3Ref,
     
     stt1Ref, stt2Ref, stt3Ref,
 
-    SchedBin1Ref, SchedBin2Ref, SchedBin3Ref, SchedBin4Ref
+    SchedBin1Ref, SchedBin2Ref, SchedBin3Ref, SchedBin4Ref,
+
+    trackRecordRef
   } = useAnimations();
 
   return (
@@ -194,7 +200,9 @@ const Project = React.forwardRef((props, ref) => {
             </div>
           </div>
           <div className="project-image">
-            <img src={stt1} ref={stt1Ref} className="imgPreview stt1" alt="Speech-to-text img preview"/>
+            <div class="windowPreview">
+              <img src={trackRecord} ref={trackRecordRef} className="imgPreview stt1" alt="Speech-to-text img preview"/>
+            </div>
           </div>
         </li>
 

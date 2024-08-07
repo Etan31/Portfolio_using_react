@@ -16,23 +16,26 @@ export const useAnimations = () => {
   const SchedBin2Ref = useRef(null);
   const SchedBin3Ref = useRef(null);
   const SchedBin4Ref = useRef(null);
+  const trackRecordRef = useRef(null);
   
 
   useEffect(() => {
     gsap.set([skycast2Ref.current, skycast3Ref.current], { opacity: 0 });
     gsap.set([stt2Ref.current, stt3Ref.current], { opacity: 0 });
     gsap.set([SchedBin1Ref.current, SchedBin2Ref.current, SchedBin3Ref.current, SchedBin4Ref.current], { opacity: 0 });
+    gsap.set([trackRecordRef.current], { opacity: 0 });
 
-    // gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '.windowPreview',
-    //     start: 'top center',
-    //     end: 'bottom 80%',
-    //     scrub: true,
-    //     markers: false,
-    //   },
-    // })
-    // .to(skycast1Ref.current, { y: -100, duration: 3, ease: "expoScale(0.5, 7, none)" })
+
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.windowPreview',
+        start: 'top center',
+        end: 'bottom 80%',
+        scrub: true,
+        markers: true,
+      },
+    })
+    .to(trackRecordRef.current, { y: -100, opacity: 1, duration: 3, ease: "expoScale(0.5, 7, none)" })
     // .to(stt1Ref.current, { y: -100, duration: 3, ease: "expoScale(0.5, 7, none)" });
 
     gsap.timeline({
@@ -80,6 +83,7 @@ export const useAnimations = () => {
   return { 
       skycast1Ref, skycast2Ref, skycast3Ref, 
       stt1Ref, stt2Ref, stt3Ref,
-      SchedBin1Ref, SchedBin2Ref, SchedBin3Ref, SchedBin4Ref 
+      SchedBin1Ref, SchedBin2Ref, SchedBin3Ref, SchedBin4Ref,
+      trackRecordRef
     };
 };
