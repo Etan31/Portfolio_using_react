@@ -29,13 +29,13 @@ export const useAnimations = () => {
     gsap.timeline({
       scrollTrigger: {
         trigger: '.windowPreview',
-        start: 'top center',
+        start: 'top 80%',
         end: 'bottom 80%',
         scrub: true,
-        markers: true,
+        markers: false,
       },
     })
-    .to(trackRecordRef.current, { y: -100, opacity: 1, duration: 3, ease: "expoScale(0.5, 7, none)" })
+    .to(trackRecordRef.current, { y: -100, opacity: 1, duration: 1, ease: "expoScale(0.5, 7, none)" })
     // .to(stt1Ref.current, { y: -100, duration: 3, ease: "expoScale(0.5, 7, none)" });
 
     gsap.timeline({
