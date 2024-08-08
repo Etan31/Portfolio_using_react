@@ -213,6 +213,7 @@ const Project = React.forwardRef((props, ref) => {
           </div>
           <div className="project-image img-container1">
             <div class="windowPreview img-wrapper1">
+              
               <img src={trackRecord} ref={trackRecordRef} className="imgPreview stt1" alt="Speech-to-text img preview"/>
             </div>
           </div>
