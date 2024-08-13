@@ -216,6 +216,7 @@ const Project = React.forwardRef((props, ref) => {
               
               <img src={trackRecord} ref={trackRecordRef} className="imgPreview stt1" alt="Speech-to-text img preview"/>
             </div>
+            
           </div>
         </li>
 
