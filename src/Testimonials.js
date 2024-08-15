@@ -12,7 +12,7 @@ const Testimonials = React.forwardRef((props, ref) => {
               <div class="user-occupation"></div>
               <div class="user-name"></div>
             </div>
-            <p class="testimony-p"></p>
+            <p class="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
         </div>
         <div class="wrapper">
             <div class="user-info">
@@ -20,7 +20,7 @@ const Testimonials = React.forwardRef((props, ref) => {
               <div class="user-occupation"></div>
               <div class="user-name"></div>
             </div>
-            <p class="testimony-p"></p>
+            <p class="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
         </div>
       </div>
     </section>
