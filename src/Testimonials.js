@@ -9,16 +9,16 @@ const Testimonials = React.forwardRef((props, ref) => {
           {/* middle  user-info*/}
             <div class="user-info">
               <img src="" alt="" class="img"></img>
-              <div class="user-occupation"></div>
               <div class="user-name">Sample A. Username</div>
+              <div class="user-occupation"></div>
             </div>
             <p class="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
         </div>
         <div class="wrapper">
             <div class="user-info">
               <img src="" alt="" class="img"></img>
-              <div class="user-occupation"></div>
               <div class="user-name">Sample B. Username</div>
+              <div class="user-occupation"></div>
             </div>
             <p class="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
         </div>
