@@ -10,7 +10,7 @@ const Testimonials = React.forwardRef((props, ref) => {
             <div class="user-info">
               <img src="" alt="" class="img"></img>
               <div class="user-occupation"></div>
-              <div class="user-name"></div>
+              <div class="user-name">Sample A. Username</div>
             </div>
             <p class="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
         </div>
@@ -18,7 +18,7 @@ const Testimonials = React.forwardRef((props, ref) => {
             <div class="user-info">
               <img src="" alt="" class="img"></img>
               <div class="user-occupation"></div>
-              <div class="user-name"></div>
+              <div class="user-name">Sample B. Username</div>
             </div>
             <p class="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
         </div>
