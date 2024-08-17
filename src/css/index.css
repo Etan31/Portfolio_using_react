@@ -82,8 +82,7 @@
 
 /* //////////// GENERAL STYLES /////////////// */
 
-section.Contact,
-section.Testimonials {
+section.Contact {
    border: 1px solid red;
 }
 

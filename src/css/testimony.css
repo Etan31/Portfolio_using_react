@@ -1,12 +1,13 @@
 @import url('./index.css');
 
-.testimony-container {
+/* .testimony-container {
    display: flex;
    justify-content: space-around;
    flex-direction: row;
    text-align: center;
    gap: 20px;
-}
+} */
+
 
 .wrapper {
    display: flex;
@@ -44,4 +45,51 @@
 
 p.testimony-p {
    line-height: 22px;;
+}
+
+
+/* Carousel */
+.testimony-container {
+    position: relative;
+    width: clamp(250px, 40vw, 350px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-x: clip;
+    margin: 0 auto;
+}
+.carousel {
+  display: flex;
+  transition: transform 0.5s var(--easing);
+}
+
+.wrapper {
+   min-width: 100%;
+   box-sizing: border-box;
+   max-width: 300px;
+   padding: 1rem;
+   margin: 0 auto;
+   text-align: center;
+   background-color: var(--light-navy);
+   border-radius: var(--border-radius);
+   box-shadow: 0 10px 30px -15px var(--navy-shadow);
+}
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-control.prev {
+  left: 0;
+}
+
+.carousel-control.next {
+  right: 0;
 }
