@@ -3,7 +3,6 @@
 
 :root {
    --on-primary: #0E153A;
-   --on-primary: #0E153A;
    --on-primary-bg: #0f0c29;
    --on-secondary: #3D5AF1;
    /* --on-tertiary: #22D1EE; */
@@ -87,6 +86,7 @@ section.Contact,
 section.Testimonials {
    border: 1px solid red;
 }
+
 
 * {
    box-sizing: border-box;
@@ -604,6 +604,10 @@ section.main_section {
     max-width: 1600px;
     min-height: 100vh;
     padding: 20px 150px 200px;
+}
+
+section.Projects {
+   padding-bottom: unset;
 }
 
 section.home {

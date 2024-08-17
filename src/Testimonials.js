@@ -13,13 +13,19 @@ const Testimonials = React.forwardRef((props, ref) => {
             <img src={sampleImg}  alt="sample profile" className="img-profile"></img>
             <div className="user-name">Sample A. Username</div>
             <div className="user-profession">Profession ABC</div>
-            <p className="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
+            <p className="testimony-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos dolores voluptatum exercitationem nostrum ad itaque cupiditate.</p>
         </div>
         <div className="wrapper">
             <img src={sampleImg} alt="sample profile" className="img-profile"></img>
             <div className="user-name">Sample B. Username</div>
             <div className="user-profession">Profession ABC</div>
-            <p className="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
+            <p className="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolores voluptatum exercitationem nostrum ad itaque cupiditate. </p>
+        </div>
+        <div className="wrapper">
+            <img src={sampleImg} alt="sample profile" className="img-profile"></img>
+            <div className="user-name">Sample B. Username</div>
+            <div className="user-profession">Profession ABC</div>
+            <p className="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolores voluptatum exercitationem nostrum ad itaque cupiditate. </p>
         </div>
       </div>
     </section>
