@@ -1,26 +1,25 @@
 import React from 'react';
+import './css/testimony.css';
+
+import sampleImg from './imgs/sample-img.jpg';
 
 const Testimonials = React.forwardRef((props, ref) => {
   return (
     <section className="Testimonials" ref={ref}>
       
-      <div class="testimony-container">
-        <div class="wrapper">
+      <div className="testimony-container">
+        <div className="wrapper">
           {/* middle  user-info*/}
-            <div class="user-info">
-              <img src="" alt="" class="img"></img>
-              <div class="user-name">Sample A. Username</div>
-              <div class="user-profession">Profession ABC</div>
-            </div>
-            <p class="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
+            <img src={sampleImg}  alt="sample profile" className="img-profile"></img>
+            <div className="user-name">Sample A. Username</div>
+            <div className="user-profession">Profession ABC</div>
+            <p className="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
         </div>
-        <div class="wrapper">
-            <div class="user-info">
-              <img src="" alt="" class="img"></img>
-              <div class="user-name">Sample B. Username</div>
-              <div class="user-profession">Profession ABC</div>
-            </div>
-            <p class="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
+        <div className="wrapper">
+            <img src={sampleImg} alt="sample profile" className="img-profile"></img>
+            <div className="user-name">Sample B. Username</div>
+            <div className="user-profession">Profession ABC</div>
+            <p className="testimony-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.  </p>
         </div>
       </div>
     </section>

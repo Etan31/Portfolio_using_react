@@ -1,1 +1,22 @@
 @import url('./index.css');
+
+.testimony-container {
+   display: flex;
+   justify-content: space-around;
+   flex-direction: row;
+   text-align: center;
+}
+
+.wrapper {
+   gap:20px;
+   border: 1px solid blue;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.img-profile {
+   height:50px;
+   width: 50px;
+   border-radius: 50px;
+}

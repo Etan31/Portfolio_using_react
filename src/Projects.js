@@ -174,11 +174,11 @@ const Project = React.forwardRef((props, ref) => {
           </div>
           <div className="project-image">
             <div className="mobilePreview schedBinMobilePreview">
-              <div class="imgAbove">
+              <div className="imgAbove">
                 <img src={SchedBin1}  ref={SchedBin1Ref} className="imgPreview schedBin1" alt="SchedBin img preview"/>
                 <img src={SchedBin2}  ref={SchedBin2Ref} className="imgPreview schedBin2" alt="SchedBin img preview"/>
               </div>
-              <div class="imgBelow">
+              <div className="imgBelow">
                 <img src={SchedBin3}  ref={SchedBin3Ref} className="imgPreview schedBin3" alt="SchedBin img preview"/>
                 <img src={SchedBin4}  ref={SchedBin4Ref} className="imgPreview schedBin4" alt="SchedBin img preview"/>
               </div>
@@ -212,7 +212,7 @@ const Project = React.forwardRef((props, ref) => {
             </div>
           </div>
           <div className="project-image img-container1">
-            <div class="windowPreview img-wrapper1">
+            <div className="windowPreview img-wrapper1">
               
               <img src={trackRecord} ref={trackRecordRef} className="imgPreview stt1" alt="Speech-to-text img preview"/>
             </div>
