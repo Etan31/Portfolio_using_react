@@ -9,7 +9,7 @@
 } */
 
 
-.wrapper {
+.testimony-wrapper {
    display: flex;
    align-items: center;
    flex-direction: column;
@@ -63,7 +63,7 @@ p.testimony-p {
   transition: transform 0.5s var(--easing);
 }
 
-.wrapper {
+.testimony-wrapper {
    min-width: 100%;
    box-sizing: border-box;
    max-width: 300px;
