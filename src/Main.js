@@ -18,46 +18,45 @@ function Main() {
   const contactRef = useRef(null);
   const cursorRef = useRef(null);
   const headerRef = useRef(null);
-
   
 
-useEffect(() => {
-  const handleMouseMove = (event) => {
-    const { clientX, clientY } = event;
-    const cursor = cursorRef.current;
-    cursor.style.left = `${clientX}px`;
-    cursor.style.top = `${clientY}px`;
-  };
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      const { clientX, clientY } = event;
+      const cursor = cursorRef.current;
+      cursor.style.left = `${clientX}px`;
+      cursor.style.top = `${clientY}px`;
+    };
 
-  const handleScroll = () => {
-    if (window.scrollY > 0) {
-      headerRef.current.classList.add('scrolled');
-    } else {
-      headerRef.current.classList.remove('scrolled');
-    }
-  };
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        headerRef.current.classList.add('scrolled');
+      } else {
+        headerRef.current.classList.remove('scrolled');
+      }
+    };
 
-  document.addEventListener('mousemove', handleMouseMove);
-  window.addEventListener('scroll', handleScroll);
+    document.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
 
-  const sr = ScrollReveal({
-    origin: 'bottom',
-    distance: '70px',
-    duration: 500,
-    delay: 200,
-    reset: false,
-  });
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '70px',
+      duration: 500,
+      delay: 200,
+      reset: false,
+    });
 
-  sr.reveal(aboutRef.current, { delay: 100, viewFactor: 0.2 });
-  sr.reveal(projectsRef.current, { delay: 200, viewFactor: 0.05 });
-  sr.reveal(testimonialsRef.current, { delay: 300, viewFactor: 0.2 });
-  sr.reveal(contactRef.current, { delay: 400, viewFactor: 0.2 });
+    sr.reveal(aboutRef.current, { delay: 100, viewFactor: 0.2 });
+    sr.reveal(projectsRef.current, { delay: 200, viewFactor: 0.05 });
+    sr.reveal(testimonialsRef.current, { delay: 300, viewFactor: 0.2 });
+    sr.reveal(contactRef.current, { delay: 400, viewFactor: 0.2 });
 
-  return () => {
-    document.removeEventListener('mousemove', handleMouseMove);
-    window.removeEventListener('scroll', handleScroll);
-  };
-}, []);
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="Main">
