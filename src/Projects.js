@@ -5,7 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { useAnimations } from './hooks/useAnimation';
 
-
 // Project preview images
 import skycastImage from './imgs/skycast/skycast1.png';
 import skycastImage2 from './imgs/skycast/skycast2.png';
