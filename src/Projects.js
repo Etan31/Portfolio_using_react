@@ -19,7 +19,7 @@ import SchedBin2 from './imgs/schedBin/SchedBin2.png';
 import SchedBin3 from './imgs/schedBin/SchedBin3.png';
 import SchedBin4 from './imgs/schedBin/SchedBin4.png';
 
-import trackRecord from './imgs/trackRecord/trackRecord.png';
+import trackRecord from './imgs/Portfolio.png';
 
 
 
@@ -191,8 +191,7 @@ const Project = React.forwardRef((props, ref) => {
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">TrackRecord</h3>
-              <div className="project-description">Simplifies your financial management by tracking your income, savings, and expenses with detailed analytics and graphs.
-                 Able to save and transfer your progress through your Google account(s).
+              <div className="project-description">This personal project, which was created with React JS, HTML, and CSS, presents a thorough and dynamic website that highlights my background, skills, and character traits. It is intended to demonstrate my proficiency with front-end development while offering a user-friendly interface that embodies my attention to detail and creativity.
               </div>
               <ul className="project-tech-list"></ul>
               <div className="project-links">
