@@ -190,7 +190,7 @@ const Project = React.forwardRef((props, ref) => {
           <div className="project-content project4Content">
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
-              <h3 className="project-title">TrackRecord</h3>
+              <h3 className="project-title">Web portfolio</h3>
               <div className="project-description">This personal project, which was created with React JS, HTML, and CSS, presents a thorough and dynamic website that highlights my background, skills, and character traits. It is intended to demonstrate my proficiency with front-end development while offering a user-friendly interface that embodies my attention to detail and creativity.
               </div>
               <ul className="project-tech-list"></ul>
