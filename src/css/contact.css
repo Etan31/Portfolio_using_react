@@ -1,3 +1,5 @@
+
+/* @import url('./index.css'); */
 .contact-container {
   display: flex;
   flex-direction: row;
@@ -50,5 +52,13 @@
 }
 
 .submit-button:hover {
+  transition: var(--transition);
+  transform: translate( -5px, -5px);
+  box-shadow: 4 4 0 0 var(--on-tertiary);
   background-color: #0056b3;
+}
+
+.submitBtn {
+  display: flex;
+  justify-content: flex-end;
 }

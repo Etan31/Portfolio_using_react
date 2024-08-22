@@ -85,9 +85,11 @@ const Contact = React.forwardRef((props, ref) => {
                 required
               />
             </div>
-            <button type="submit" className="submit-button">
-              Send Message
-            </button>
+            <div className="submitBtn">
+              <button type="submit" className="submit-button">
+                Send Message
+              </button>
+            </div>
           </form>
         </div>
       </div>
