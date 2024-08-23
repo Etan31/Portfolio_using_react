@@ -9,8 +9,6 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
   return (
     <nav>
       <h1 className="portfolio-name start">
-        {/* <img src={MyLogo} className="t-logo" alt="T-logo" width="40" height="35"/> */}
-        {/* Todo: should refresh back to the home page */}
         <MyLogo className="t-logo" />
         
         
@@ -20,7 +18,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
         <li className="navMenu" onClick={() => handleClick(projectsRef)}>Projects</li>
         <li className="navMenu" onClick={() => handleClick(testimonialsRef)}>Testimonials</li>
         <li className="navMenu" onClick={() => handleClick(contactRef)}>Contact</li>
-        <button className="navMenu" >Resume</button>
+        <button className="navMenu" href="/Resume.pdf" rel="noopener noreferrer" target="_blank">Resume</button>
       </ol>
     </nav>
   );
