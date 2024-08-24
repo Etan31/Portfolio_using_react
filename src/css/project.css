@@ -201,7 +201,9 @@
     transform: translate(-50px, -10px);
 }
 
-
+img.imgPreview.stt1 {
+    transform: translate(0px, -55px) !important;
+}
 
 
 
