@@ -121,6 +121,7 @@ function Main() {
                 solid server-side solutions as well as exceptional websites. Building scalable, <br />
                  effective, and high-quality applications is my area of expertise, <br />
                  and I constantly provide amazing online experiences.
+                 <span className="highlight">This portfolio is still work in progress.</span>
               </p>
             </div>
             <div className="fadeup-enter-done"><button className="get-in-touch">Get In Touch</button></div>
