@@ -28,16 +28,36 @@ function Main() {
       cursor.style.top = `${clientY}px`;
     };
 
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        headerRef.current.classList.add('scrolled');
-      } else {
-        headerRef.current.classList.remove('scrolled');
-      }
-    };
+  let prevScrollY = 0;
 
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY < prevScrollY && currentScrollY < 200) {
+      headerRef.current.classList.remove('hidden');
+    }
+
+    if (currentScrollY > prevScrollY) {
+      // Scrolling down
+      if (currentScrollY > 200) {
+        headerRef.current.classList.add('hidden');
+      }
+    } else {
+      // Scrolling up
+      headerRef.current.classList.remove('hidden');
+    }
+
+    if (currentScrollY > 0) {
+      headerRef.current.classList.add('scrolled');
+    } else {
+      headerRef.current.classList.remove('scrolled');
+    }
+
+    prevScrollY = currentScrollY;
+  };
     document.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('scroll', handleScroll);
+    
 
     const sr = ScrollReveal({
       origin: 'bottom',

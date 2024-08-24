@@ -18,7 +18,16 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
         <li className="navMenu" onClick={() => handleClick(projectsRef)}>Projects</li>
         <li className="navMenu" onClick={() => handleClick(testimonialsRef)}>Testimonials</li>
         <li className="navMenu" onClick={() => handleClick(contactRef)}>Contact</li>
-        <button className="navMenu" href="/Resume.pdf" rel="noopener noreferrer" target="_blank">Resume</button>
+        {/* <button className="navMenu" href="/Resume.pdf" rel="noopener noreferrer" target="_blank">           */}
+        <a
+            className="resume-button"
+            href="/Resume.pdf"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Resume
+          </a>
+          {/* </button> */}
       </ol>
     </nav>
   );

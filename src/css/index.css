@@ -337,12 +337,13 @@ header {
    user-select: auto !important;
 }
 
+
 header.heading-nav.scrolled {
-    height: var(--nav-scroll-height);
-    background-color: var(--main-bg);
-    opacity: 85%;
-    box-shadow: 0 10px 30px -10px var(--navy-shadow);
-    transform: translateY(0);
+  transform: translateY(0);
+}
+
+header.heading-nav.scrolled.hidden {
+  transform: translateY(-100%);
 }
 
 nav {
@@ -452,8 +453,14 @@ li.navMenu:nth-child(4) {
     animation-delay: calc(var(--animation-times) * 3);
 }
 
-li.navMenu:nth-child(5) {
-    animation-delay: calc(var(--animation-times) * 4);
+a.resume-button {
+   animation-name: onLoadButton;
+   animation-duration: var(--animation-listnav);
+   animation-timing-function: var(--transition);
+   animation-delay: var(--animation-times);
+   animation-fill-mode: forwards;
+   opacity: 0 ;
+   animation-delay: calc(var(--animation-times) * 4);  
 }
 
 li.navMenu:hover {
@@ -469,37 +476,8 @@ li.navMenu::before {
 }
 
 button.navMenu{
-   color: var(--on-tertiary);
    background-color: transparent;
-   border: 1px solid var(--green);
-   border-radius: var(--border-radius);
-   padding: 0.75rem 1rem;
-   font-family: var(--font-mono);
-   line-height: 1;
-   opacity: 0;
-   text-decoration: none;
-   transition: var(--transition);
-   margin-left: 15px;
-   font-size: var(--fz-xs);
-   animation-name: onLoad;
-   animation-duration: var(--animation-listnav);
-   animation-timing-function: var(--transition);
-   animation-delay: var(--animation-times);
-   animation-fill-mode:forwards;
-    animation-delay: calc(var(--animation-times) * 5);
-}
-
-button.navMenu:hover {
-   transition: var(--transition);
-   box-shadow: 4px 4px 0 0 var(--on-tertiary);
-   transform: translate(-5px, -5px);
-   cursor: pointer;
-}
-
-button.navMenu:focus-visible {
-   outline: none;
-   box-shadow: 3px 3px 0 0 var(--on-tertiary);
-   transform: translate(-4px, -4px);
+   border:none;
 }
 
 :focus-visible {
@@ -507,6 +485,26 @@ button.navMenu:focus-visible {
    outline-offset: 3px;
 }
 
+.resume-button:hover, .resume-button:focus-visible {
+    outline: none;
+    text-decoration: none;
+    box-shadow: 3px 3px 0 0 var(--green);
+    transform: translate(-4px, -4px);
+}
+
+.resume-button {
+   color: var(--green);
+   background-color: transparent;
+   border: 1px solid var(--green);
+   border-radius: var(--border-radius);
+   padding: 0.75rem 1rem;
+   font-family: var(--font-mono);
+   line-height: 1;
+   text-decoration: none;
+   transition: var(--transition);
+   margin-left: 15px;
+   font-size: var(--fz-xs);
+}
 
 
 
@@ -872,6 +870,15 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* ===================== Media queries =================== */
+
+/* @media (prefers-reduced-motion: no-preference) {
+   .header.heading-nav.scrolled {
+      height: var(--nav-scroll-height);
+      transform: translateY(calc(var(--nav-scroll-height)* -1));
+      box-shadow: 0 10px 30px -10px var(--navy-shadow);
+   }
+} */
+
 @media (max-width: 1080px) {
 
    
@@ -931,6 +938,16 @@ h1, h2, h3, h4, h5, h6 {
       opacity: 0;
       transform: translateY(-100%);
    } 
+   100% {
+      opacity: 100%;
+      transform: translateY(0);
+   }
+}
+@keyframes onLoadButton {
+   0% {
+      opacity: 0; 
+      transform: translateY(-100%);
+   }
    100% {
       opacity: 100%;
       transform: translateY(0);
