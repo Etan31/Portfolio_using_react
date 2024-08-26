@@ -36,7 +36,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
       {/* <img src={Ic_Menu} alt="Menu" /> */}
       <img src={Ic_Menu} className="menuBtn" alt="Menu" onClick={onClickMenu} />
     </div>
-    {/* Side menu content */}
+    {/* TODO: change this later */}
     {/* <div className={`sideMenuContent ${isMenuOpen ? 'open' : '' }`}>
       <li className="navMenu" onClick={()=> handleClick(aboutRef)}>About</li>
       <li className="navMenu" onClick={()=> handleClick(projectsRef)}>Projects</li>
