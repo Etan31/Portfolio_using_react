@@ -360,6 +360,32 @@ nav {
     z-index: 12;
 }
 
+nav > .side-menu {
+   display:none;
+}
+
+img.menuBtn {
+   width: clamp(30px, 5vw, 40px);
+   display: hidden;
+   position:relative;
+   z-index:10;
+}
+
+.sideMenuContent {
+  display: none;
+  /* Additional styles for side menu */
+}
+
+.sideMenuContent.open {
+  display: block;
+   background-color: red;
+   width: 116px;
+   right: -50px;
+   position: absolute;
+   height: 100vh;
+   transition: var(--transition);
+}
+
 .right a {
     margin: 20px auto;
     padding: 10px;
@@ -872,6 +898,30 @@ h1, h2, h3, h4, h5, h6 {
    }
 } */
 
+
+@media (max-width: 768px) {
+   .heading-nav {
+      padding: 0px 25px;
+   };
+
+   nav{
+        padding: 0px 0px  !important;
+   }
+
+   ol.navList{
+      display: none;
+   }
+
+   nav > .side-menu {
+      display: flex !important;
+   }
+
+    /* .gvznfB  */
+   .project-title {
+      margin: 0px 0px 20px;
+   }
+}
+
 @media (max-width: 1080px) {
 
    
@@ -902,17 +952,6 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-/* The nav icon will be shown here */
-@media (max-width: 768px) {
-   nav{
-        padding: 0px 25px ; 
-   }
-
-    /* .gvznfB  */
-   .project-title {
-      margin: 0px 0px 20px;
-   }
-}
 
 
 
