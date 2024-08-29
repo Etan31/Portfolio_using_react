@@ -1,5 +1,6 @@
-@import url('https://fonts.cdnfonts.com/css/sf-mono');
-@import url('https://fonts.cdnfonts.com/css/calibri-light');
+/* @import url('https://fonts.cdnfonts.com/css/sf-mono');
+@import url('https://fonts.cdnfonts.com/css/calibri-light'); */
+/* Rectangle 9 */
 
 :root {
    --on-primary: #0E153A;
@@ -45,6 +46,7 @@
 
 
    --animation-times: 100ms;
+   --animation-times2: 2s;
    --animation-fast: 50ms;
    --animation-listnav: 500ms;
 
@@ -63,6 +65,7 @@
    --tab-width: 120px;
    --easing: cubic-bezier(0.645,0.045,0.355,1);
    --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+   --transition2: all 2s cubic-bezier(0,1.91,.85,1.28);
    --hamburger-width: 30px;
    --ham-before: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
    --ham-before-active: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
@@ -154,6 +157,38 @@ svg,
    fill:var(--on-tertiary)
 }
 
+
+.notification {
+   animation-name: notif;
+   animation-duration: 1s;
+   animation-timing-function: var(--transition2);
+   transition: var(--transition2);
+   animation-fill-mode:forwards;
+   z-index: 100;
+   top: 20px;
+   left: 50%;
+   display: flex;
+   align-items: center;
+   transform: translate(-50%, -50%);
+   position: fixed;
+   border: 1px solid var(--on-tertiary);
+   /* border: 1px solid rgba(255, 0, 0, 0.568); */
+   width: 250px;
+   background: linear-gradient(90deg, #3D5AF1 -90.06%, #0E153A 41.67%);
+   border-radius: 3px;
+   transition: opacity 1s ease-out, top 1s ease-out;
+}
+
+.notification .text-notif {
+   font-size: 12px;
+   font-weight: 600;
+   color:var(--on-tertiary)
+}
+
+.img-notif {
+   width: 40px;
+   padding: 10px;
+}
 /* ////////////HOME//////////////// */
 
 /* html {
@@ -995,6 +1030,28 @@ h1, h2, h3, h4, h5, h6 {
       opacity: 100%;
       transform: translateY(0);
    }
+}
+
+@keyframes notif {
+  0% {
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    opacity: 1;
+    top:30px
+  }
+}
+
+@keyframes notif-out {
+  0% {
+    opacity: 0;
+    top: 20px;
+  }
+  100% {
+    opacity: 1;
+    top:-30px
+  }
 }
 
 @keyframes onLoadhome {

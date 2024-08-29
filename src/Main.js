@@ -1,5 +1,5 @@
 import Navbar from './components/Navbar';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect ,useState } from 'react';
 import ScrollReveal from 'scrollreveal';
 
 import About from './About';
@@ -9,8 +9,11 @@ import Contact from './Contact';
 
 import Socials from './components/Socials';
 import Mailto from './components/mailto';
+import MarkIC from './imgs/optimized/mark.png';
 
 function Main() {
+
+const [showNotification, setShowNotification] = useState(true);
 
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
@@ -21,6 +24,7 @@ function Main() {
   
 
   useEffect(() => {
+
     const handleMouseMove = (event) => {
       const { clientX, clientY } = event;
       const cursor = cursorRef.current;
@@ -67,6 +71,13 @@ function Main() {
       reset: false,
     });
 
+
+    //notif to show my porfolio under development
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 5000);
+
+
     sr.reveal(aboutRef.current, { delay: 100, viewFactor: 0.2 });
     sr.reveal(projectsRef.current, { delay: 200, viewFactor: 0.05 });
     sr.reveal(testimonialsRef.current, { delay: 300, viewFactor: 0.2 });
@@ -80,6 +91,13 @@ function Main() {
 
   return (
     <div className="Main">
+      {showNotification && (
+        <div className="notification">
+          <img src={MarkIC} className="img-notif" alt="exclamation mark"/>
+          <p className="text-notif">Under Development — Stay Tuned!</p>
+        </div>
+      )}
+
       <div className="cursor" ref={cursorRef}></div>
       <header className="heading-nav" ref={headerRef}>
         <Navbar 
@@ -121,7 +139,7 @@ function Main() {
                 solid server-side solutions as well as exceptional websites. Building scalable, <br />
                  effective, and high-quality applications is my area of expertise, <br />
                  and I constantly provide amazing online experiences.
-                 <span className="highlight">This portfolio is still work in progress.</span>
+                 {/* <span className="highlight">This portfolio is still work in progress.</span> */}
               </p>
             </div>
             <div className="fadeup-enter-done"><button className="get-in-touch">Get In Touch</button></div>
