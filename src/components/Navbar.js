@@ -32,8 +32,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
       </a>
     </div>
   </ol>
-  <div className="side-menu">
-    {/* <img src={Ic_Menu} alt="Menu" /> */}
+{/*   <div className="side-menu">
     <img src={Ic_Menu} className="menuBtn" alt="Menu" onClick={onClickMenu} />
   </div>
   <div className={`sideMenuContent ${isMenuOpen ? 'open' : '' }`}>
@@ -46,7 +45,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
         Resume
       </a>
     </div>
-  </div>
+  </div> */}
 </nav>
   );
 }
