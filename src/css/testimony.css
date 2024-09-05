@@ -30,12 +30,14 @@
 
 
 .img-profile {
-   height: 50px;
-   width: 50px;
-   transform: translateY(-25px);
+   height: 60px;
+   width: 60px;
+   object-fit: contain;
+   transform: translateY(-100%);
    border-radius: 50%;
    outline: 2px solid white;
    outline-offset: 2px;
+   position:fixed;
 }
 .user-name,
 .user-profession,
@@ -43,15 +45,26 @@
    padding: 10px;
 }
 
+.user-name{
+   padding-top: 20px;
+   padding-bottom: unset;
+}
+
+.user-profession {
+   padding-top: unset;
+   font-size:small;
+}
+
 p.testimony-p {
-   line-height: 22px;;
+   line-height: 22px;
+   font-size: 15px;
 }
 
 
 /* Carousel */
 .testimony-container {
     position: relative;
-    width: clamp(250px, 40vw, 350px);
+    width: clamp(250px, 40vw, 470px);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -63,11 +76,12 @@ p.testimony-p {
   transition: transform 0.5s var(--easing);
 }
 
+/* TODO: make the padding responsive */
 .testimony-wrapper {
    min-width: 100%;
    box-sizing: border-box;
    max-width: 300px;
-   padding: 1rem;
+   padding: 2rem;
    margin: 0 auto;
    text-align: center;
    background-color: var(--light-navy);
