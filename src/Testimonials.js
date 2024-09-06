@@ -5,7 +5,7 @@ import Armand from './imgs/profiles/Armand.jpg'
 
 const Testimonials = React.forwardRef((props, ref) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const totalItems = 3; // Number of testimonial items
+  const totalItems = 1; // Number of testimonial items
 
   const carouselRef = useRef(null);
 
@@ -45,7 +45,7 @@ const Testimonials = React.forwardRef((props, ref) => {
               I highly recommend him for anyone in need of top-quality web development services.
             </p>
           </div>
-          <div className="testimony-wrapper">
+          {/* <div className="testimony-wrapper">
             <img src={sampleImg} alt="sample profile" className="img-profile"></img>
             <div className="user-name">
               <span className="highlight">Sample B. Username</span>
@@ -55,21 +55,12 @@ const Testimonials = React.forwardRef((props, ref) => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolores voluptatum exercitationem nostrum ad
               itaque cupiditate.
             </p>
-          </div>
-          <div className="testimony-wrapper">
-            <img src={sampleImg} alt="sample profile" className="img-profile"></img>
-            <div className="user-name">
-              <span className="highlight">Sample C. Username</span>
-            </div>
-            <div className="user-profession">Profession ABC</div>
-            <p className="testimony-p">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolores voluptatum exercitationem nostrum ad
-              itaque cupiditate.
-            </p>
-          </div>
+          </div> */}
         </div>
-        <button className="carousel-control prev" onClick={handlePrev}>‹</button>
-        <button className="carousel-control next" onClick={handleNext}>›</button>
+
+        {/* TODO: Change this if there are multiple Testimony */}
+        {/* <button className="carousel-control prev" onClick={handlePrev}>‹</button>
+        <button className="carousel-control next" onClick={handleNext}>›</button> */}
       </div>
     </section>
   );
