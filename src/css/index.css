@@ -284,10 +284,9 @@ body {
   background-color: var(--on-primary); /* or any other background color */
 }
 
-/* //TODO: should be responsive */
 .loader-logo {
-  width: 550px; 
-  height: 550px; 
+   width: 70px;
+   height: 70px;
 }
 
 .loader-logo {
