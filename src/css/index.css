@@ -8,6 +8,7 @@
    --on-secondary: #3D5AF1;
    /* --on-tertiary: #22D1EE; */
    --on-tertiary: #10e0e0;
+   --on-tertiary-45: hsla(180, 87%, 47%, 0.45);
    
    --tertiary-10: #10e0e01a; 
    --tertiary-25: rgba(16, 224, 224, 0.25); 

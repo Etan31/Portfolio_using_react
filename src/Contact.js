@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import './css/contact.css';
+import massageGif from './message.gif';
 
 const Contact = React.forwardRef((props, ref) => {
   const [formData, setFormData] = useState({
@@ -46,7 +47,7 @@ const Contact = React.forwardRef((props, ref) => {
       <h2 className="numbered-heading">Contact Me</h2>
       <div className="contact-container">
         <div className="contact-text">
-          
+          <img src={massageGif} className="message_gif" alt="contact me gif" />
           <p>
             I'm currently looking for new opportunities. Feel free to reach out if you have any questions or just want to say hi!
           </p>
