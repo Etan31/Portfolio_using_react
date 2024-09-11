@@ -29,7 +29,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
     <div className="resumebtn-div">
       {/* resume uploaded is for software dev */}
     <a className="resume-button" href={`${process.env.PUBLIC_URL}/Resume.pdf`} rel="noopener noreferrer" target="_blank">
-      Resume
+      Resume try
     </a>
     </div>
   </ol>
