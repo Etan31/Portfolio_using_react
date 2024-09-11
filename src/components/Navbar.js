@@ -27,9 +27,10 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
     <li className="navMenu" onClick={()=> handleClick(testimonialsRef)}>Testimonials</li>
     <li className="navMenu" onClick={()=> handleClick(contactRef)}>Contact</li>
     <div className="resumebtn-div">
-      <a className="resume-button" href="/Resume.pdf" rel="noopener noreferrer" target="_blank">
-        Resume
-      </a>
+      {/* resume uploaded is for software dev */}
+    <a className="resume-button" href={`${process.env.PUBLIC_URL}/Resume.pdf`} rel="noopener noreferrer" target="_blank">
+      Resume
+    </a>
     </div>
   </ol>
 {/*   <div className="side-menu">
