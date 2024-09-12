@@ -33,20 +33,6 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
       </a>
     </div>
   </ol>
-{/*   <div className="side-menu">
-    <img src={Ic_Menu} className="menuBtn" alt="Menu" onClick={onClickMenu} />
-  </div>
-  <div className={`sideMenuContent ${isMenuOpen ? 'open' : '' }`}>
-    <li className="navMenu" onClick={()=> handleClick(aboutRef)}>About</li>
-    <li className="navMenu" onClick={()=> handleClick(projectsRef)}>Projects</li>
-    <li className="navMenu" onClick={()=> handleClick(testimonialsRef)}>Testimonials</li>
-    <li className="navMenu" onClick={()=> handleClick(contactRef)}>Contact</li>
-    <div className="resumebtn-div">
-      <a className="resume-button" href="/Resume.pdf" rel="noopener noreferrer" target="_blank">
-        Resume
-      </a>
-    </div>
-  </div> */}
 </nav>
   );
 }
