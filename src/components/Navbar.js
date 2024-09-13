@@ -31,6 +31,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
       <a className="resume-button" href={process.env.REACT_APP_RESUME_URL} rel="noopener noreferrer" target="_blank">
         Resume
       </a>
+      
     </div>
   </ol>
 </nav>
