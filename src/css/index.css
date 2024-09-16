@@ -654,7 +654,7 @@ section.main_section {
     width: 100%;
     max-width: 1600px;
     min-height: 100vh;
-    padding: 20px 150px 200px;
+    padding: 20px 100px 200px;
 }
 
 section.Projects {
@@ -935,6 +935,13 @@ h1, h2, h3, h4, h5, h6 {
 
 
 @media (max-width: 768px) {
+   section.main_section {
+      padding: 20px 50px;
+   }
+   aside.left, aside.right{
+      display: none;
+   }
+
    .heading-nav {
       padding: 0px 25px;
    };
@@ -954,6 +961,14 @@ h1, h2, h3, h4, h5, h6 {
     /* .gvznfB  */
    .project-title {
       margin: 0px 0px 20px;
+   }
+
+
+   /* about */
+   .About .inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
    }
 }
 
