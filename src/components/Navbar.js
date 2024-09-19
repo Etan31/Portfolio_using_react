@@ -28,7 +28,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
     <li className="navMenu" onClick={()=> handleClick(contactRef)}>Contact</li>
     <div className="resumebtn-div">
       {/* resume uploaded is for software dev */}
-      <a className="resume-button" href={process.env.REACT_APP_RESUME_URL} rel="noopener noreferrer" target="_blank">
+      <a className="resume-button" href='https://resume-softdev.s3.ap-southeast-2.amazonaws.com/resume-softdev.pdf' rel="noopener noreferrer" target="_blank">
         Resume
       </a>
     </div>
