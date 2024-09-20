@@ -14,7 +14,6 @@ import MarkIC from './imgs/optimized/mark.png';
 function Main() {
 
 const [showNotification, setShowNotification] = useState(true);
-const [showBackToTop, setShowBackToTop] = useState(false);
 
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
@@ -23,10 +22,6 @@ const [showBackToTop, setShowBackToTop] = useState(false);
   const cursorRef = useRef(null);
   const headerRef = useRef(null);
   
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
 
   useEffect(() => {
 
@@ -41,7 +36,6 @@ const [showBackToTop, setShowBackToTop] = useState(false);
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
-    setShowBackToTop(currentScrollY > 300);
 
     if (currentScrollY < prevScrollY && currentScrollY < 200) {
       headerRef.current.classList.remove('hidden');
@@ -115,6 +109,14 @@ const [showBackToTop, setShowBackToTop] = useState(false);
       </header>
       
       <main>
+        <aside>
+          <Navbar 
+          aboutRef={aboutRef}
+          projectsRef={projectsRef}
+          testimonialsRef={testimonialsRef}
+          contactRef={contactRef} 
+        />
+        </aside>
         < Socials />
         < Mailto />
 
@@ -157,12 +159,6 @@ const [showBackToTop, setShowBackToTop] = useState(false);
           <Testimonials ref={testimonialsRef} />
           <Contact ref={contactRef} />
         </section>
-
-        {showBackToTop && (
-          <button className="back-to-top" onClick={scrollToTop}>
-            ↑ Back to Top
-          </button>
-        )}
       </main>
     </div>
 

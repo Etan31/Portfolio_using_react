@@ -294,12 +294,12 @@ body {
   mix-blend-mode: screen;
 }
 
-svg#Layer_1 {
+/* svg#Layer_1 {
    height: 40px;
    opacity: 0;
    animation: onLoad var(--animation-times) forwards 0ms;
    animation-timing-function: var(--transition);
-}
+} */
 
 svg#Layer_1:hover {
    background-color: var(--main-bg);
@@ -398,6 +398,20 @@ nav {
 nav > .side-menu {
    display:none;
 }
+
+
+aside nav {
+   display: flex;
+}
+
+aside>nav>h1.logo2 {
+    display: none;
+}
+
+aside>nav>ol.navList.navList2 {
+   display: none;
+}
+
 
 img.menuBtn {
    width: clamp(30px, 5vw, 40px);
@@ -564,7 +578,8 @@ li.navMenu::before {
 button.back-to-top {
    position:fixed;
    right:70px;
-   bottom:50px
+   bottom:50px;
+   cursor: pointer;
 }
 
 
@@ -955,6 +970,11 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0px 0px  !important;
    }
 
+   /* TODO: change this if the menu button is clicked */
+   aside>nav>ol.navList.navList2{
+      display: none;
+   }
+
    ol.navList{
       display: none;
    }
@@ -978,7 +998,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 1080px) {
-
    
    .heading-nav {
       padding: 0px 40px;
