@@ -10,10 +10,14 @@ import Contact from './Contact';
 import Socials from './components/Socials';
 import Mailto from './components/mailto';
 import MarkIC from './imgs/optimized/mark.png';
+import MenuBtn from './icons/ic_menu.jpg';
+import CloseBtn from './icons/ic_x_close.png';
 
 function Main() {
 
 const [showNotification, setShowNotification] = useState(true);
+const [menuVisible, setMenuVisible] = useState(false);
+
 
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
@@ -40,7 +44,6 @@ const [showNotification, setShowNotification] = useState(true);
     if (currentScrollY < prevScrollY && currentScrollY < 200) {
       headerRef.current.classList.remove('hidden');
     }
-
     if (currentScrollY > prevScrollY) {
       // Scrolling down
       if (currentScrollY > 200) {
@@ -50,7 +53,6 @@ const [showNotification, setShowNotification] = useState(true);
       // Scrolling up
       headerRef.current.classList.remove('hidden');
     }
-
     if (currentScrollY > 0) {
       headerRef.current.classList.add('scrolled');
     } else {
@@ -89,6 +91,11 @@ const [showNotification, setShowNotification] = useState(true);
     };
   }, []);
 
+  const toggleMenu = () => {
+    setMenuVisible(prev => !prev);
+  };
+
+
   return (
     <div className="Main">
       {showNotification && (
@@ -109,14 +116,32 @@ const [showNotification, setShowNotification] = useState(true);
       </header>
       
       <main>
-        <aside>
-          <Navbar 
-          aboutRef={aboutRef}
-          projectsRef={projectsRef}
-          testimonialsRef={testimonialsRef}
-          contactRef={contactRef} 
-        />
-        </aside>
+        <button className="menubtn123 menubtnNotclose" onClick={toggleMenu}> 
+          <img src={MenuBtn} className="Menubtn" alt="Humberger menu" />
+        </button>
+        {menuVisible && (
+          <aside className="menuAside">
+            <div className="navto">
+              <nav className="sideNav navMobile">
+                <button className="menubtn123 menubtnIsclose" onClick={toggleMenu}> 
+                  <img src={CloseBtn} className="Menubtn closeBtn" alt="Close menu" />
+                </button>
+                <ol className="sideMenu-ol">
+                  <li className="navMenu sidemenu2">About</li>
+                  <li className="navMenu sidemenu2">Projects</li>
+                  <li className="navMenu sidemenu2">Testimonials</li>
+                  <li className="navMenu sidemenu2">Contact</li>
+                  <div className="resumebtn-div">
+                    <a className="resume-button" href='https://resume-softdev.s3.ap-southeast-2.amazonaws.com/resume-softdev.pdf' rel="noopener noreferrer" target="_blank">
+                      Resume
+                    </a>
+                  </div>
+                </ol>
+              </nav>
+            </div>
+          </aside>
+        )}
+
         < Socials />
         < Mailto />
 
