@@ -109,6 +109,14 @@ const [showNotification, setShowNotification] = useState(true);
       </header>
       
       <main>
+        <aside>
+          <Navbar 
+          aboutRef={aboutRef}
+          projectsRef={projectsRef}
+          testimonialsRef={testimonialsRef}
+          contactRef={contactRef} 
+        />
+        </aside>
         < Socials />
         < Mailto />
 
