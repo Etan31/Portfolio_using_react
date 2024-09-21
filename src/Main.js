@@ -127,12 +127,22 @@ const [menuVisible, setMenuVisible] = useState(false);
                   <img src={CloseBtn} className="Menubtn closeBtn" alt="Close menu" />
                 </button>
                 <ol className="sideMenu-ol">
-                  <li className="navMenu sidemenu2" ref={(element) => aboutRef.current = element}>About</li>
-                  <li className="navMenu sidemenu2" ref={projectsRef} >Projects</li>
-                  <li className="navMenu sidemenu2" ref={testimonialsRef} >Testimonials</li>
-                  <li className="navMenu sidemenu2" ref={contactRef} >Contact</li>
+                  <li className="navMenu sidemenu2" onClick={()=> {aboutRef.current.scrollIntoView({ behavior: 'smooth' }); toggleMenu();}}>
+                    About
+                  </li>
+                  <li className="navMenu sidemenu2" onClick={()=> {projectsRef.current.scrollIntoView({ behavior: 'smooth' }); toggleMenu();}}>
+                    Projects
+                  </li>
+                  <li className="navMenu sidemenu2" onClick={()=> {testimonialsRef.current.scrollIntoView({ behavior: 'smooth' }); toggleMenu();}}>
+                    Testimonials
+                  </li>
+                  <li className="navMenu sidemenu2" onClick={()=> {contactRef.current.scrollIntoView({ behavior: 'smooth' }); toggleMenu();}}>
+                    Contact
+                  </li>
+
                   <div className="resumebtn-div">
-                    <a className="resume-button" href='https://resume-softdev.s3.ap-southeast-2.amazonaws.com/resume-softdev.pdf' rel="noopener noreferrer" target="_blank">
+                    <a className="resume-button" href='https://resume-softdev.s3.ap-southeast-2.amazonaws.com/resume-softdev.pdf'
+                      rel="noopener noreferrer" target="_blank">
                       Resume
                     </a>
                   </div>
