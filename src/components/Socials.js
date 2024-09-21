@@ -23,7 +23,7 @@ const Socials = () => {
    </svg>
 </a>
 
-         <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tristan-tumbaga-b42478175/">
+         <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tristan-ehron-tumbaga-b42478175/">
             <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-linkedin">
                <title>LinkedIn</title>

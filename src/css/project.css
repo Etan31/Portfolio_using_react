@@ -205,16 +205,52 @@ img.imgPreview.stt1 {
     transform: translate(0px, -55px) !important;
 }
 
+.content-wrapper {
+    padding-inline: 25px;
+    padding-block: 15px;
+}
 
 
 @media (max-width: 1080px) {
     .projects:nth-of-type(2n+1) .project-content {
         grid-column: 5 / -1;
+        text-align: left; 
+    }
+    .projects:nth-of-type(2n+1) .project-tech-list {
+        justify-content: unset;
+    }
+    .projects:nth-of-type(2n+1) .project-links {
+        justify-content: flex-start;
+        margin-left: 0px;
+    }
+    .project-description {
+        padding: 25px 0 25px 0;
+        background-color: unset;
+        color: var(--slate);
+        box-shadow: unset;
+    }
+
+    li.projects.proj1>.project-content {
+        background-image: url('./../imgs/skycast/skycast1.png');
+        background-size: cover ;
+        border-radius: 10px;
+    }
+     li.projects.proj1>.project-content>.content-wrapper {
+        background-color: var(--on-primary2);
+        border-right: 1px solid var(--on-tertiary2);
+        border-bottom: 1px solid var(--on-tertiary2);
+        border-radius: 10px;
     }
 }
 
 @media (min-width: 768px) {
+    li.projects.proj1>.project-content {
+        background-image: unset;
+    }
     .project-title {
         margin: 0px 0px 20px;
     }
+    .project-content.project4Content {
+        margin-top: unset;
+    } 
 }

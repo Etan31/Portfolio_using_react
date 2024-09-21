@@ -185,7 +185,7 @@ const [menuVisible, setMenuVisible] = useState(false);
                  {/* <span className="highlight">This portfolio is still work in progress.</span> */}
               </p>
             </div>
-            <div className="fadeup-enter-done"><button className="get-in-touch">Get In Touch</button></div>
+            <div className="fadeup-enter-done" ><a className="getInTouch" href="mailto:tristan.ehron.tumbaga@gmail.com"><button className="get-in-touch" >Get In Touch</button></a></div>
           </section>
 
           {/* Pages */}

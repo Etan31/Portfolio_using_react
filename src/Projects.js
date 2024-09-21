@@ -42,14 +42,14 @@ const Project = React.forwardRef((props, ref) => {
       <h2 className="numbered-heading">Some Things I’ve Built</h2>
       <ul className="featured-projects">
 
-        {/* project 1 */}
-        <li className="projects">
+        {/* project 1: skycast */}
+        <li className="projects proj1">
           <div className="project-content">
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
               <h3 className="project-title">Skycast</h3>
               <div className="project-description">
-                <p >SkyCast is a web project that offers real-time weather updates for
+                <p >A web project that uses <span className="highlight">Weather API</span>. It offers real-time weather updates for
                   your current location or a searched location, featuring a 5-day forecast, air quality index, humidity,
                   pressure, and more.</p>
               </div>
@@ -93,8 +93,8 @@ const Project = React.forwardRef((props, ref) => {
           </div>
         </li>
 
-        {/* project 2 */}
-        <li className="projects">
+        {/* project 2: speech2text*/}
+        <li className="projects proj2">
           <div className="project-content project2Content">
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
@@ -140,8 +140,8 @@ const Project = React.forwardRef((props, ref) => {
           </div>
         </li>
 
-        {/* project 3 */}
-        <li className="projects">
+        {/* project 3: SchedBin*/}
+        <li className="projects proj3">
           <div className="project-content project3Content">
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
@@ -185,8 +185,8 @@ const Project = React.forwardRef((props, ref) => {
           </div>
         </li>
 
-        {/* project 4 /// Ongoing*/}
-        <li className="projects">
+        {/* project 4: Portfolio /// Ongoing*/}
+        <li className="projects proj4">
           <div className="project-content project4Content">
             <div className="content-wrapper">
               <p className="project-overline">Featured Project</p>
