@@ -127,10 +127,10 @@ const [menuVisible, setMenuVisible] = useState(false);
                   <img src={CloseBtn} className="Menubtn closeBtn" alt="Close menu" />
                 </button>
                 <ol className="sideMenu-ol">
-                  <li className="navMenu sidemenu2">About</li>
-                  <li className="navMenu sidemenu2">Projects</li>
-                  <li className="navMenu sidemenu2">Testimonials</li>
-                  <li className="navMenu sidemenu2">Contact</li>
+                  <li className="navMenu sidemenu2" ref={(element) => aboutRef.current = element}>About</li>
+                  <li className="navMenu sidemenu2" ref={projectsRef} >Projects</li>
+                  <li className="navMenu sidemenu2" ref={testimonialsRef} >Testimonials</li>
+                  <li className="navMenu sidemenu2" ref={contactRef} >Contact</li>
                   <div className="resumebtn-div">
                     <a className="resume-button" href='https://resume-softdev.s3.ap-southeast-2.amazonaws.com/resume-softdev.pdf' rel="noopener noreferrer" target="_blank">
                       Resume
