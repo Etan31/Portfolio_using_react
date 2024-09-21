@@ -230,6 +230,7 @@ img.imgPreview.stt1 {
         box-shadow: unset;
     }
 
+    /* first project  */
     li.projects.proj1>.project-content {
         background-image: url('./../imgs/skycast/skycast1.png');
         background-size: cover ;
@@ -237,9 +238,73 @@ img.imgPreview.stt1 {
     }
      li.projects.proj1>.project-content>.content-wrapper {
         background-color: var(--on-primary2);
-        border-right: 1px solid var(--on-tertiary2);
+        border-left: 1px solid var(--on-tertiary2);
         border-bottom: 1px solid var(--on-tertiary2);
         border-radius: 10px;
+    }
+
+    /* second project  */
+    li.projects.proj2>.project-content {
+        background-image: url('./../imgs/stt/stt1.png');
+        background-size: contain ;
+        border-radius: 10px;
+    }
+    li.projects.proj2>.project-content>.content-wrapper {
+        background-color: hsl(230deg 61% 14% / 93%);
+        border-radius: 10px;
+    }
+    
+    /* third project */
+    li.projects.proj3 > .project-content {
+        position: relative;
+        border-radius: 10px;
+        /* padding: 20px;  */
+    }
+
+    li.projects.proj3 > .project-content::before,
+    li.projects.proj3 > .project-content::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 20%; 
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: skewX(-15deg); 
+    }
+
+    li.projects.proj3 > .project-content::before {
+        left: 55%;
+        z-index: -1;
+        transform: translateX(-50%) skewX(-15deg);
+        background-image: url('./../imgs/schedBin/SchedBin1.png');
+        top: 100px;
+    }
+
+    li.projects.proj3 > .project-content::after {
+        right: 60px;
+        background-image: url('./../imgs/schedBin/SchedBin3.png');
+        z-index: -1;
+        top: 60px;
+    }
+    
+    li.projects.proj3>.project-content>.content-wrapper {
+        background-color: var(--on-primary2);
+        border-radius: 10px;
+        border-left: 1px solid var(--on-tertiary2);
+        border-bottom: 1px solid var(--on-tertiary2);
+    }
+
+    /* forth project */
+    li.projects.proj4>.project-content {
+        background-image: url('./../imgs/Portfolio.png');
+        border-radius: 10px;
+        background-position: center;
+    }
+    li.projects.proj4>.project-content>.content-wrapper {
+        background-color: hsl(230deg 61% 14% / 75%);
+        border-radius: 10px;
+        border: 1px solid var(--on-tertiary2)
     }
 }
 
