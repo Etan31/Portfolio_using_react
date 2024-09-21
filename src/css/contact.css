@@ -91,3 +91,36 @@
 a.getInTouch{
   text-decoration: none;
 }
+@media (max-width: 768px) {
+
+  .message_gif{
+    display: none;
+  }
+  .contact-text {
+    padding: 0 50px 0 20px;
+    position: relative;
+    top: unset;
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-container {
+      display: flex;
+      flex-direction: column;
+  }
+  .contact-form {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: var(--on-tertiary);
+    background: transparent;
+    border: 1px solid var(--on-tertiary-45);
+  }
+}
