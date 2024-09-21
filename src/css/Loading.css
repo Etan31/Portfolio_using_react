@@ -1,0 +1,60 @@
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--on-primary);
+}
+
+.loader-logo {
+   width: 70px;
+   height: 70px;
+}
+
+.loader-logo {
+  mix-blend-mode: screen;
+}
+
+/* svg#Layer_1 {
+   height: 40px;
+   opacity: 0;
+   animation: onLoad var(--animation-times) forwards 0ms;
+   animation-timing-function: var(--transition);
+} */
+
+svg#Layer_1:hover {
+   background-color: var(--main-bg);
+   filter: drop-shadow(0 0 3px var(--tertiary-25))
+           drop-shadow(0 0 3px var(--tertiary-25))
+           drop-shadow(0 0 3px var(--tertiary-25))
+           drop-shadow(0 0 3px var(--tertiary-25));
+   transform: translate(-5px, -5px);
+   cursor: pointer;
+
+}
+
+/* svg#Layer_1:hover path {
+    transition: var(--transition);
+    box-shadow: 4px 4px 0 0 var(--on-tertiary);
+    transform: translate(-5px, -5px);
+    cursor: pointer;
+}
+
+svg#Layer_1:hover text {
+    transition: var(--transition);
+    box-shadow: 4px 4px 0 0 var(--on-tertiary);
+    transform: translate(0.1px, 0.1px);
+    cursor: pointer;
+} */
+
+svg#Layer_1 {
+  height: 40px;
+}
+
+/* svg#Layer_1:hover g {
+  transition: var(--transition);
+  box-shadow: 4px 4px 0 0 var(--on-tertiary);
+  transform: translate(-5px, -5px);
+  cursor: pointer;
+} */
