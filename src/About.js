@@ -40,12 +40,11 @@ const About = React.forwardRef((props, ref) => {
           <div className="wrapper">
             <div className="gatsby-image-wrapper gatsby-image-wrapper-constrained img">
        
-              <img data-main-image className="img-pic" sizes="(min-width: 500px) 500px, 100vw"
-                decoding="async" 
-                src={ProfilePic} 
-                data-main-image="" 
-                alt="Profile headshot"
-                />
+              <img className="img-pic" sizes="(min-width: 500px) 500px, 100vw"
+     decoding="async" 
+     src={ProfilePic} 
+     alt="Profile headshot" />
+
 
             </div>
           </div>
