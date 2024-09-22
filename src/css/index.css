@@ -1,5 +1,5 @@
-/* @import url('https://fonts.cdnfonts.com/css/sf-mono');
-@import url('https://fonts.cdnfonts.com/css/calibri-light'); */
+@import url('https://fonts.cdnfonts.com/css/sf-mono');
+@import url('https://fonts.cdnfonts.com/css/calibri-light');
 /* Rectangle 9 */
 
 @import url('./Loading.css');
@@ -42,8 +42,8 @@
    --white-60: hsla(0, 0%, 100%, 0.6);
    --white-85: hsla(0, 0%, 100%, 0.85);
 
-   /* --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
-   --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace; */
+   --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+   --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
    
    --main-bg: linear-gradient(90deg, rgba(14,21,58,1) 0%, rgba(15,74,101,1) 26%, rgba(15,108,129,1) 43%, rgba(16,224,224,1) 100%);
    --bg-scroll: linear-gradient(180deg, #0f4a65 0%, #80d0c7 100%);
