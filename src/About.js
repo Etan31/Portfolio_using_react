@@ -14,8 +14,8 @@ const About = React.forwardRef((props, ref) => {
               playing with various projects taught me a lot about HTML, CSS, and JavaScript!
             </p>
             <p>
-              Fast forward to now, and I've had the opportunity to work for <span className="highlight"><a rel="noopener noreferer"  target="_blank" className="highlight-link" href="https://web.facebook.com/dostpstceasternsamar/">Bytewise Information Technology Solutions</a></span> and
-              <span className="highlight"> <a className="highlight-link" rel="noopener noreferer" target="_blank" href="https://web.facebook.com/profile.php?id=61554203821069">DOST PSTO-Eastern Samar</a></span> in Borongan, Eastern Samar. These days, my major focus is on developing
+              Fast forward to now, and I've had the opportunity to work for <span className="highlight"><a rel="noopener noreferrer" target="_blank" className="highlight-link" href="https://web.facebook.com/dostpstceasternsamar/">Bytewise Information Technology Solutions</a></span> and
+              <span className="highlight"> <a className="highlight-link" rel="noopener noreferrer" target="_blank" href="https://web.facebook.com/profile.php?id=61554203821069">DOST PSTO-Eastern Samar</a></span> in Borongan, Eastern Samar. These days, my major focus is on developing
               user-friendly products and experiences.
             </p>
             <p>
