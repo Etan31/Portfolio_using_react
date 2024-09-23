@@ -34,7 +34,7 @@ aside.menuAside {
 }
 
 .navto {
-    background: var(--on-primary-bg);
+    background: var(--on-primary);
     width: 50%;
     position: fixed;
     right: 0;
