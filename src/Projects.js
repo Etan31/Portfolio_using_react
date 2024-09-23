@@ -22,15 +22,12 @@ import SchedBin4 from './imgs/schedBin/SchedBin4.png';
 import trackRecord from './imgs/Portfolio.png';
 
 const Project = React.forwardRef((props, ref) => {
-const {
-skycast1Ref, skycast2Ref, skycast3Ref,
-
-stt1Ref, stt2Ref, stt3Ref,
-
-SchedBin1Ref, SchedBin2Ref, SchedBin3Ref, SchedBin4Ref,
-
-trackRecordRef
-} = useAnimations();
+  const {
+    skycast1Ref, skycast2Ref, skycast3Ref,
+    stt1Ref, stt2Ref, stt3Ref,
+    SchedBin1Ref, SchedBin2Ref, SchedBin3Ref, SchedBin4Ref,
+    trackRecordRef
+  } = useAnimations();
 
 return (
 
