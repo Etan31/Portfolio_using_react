@@ -283,6 +283,11 @@ a.resume-button {
    animation-delay: calc(var(--animation-times) * 4);  
 }
 
+ol.sideMenu-ol > .resumebtn-div > a.resume-button {
+    margin-left: 0;
+}
+
+
 li.navMenu:hover {
    color: var(--on-tertiary)
 }

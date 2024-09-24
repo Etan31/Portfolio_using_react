@@ -76,12 +76,12 @@ p.testimony-p {
   transition: transform 0.5s var(--easing);
 }
 
-/* TODO: make the padding responsive */
 .testimony-wrapper {
    min-width: 100%;
    box-sizing: border-box;
    max-width: 300px;
-   padding: 2rem;
+   padding-block: 2rem;
+   padding-inline: clamp(1rem, 3vw, 1.5rem);
    margin: 0 auto;
    text-align: center;
    background-color: var(--light-navy);

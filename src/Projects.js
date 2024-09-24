@@ -108,8 +108,9 @@ return (
         <div className="content-wrapper">
           <p className="project-overline">Featured Project</p>
           <h3 className="project-title">Speech2Text</h3>
-          <div className="project-description">This project allows you to record your speech and convert it into text
-            and can be saved as txt file.</div>
+          <div className="project-description">This project allows you to record your speech, convert it into text,
+             and save it as a `.txt` file. It was developed as a school project by Arca, Dolim, Vergara, and myself.
+</div>
           <ul className="project-tech-list">
             <li>Nodejs</li>
             <li>PostgreSQL</li>
@@ -214,12 +215,21 @@ return (
         <div className="content-wrapper">
           <p className="project-overline">Featured Project</p>
           <h3 className="project-title">Web portfolio</h3>
-          <div className="project-description">This personal project, which was created with <span
-              className="highlight">React, HTML, and CSS</span>, presents a thorough and dynamic website that highlights
-            my background, skills, and character traits. It is intended to demonstrate my proficiency with front-end
-            development while offering a user-friendly interface that embodies my attention to detail and creativity.
+          <div className="project-description">
+            This personal project, which was mainly created with 
+            <span className="highlight"> React, HTML, and CSS</span>, 
+            presents a thorough and dynamic website that highlights my background, skills, and character traits. 
+            It is intended to demonstrate my proficiency with front-end development while offering a user-friendly interface 
+            that embodies my attention to detail and creativity.
           </div>
-          <ul className="project-tech-list"></ul>
+          <ul className="project-tech-list">
+            <li>Node.js</li>
+            <li>Git</li>
+            <li>React</li>
+            <li>Framer Motion</li>
+            <li>EmailJS</li>
+          </ul>
+
           <div className="project-links">
             <a target="_blank" rel="noreferrer" href="https://github.com/Etan31/TrackRecord">
               <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor"

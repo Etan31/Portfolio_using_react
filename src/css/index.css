@@ -285,6 +285,23 @@ body {
 
 
 
+/* Main */
+
+h1.name,
+h2.paragraph.name {
+   margin: 0px;
+   font-size: clamp(40px, 8vw, 60px);
+   line-height: 1;
+   margin-top: 10px;
+}
+
+p.short-intro {
+    margin: 20px 0px 0px;
+    width: clamp(250px, 80vw, 685px);
+    font-size: clamp(11px, 10vw, 20px);
+}
+
+
 
 /* ===================== Media queries =================== */
 
@@ -495,3 +512,9 @@ body {
    }
 }
 
+
+@media (max-width: 480px) {
+    body {
+        font-size: var(--fz-lg);
+    }
+}

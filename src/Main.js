@@ -113,12 +113,12 @@ const [menuVisible, setMenuVisible] = useState(false);
           testimonialsRef={testimonialsRef}
           contactRef={contactRef} 
         />
-      </header>
-      
-      <main>
         <button className="menubtn123 menubtnNotclose" onClick={toggleMenu}> 
           <img src={MenuBtn} className="Menubtn" alt="Humberger menu" />
         </button>
+      </header>
+      
+      <main>
         {menuVisible && (
           <aside className="menuAside">
             <div className="navto">
@@ -178,9 +178,9 @@ const [menuVisible, setMenuVisible] = useState(false);
                 solid server-side solutions as well as exceptional websites. Building scalable, <br />
                  effective, and high-quality applications br is my area of expertise, <br />
                  and I constantly provide amazing online experiences. */}
-                 I am a junior web developer who specializes in creating <br />
-                solid server-side solutions as well as exceptional websites. Building scalable, <br />
-                 effective, and high-quality applications is my area of expertise, <br />
+                 I am a junior web developer who specializes in creating
+                solid server-side solutions as well as exceptional websites. Building scalable, 
+                 effective, and high-quality applications is my area of expertise, 
                  and I constantly provide amazing online experiences.
                  {/* <span className="highlight">This portfolio is still work in progress.</span> */}
               </p>
