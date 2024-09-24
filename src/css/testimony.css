@@ -107,3 +107,20 @@ p.testimony-p {
 .carousel-control.next {
   right: 0;
 }
+
+.qoutes_c > img {
+   width:15px;
+   opacity: 25%;
+}
+
+.qoutes_c img:nth-child(1){
+   transform: scaleX(-1);
+}
+
+.qoutes_c {
+    width: 161%;
+    position: fixed;
+    display: flex;
+    top: 110px;
+    justify-content: space-around;
+}
