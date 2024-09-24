@@ -59,7 +59,7 @@ export const useAnimations = () => {
       controls.schedBin3.start({ y: -160, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
     }
     if (inViewSchedBin4) {
-      controls.schedBin4.start({ y: -80, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+      controls.schedBin4.start({ y: -100, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
     }
     if (inViewTrackRecord) {
       controls.trackRecord.start({ y: -100, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });

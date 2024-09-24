@@ -207,8 +207,10 @@
 
 img.trackRecord{
     top: 0;
+    border: 1px solid var(--tertiary-10);
     position: relative;
     transform: translate(0, -140px);
+    border-radius: 10px;
 }
 
 .content-wrapper {
@@ -291,8 +293,9 @@ img.trackRecord{
     li.projects.proj3 > .project-content::after {
         background-image: url('./../imgs/schedBin/SchedBin3.png');
         z-index: -1;
-        right: 3vw;
+        right: 2.5vw;
         /* width: 30%; */
+        top: 25vh;
     }
     
     li.projects.proj3>.project-content>.content-wrapper {
@@ -325,4 +328,69 @@ img.trackRecord{
     .project-content.project4Content {
         margin-top: unset;
     } 
+}
+
+@media only screen and (min-width: 768px) and (max-width: 768px) {
+    li.projects.proj1>.project-content {
+        background-image: url('./../imgs/skycast/skycast1.png');
+        background-size: cover;
+        border-radius: 10px;
+    }
+}
+
+
+@media only screen and (min-width: 769px) and (max-width: 1079px) {
+    .projects.proj1 .project-content {
+        top:0;
+        z-index: 2;
+    }
+
+    li.projects.proj1>.project-content>.content-wrapper,
+    li.projects.proj2>.project-content>.content-wrapper {
+        background-color: var(--on-primary);
+    }
+
+    li.projects.proj2>.project-content,
+    li.projects.proj3 > .project-content,
+    .project-content.project4Content > .content-wrapper {
+        background-image: unset;
+        background-color: var(--on-primary);
+        z-index: 2;
+        position: relative;
+    }
+
+    li.projects.proj2>.project-content>.content-wrapper {
+        top: 20px;
+        position: relative;
+        border: 1px solid var(--on-tertiary2);
+    }
+
+    li.projects.proj3 > .project-content::before,
+    li.projects.proj3 > .project-content::after,
+    li.projects.proj4>.project-content {
+        background-image: unset;
+    }
+    img.imgPreview.schedBin2 {
+        display: none;
+    }
+
+    img.imgPreview.skycast3 {
+        visibility: hidden;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    li.projects.proj3 > .project-content::after,
+    li.projects.proj3 > .project-content::before {
+        z-index: -1;
+        right: 8.5vw;
+        width: 25%;
+    }
+    li.projects.proj3 > .project-content::after {
+        top:clamp(25vh, 69%, 51vh);
+    }
+    li.projects.proj3 > .project-content::before{
+        right: 14.5vw;
+    }
 }
