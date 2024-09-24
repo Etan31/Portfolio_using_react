@@ -11,9 +11,9 @@
    --on-primary2: hsla(230, 61%, 14%, 0.85);
    --on-primary-bg: #0f0c29;
    /* --on-primary-bg50:hsla(246, 57%, 10%, 0.5); */
-   --on-secondary: #3D5AF1;
+   --on-secondary: rgb(61, 90, 241);
    /* --on-tertiary: #22D1EE; */
-   --on-tertiary: #10e0e0;
+   --on-tertiary: rgb(16, 224, 224);
    --on-tertiary2: hsla(180, 87%, 47%, 0.20);
    --on-tertiary-45: hsla(180, 87%, 47%, 0.45);
    
@@ -48,7 +48,7 @@
    --main-bg: linear-gradient(90deg, rgba(14,21,58,1) 0%, rgba(15,74,101,1) 26%, rgba(15,108,129,1) 43%, rgba(16,224,224,1) 100%);
    --bg-scroll: linear-gradient(180deg, #0f4a65 0%, #80d0c7 100%);
 
-   --bg2: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+   --bg2: linear-gradient(160deg, rgb(0, 147, 233) 0%, hwb(173 50% 18%) 100%);
    --bg3: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
    --bg3-1: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 

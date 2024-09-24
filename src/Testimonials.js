@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './css/testimony.css';
 import sampleImg from './imgs/profiles/sample-img.jpg';
-import Armand from './imgs/profiles/Armand.jpg'
+import Armand from './imgs/profiles/Armand.jpg';
+import Quote_ic from './imgs/quote.png';
 
 const Testimonials = React.forwardRef((props, ref) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,6 +39,10 @@ const Testimonials = React.forwardRef((props, ref) => {
             <img src={Armand} alt="sample profile" className="img-profile"></img>
             <div className="user-name"><span className="highlight">Armand Ralph Anacta</span></div>
             <div className="user-profession">QCBOT WEB DEVELOPER</div>
+            <div className="qoutes_c">
+              <img src={Quote_ic} alt="Testimony Qoute icon" />
+              <img src={Quote_ic} alt="Testimony Qoute icon" />
+            </div>
             <p className="testimony-p">
               Tristan Ehron consistently delivers outstanding web solutions, demonstrating both skill and innovation. 
               Whether it's complex applications or optimizing performance, his expertise is evident.
