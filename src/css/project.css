@@ -261,32 +261,60 @@
         /* padding: 20px;  */
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
     li.projects.proj3 > .project-content::before,
     li.projects.proj3 > .project-content::after {
         content: "";
         position: absolute;
-        top: 0;
         bottom: 0;
-        width: 20%; 
+        right: 0vw;
+        width: 32%;
+        height: 49%;
         background-size: contain;
         background-repeat: no-repeat;
         transform: skewX(-15deg); 
+
     }
 
     li.projects.proj3 > .project-content::before {
-        left: 55%;
         z-index: -1;
         transform: translateX(-50%) skewX(-15deg);
         background-image: url('./../imgs/schedBin/SchedBin1.png');
-        top: 100px;
+        /* width: 30%; */
     }
 
     li.projects.proj3 > .project-content::after {
-        right: 60px;
         background-image: url('./../imgs/schedBin/SchedBin3.png');
         z-index: -1;
-        top: 60px;
+        right: 3vw;
+        /* width: 30%; */
     }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     li.projects.proj3>.project-content>.content-wrapper {
         background-color: var(--on-primary2);
