@@ -97,7 +97,7 @@ a.getInTouch{
     display: none;
   }
   .contact-text {
-    padding: 0 50px 0 20px;
+    padding: unset;
     position: relative;
     top: unset;
     width: 100%;
@@ -122,5 +122,10 @@ a.getInTouch{
     color: var(--on-tertiary);
     background: transparent;
     border: 1px solid var(--on-tertiary-45);
+  }
+
+  .submitBtn button{
+    margin-top: 20px;
+    width: 100%;
   }
 }

@@ -17,10 +17,11 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
 
   return (
     <nav className="sideNav">
-  <h1 className="portfolio-name start logo2">
-    <MyLogo className="t-logo" />
-
-  </h1>
+  <a href="https://www.tristanehrontumbaga.xyz/">
+    <h1 className="portfolio-name start logo2">
+      <MyLogo className="t-logo" />
+    </h1>
+  </a>
   <ol className="navList navList2">
     <li className="navMenu" onClick={()=> handleClick(aboutRef)}>About</li>
     <li className="navMenu" onClick={()=> handleClick(projectsRef)}>Projects</li>

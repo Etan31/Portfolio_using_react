@@ -97,7 +97,7 @@ section.Projects {
 section.home {
    margin: auto;
    display: flex;
-   padding: 175px 0px 0 0;
+   padding: 215px 0px 0 0; /* 215px 0px 0 0 */
    flex-direction: column;
    position: relative;
 }
