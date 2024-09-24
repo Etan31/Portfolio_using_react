@@ -113,12 +113,12 @@ const [menuVisible, setMenuVisible] = useState(false);
           testimonialsRef={testimonialsRef}
           contactRef={contactRef} 
         />
-      </header>
-      
-      <main>
         <button className="menubtn123 menubtnNotclose" onClick={toggleMenu}> 
           <img src={MenuBtn} className="Menubtn" alt="Humberger menu" />
         </button>
+      </header>
+      
+      <main>
         {menuVisible && (
           <aside className="menuAside">
             <div className="navto">
