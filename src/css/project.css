@@ -205,6 +205,12 @@
     transform: translate(0px, -55px) !important;
 } */
 
+img.trackRecord{
+    top: 0;
+    position: relative;
+    transform: translate(0, -140px);
+}
+
 .content-wrapper {
     padding-inline: 25px;
     padding-block: 15px;
@@ -261,18 +267,6 @@
         /* padding: 20px;  */
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
     li.projects.proj3 > .project-content::before,
     li.projects.proj3 > .project-content::after {
         content: "";
@@ -300,21 +294,6 @@
         right: 3vw;
         /* width: 30%; */
     }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
     li.projects.proj3>.project-content>.content-wrapper {
         background-color: var(--on-primary2);

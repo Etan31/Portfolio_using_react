@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from 'react';
-// import gsap from 'gsap';  // commented <becuase></becuase> you're already registering ScrollTrigger in useAnimations.js
+import React from 'react';
 import './css/project.css';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useAnimations } from "./hooks/useAnimation";
+import { motion } from "framer-motion";
 
-import { useAnimations } from './hooks/useAnimation';
+// import { useAnimations } from './hooks/useAnimation';
 
 // Project preview images
-import skycastImage from './imgs/skycast/skycast1.png';
+import skycastImage1 from './imgs/skycast/skycast1.png';
 import skycastImage2 from './imgs/skycast/skycast2.png';
 import skycastImage3 from './imgs/skycast/skycast3.png';
 
@@ -23,10 +23,18 @@ import trackRecord from './imgs/Portfolio.png';
 
 const Project = React.forwardRef((props, ref) => {
   const {
-    skycast1Ref, skycast2Ref, skycast3Ref,
-    stt1Ref, stt2Ref, stt3Ref,
-    SchedBin1Ref, SchedBin2Ref, SchedBin3Ref, SchedBin4Ref,
-    trackRecordRef
+    skycast1Ref,
+    skycast2Ref,
+    skycast3Ref,
+    stt1Ref,
+    stt2Ref,
+    stt3Ref,
+    schedBin1Ref,
+    schedBin2Ref,
+    schedBin3Ref,
+    schedBin4Ref,
+    trackRecordRef,
+    controls,
   } = useAnimations();
 
 return (
@@ -80,11 +88,16 @@ return (
         </div>
       </div>
       <div className="project-image">
-        <div className="windowPreview"><img src={skycastImage} ref={skycast1Ref} className="imgPreview skycast1"
-            alt="skycast img preview" /></div>
+        <div className="windowPreview">
+          <motion.img src={skycastImage1}  ref={skycast1Ref}  initial={{ opacity: 1 }} className="imgPreview skycast1" alt="skycast image preview" />
+          {/* <img src={skycastImage} ref={skycast1Ref} className="imgPreview skycast1" alt="Skycast image preview" /> */}
+        </div>
         <div className="mobilePreview">
-          <img src={skycastImage2} ref={skycast2Ref} className="imgPreview skycast2" alt="skycast img preview" />
-          <img src={skycastImage3} ref={skycast3Ref} className="imgPreview skycast3" alt="skycast img preview" />
+          {/* <img src={skycastImage2} ref={skycast2Ref} className="imgPreview skycast2" alt="skycast img preview" />
+          <img src={skycastImage3} ref={skycast3Ref} className="imgPreview skycast3" alt="skycast img preview" /> */}
+
+          <motion.img src={skycastImage2} ref={skycast2Ref}  animate={controls.skycast2} initial={{ opacity: 0 }} className="imgPreview skycast2" alt="skycast image preview" />
+          <motion.img src={skycastImage3} ref={skycast3Ref} animate={controls.skycast3} initial={{ opacity: 0 }} className="imgPreview skycast3" alt="skycast image preview" /> 
         </div>
       </div>
     </li>
@@ -128,11 +141,16 @@ return (
       </div>
       <div className="project-image">
         <div className="windowPreview">
-          <img src={stt1} ref={stt1Ref} className="imgPreview stt1" alt="Speech-to-text img preview" />
+          {/* <img src={stt1} ref={stt1Ref} className="imgPreview stt1" alt="Speech-to-text img preview" /> */}
+
+          <motion.img src={stt1} ref={stt1Ref}  initial={{ opacity: 1 }} className="imgPreview stt1" />
         </div>
         <div className="mobilePreview sttMobilePreview">
-          <img src={stt2} ref={stt2Ref} className="imgPreview stt2" alt="Speech-to-text img preview" />
-          <img src={stt3} ref={stt3Ref} className="imgPreview stt3" alt="Speech-to-text img preview" />
+          {/* <img src={stt2} ref={stt2Ref} className="imgPreview stt2" alt="Speech-to-text img preview" />
+          <img src={stt3} ref={stt3Ref} className="imgPreview stt3" alt="Speech-to-text img preview" /> */}
+
+          <motion.img src={stt2} ref={stt2Ref} animate={controls.stt2} initial={{ opacity: 0 }} className="imgPreview stt2" />
+          <motion.img src={stt3} ref={stt3Ref} animate={controls.stt3} initial={{ opacity: 0 }} className="imgPreview stt3" />
         </div>
       </div>
     </li>
@@ -173,12 +191,18 @@ return (
       <div className="project-image">
         <div className="mobilePreview schedBinMobilePreview">
           <div className="imgAbove">
-            <img src={SchedBin1} ref={SchedBin1Ref} className="imgPreview schedBin1" alt="SchedBin img preview" />
-            <img src={SchedBin2} ref={SchedBin2Ref} className="imgPreview schedBin2" alt="SchedBin img preview" />
+            {/* <img src={SchedBin1} ref={SchedBin1Ref} className="imgPreview schedBin1" alt="SchedBin img preview" />
+            <img src={SchedBin2} ref={SchedBin2Ref} className="imgPreview schedBin2" alt="SchedBin img preview" /> */}
+
+            <motion.img  src={SchedBin1} ref={schedBin2Ref} animate={controls.schedBin2} initial={{ opacity: 0 }} className="imgPreview schedBin1" />
+            <motion.img  src={SchedBin2} ref={schedBin1Ref} animate={controls.schedBin1} initial={{ opacity: 0 }} className="imgPreview schedBin2" />
           </div>
           <div className="imgBelow">
-            <img src={SchedBin3} ref={SchedBin3Ref} className="imgPreview schedBin3" alt="SchedBin img preview" />
-            <img src={SchedBin4} ref={SchedBin4Ref} className="imgPreview schedBin4" alt="SchedBin img preview" />
+            {/* <img src={SchedBin3} ref={SchedBin3Ref} className="imgPreview schedBin3" alt="SchedBin img preview" />
+            <img src={SchedBin4} ref={SchedBin4Ref} className="imgPreview schedBin4" alt="SchedBin img preview" /> */}
+
+            <motion.img src={SchedBin3} ref={schedBin3Ref} animate={controls.schedBin3} initial={{ opacity: 0 }} className="imgPreview schedBin3" />
+            <motion.img src={SchedBin4} ref={schedBin4Ref} animate={controls.schedBin4} initial={{ opacity: 0 }} className="imgPreview schedBin4" />
           </div>
         </div>
       </div>
@@ -221,7 +245,10 @@ return (
         <div className="windowPreview img-wrapper1">
 
           {/* Change this image, fix the icon on the side bar */}
-          <img src={trackRecord} ref={trackRecordRef} className="imgPreview stt1" alt="Speech-to-text img preview" />
+          {/* <img src={trackRecord} ref={trackRecordRef} className="imgPreview stt1" alt="Speech-to-text img preview" /> */}
+
+          {/* <motion.div ref={trackRecordRef} animate={controls.trackRecord} initial={{ opacity: 0 }} className="trackRecord" /> */}
+          <motion.img src={trackRecord} ref={trackRecordRef} initial={{ opacity: 1 }} className="trackRecord" alt="Speech-to-text image preview" />
         </div>
 
       </div>
@@ -230,7 +257,7 @@ return (
   </ul>
 </section>
 
-);
+  );
 });
 
 export default Project;
