@@ -1,6 +1,6 @@
 // useAnimations.js
 import { useEffect } from "react";
-import { useAnimation, motion } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export const useAnimations = () => {
@@ -40,13 +40,13 @@ export const useAnimations = () => {
     if (inViewSkycast3) {
       controls.skycast3.start({ y: -140, opacity: 1, transition: { duration: 0.2, ease: "easeInOut" } });
     }
-    if (inViewStt2) {
+    if (inViewStt1) {
       controls.stt1.start({ y: -70, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
     }
-    if (inViewStt1) {
+    if (inViewStt2) {
       controls.stt2.start({ y: -140, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
     }
-    if (inViewStt2) {
+    if (inViewStt3) {
       controls.stt3.start({ y: -70, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
     }
     if (inViewSchedBin1) {
