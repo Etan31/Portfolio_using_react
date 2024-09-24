@@ -1,65 +1,95 @@
 // useAnimations.js
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-const createTimeline = (triggerClass, start, end, animations) => {
-
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: triggerClass,
-      start,
-      end,
-      scrub: true,
-      markers: false,
-    },
-  })
-  .to(...animations);
-};
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export const useAnimations = () => {
-  const skycast1Ref = useRef(null);
-  const skycast2Ref = useRef(null);
-  const skycast3Ref = useRef(null);
-  const stt1Ref = useRef(null);
-  const stt2Ref = useRef(null);
-  const stt3Ref = useRef(null);
-  const SchedBin1Ref = useRef(null);
-  const SchedBin2Ref = useRef(null);
-  const SchedBin3Ref = useRef(null);
-  const SchedBin4Ref = useRef(null);
-  const trackRecordRef = useRef(null);
-
-  // console.log("gsap: ", gsap);
-
-useEffect(() => {
-  gsap.set([skycast2Ref.current, skycast3Ref.current, stt2Ref.current, stt3Ref.current, SchedBin1Ref.current, SchedBin2Ref.current, SchedBin3Ref.current, SchedBin4Ref.current, trackRecordRef.current], { opacity: 0 });
-
-  // Example for trackRecord
-  createTimeline('img.imgPreview.skycast1', 'top 80%', 'bottom 80%', [trackRecordRef.current, { y: -100, opacity: 1, duration: 1, ease: "expoScale(0.5, 7, none)" }]);
-  createTimeline('img.imgPreview.skycast2', 'top 90%', 'top 75%', [skycast2Ref.current, { y: -60, opacity: 1, duration: 2, ease: "power1.inOut" }]);
-  createTimeline('img.imgPreview.skycast3', 'top 90%', 'top 75%', [skycast3Ref.current, { y: -120, opacity: 1, duration: 1, ease: "power1.inOut" }]);
-  createTimeline('img.imgPreview.stt1', 'top 90%', 'top 65%', [stt2Ref.current, { y: -140, opacity: 1, duration: 1, ease: "power1.inOut" }]);
-  createTimeline('img.imgPreview.stt2', 'top 90%', 'top 65%', [stt3Ref.current, { y: -70, opacity: 1, duration: 1, ease: "power1.inOut" }]);
-  
-  createTimeline('img.imgPreview.schedBin1', 'top 95%', 'bottom bottom', [SchedBin1Ref.current, { y: -200, opacity: 1, duration: 2, ease: "power1.inOut" }]);
-  createTimeline('img.imgPreview.schedBin2', 'top 95%', 'bottom bottom', [SchedBin2Ref.current, { y: -90, opacity: 1, duration: 1, ease: "power1.inOut" }]);
-  createTimeline('img.imgPreview.schedBin3', 'top 95%', 'bottom bottom', [SchedBin3Ref.current, { y: -160, opacity: 1, duration: 1, ease: "power1.inOut" }]);
-  createTimeline('img.imgPreview.schedBin4', 'top 95%', 'bottom bottom', [SchedBin4Ref.current, { y: -80, opacity: 1, duration: 1, ease: "power1.inOut" }]);
-
-
-  return () => {
-    // Kill all ScrollTrigger instances when the component unmounts
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  const controls = {
+    skycast1: useAnimation(),
+    skycast2: useAnimation(),
+    skycast3: useAnimation(),
+    stt1: useAnimation(),
+    stt2: useAnimation(),
+    stt3: useAnimation(),
+    schedBin1: useAnimation(),
+    schedBin2: useAnimation(),
+    schedBin3: useAnimation(),
+    schedBin4: useAnimation(),
+    trackRecord: useAnimation(),
   };
-}, []);
-  
-  return { 
-      skycast1Ref, skycast2Ref, skycast3Ref, 
-      stt1Ref, stt2Ref, stt3Ref,
-      SchedBin1Ref, SchedBin2Ref, SchedBin3Ref, SchedBin4Ref,
-      trackRecordRef
-    };
+
+  const [skycast1Ref, inViewSkycast1] = useInView({ triggerOnce: true, threshold: 0.8 });
+  const [skycast2Ref, inViewSkycast2] = useInView({ triggerOnce: true, threshold: 0.75 });
+  const [skycast3Ref, inViewSkycast3] = useInView({ triggerOnce: true, threshold: 0.75 });
+  const [stt1Ref, inViewStt1] = useInView({ triggerOnce: true, threshold: 0.65 });
+  const [stt2Ref, inViewStt2] = useInView({ triggerOnce: true, threshold: 0.65 });
+  const [stt3Ref, inViewStt3] = useInView({ triggerOnce: true, threshold: 0.65 });
+  const [schedBin1Ref, inViewSchedBin1] = useInView({ triggerOnce: true, threshold: 0.95 });
+  const [schedBin2Ref, inViewSchedBin2] = useInView({ triggerOnce: true, threshold: 0.95 });
+  const [schedBin3Ref, inViewSchedBin3] = useInView({ triggerOnce: true, threshold: 0.95 });
+  const [schedBin4Ref, inViewSchedBin4] = useInView({ triggerOnce: true, threshold: 0.95 });
+  const [trackRecordRef, inViewTrackRecord] = useInView({ triggerOnce: true, threshold: 0.8 });
+
+  useEffect(() => {
+    if (inViewSkycast1) {
+      controls.skycast1.start({ y: -60, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+    }
+    if (inViewSkycast2) {
+      controls.skycast2.start({ y: -100, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+    }
+    if (inViewSkycast3) {
+      controls.skycast3.start({ y: -140, opacity: 1, transition: { duration: 0.2, ease: "easeInOut" } });
+    }
+    if (inViewStt1) {
+      controls.stt1.start({ y: -70, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+    }
+    if (inViewStt2) {
+      controls.stt2.start({ y: -140, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+    }
+    if (inViewStt3) {
+      controls.stt3.start({ y: -70, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+    }
+    if (inViewSchedBin1) {
+      controls.schedBin1.start({ y: -200, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+    }
+    if (inViewSchedBin2) {
+      controls.schedBin2.start({ y: -90, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+    }
+    if (inViewSchedBin3) {
+      controls.schedBin3.start({ y: -160, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+    }
+    if (inViewSchedBin4) {
+      controls.schedBin4.start({ y: -100, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+    }
+    if (inViewTrackRecord) {
+      controls.trackRecord.start({ y: -100, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });
+    }
+  }, [
+    inViewSkycast1,
+    inViewSkycast2,
+    inViewSkycast3,
+    inViewStt1,
+    inViewStt2,
+    inViewSchedBin1,
+    inViewSchedBin2,
+    inViewSchedBin3,
+    inViewSchedBin4,
+    inViewTrackRecord,
+    controls,
+  ]);
+
+  return {
+    skycast1Ref,
+    skycast2Ref,
+    skycast3Ref,
+    stt1Ref,
+    stt2Ref,
+    stt3Ref,
+    schedBin1Ref,
+    schedBin2Ref,
+    schedBin3Ref,
+    schedBin4Ref,
+    trackRecordRef,
+    controls,
+  };
 };
