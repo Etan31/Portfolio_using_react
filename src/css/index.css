@@ -350,7 +350,6 @@ p.credits {
         padding: 0px 0px  !important;
    }
 
-   /* TODO: change this if the menu button is clicked */
    aside>nav>ol.navList.navList2{
       display: none;
    }

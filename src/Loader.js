@@ -19,7 +19,6 @@ function Loader() {
     <div>
       {loading ? (
         <div className="loader-container">
-          {/* TODO: Make this responsive */}
           <img src={logo} alt="Logo" className="loader-logo" />
         </div>
       ) : (
