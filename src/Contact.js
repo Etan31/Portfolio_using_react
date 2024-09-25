@@ -2,45 +2,75 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import './css/contact.css';
 import massageGif from './message.gif';
+import MarkIC from './imgs/optimized/mark.png';
 
 const Contact = React.forwardRef((props, ref) => {
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState(''); // Notification message
+  const [loading, setLoading] = useState(false); // Loading state
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    from_name: '',
+    from_email: '',
     message: ''
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  }
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const getLastName = (fullName) => {
+    const splitName = fullName.trim().split(' ');
+    return splitName.length > 1 ? splitName[splitName.length - 1] : fullName; // Return last word or full name if it's a single word
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);  // Start loading, change button text to "Sending message..."
 
-    // Collect the form data
-    const formData = {
-      name: e.target.name.value,
-      email: e.target.email.value,
-      message: e.target.message.value
+    const lastName = getLastName(formData.from_name); // Extract last name
+
+    const templateParams = {
+      ...formData,
+      last_name: lastName  
     };
 
-    // Send the email
-    emailjs.sendForm(
+    emailjs.send(
       process.env.REACT_APP_SERVICE_ID,
       process.env.REACT_APP_TEMPLATE_ID,
-      e.target,
+      templateParams,
       process.env.REACT_APP_PUBLIC_KEY
     )
     .then((result) => {
       console.log('Email sent successfully:', result.text);
+      setLoading(false);  // Stop loading
+      setNotificationMessage('Email sent successfully, Thank you!');  // Success message
+      setShowNotification(true);  // Show notification
+      setTimeout(() => {
+        setShowNotification(false);  // Hide notification after 5 seconds
+      }, 5000);
     }, (error) => {
       console.log('Failed to send email:', error.text);
+      setLoading(false);  // Stop loading
+      setNotificationMessage('Email sent unsuccessfully, please try again later.');  // Error message
+      setShowNotification(true);  // Show notification
+      setTimeout(() => {
+        setShowNotification(false);  // Hide notification after 5 seconds
+      }, 5000);
     });
 
-    // TODO: have a notification
+    // Reset the form after submission
     e.target.reset();
-  }
+    setFormData({
+      from_name: '',
+      from_email: '',
+      message: ''
+    });
+  };
 
   return (
     <section className="contact" ref={ref}>
@@ -55,23 +85,23 @@ const Contact = React.forwardRef((props, ref) => {
         <div className="contact-form">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="from_name">Name</label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                value={formData.name}
+                id="from_name"
+                name="from_name"
+                value={formData.from_name}
                 onChange={handleChange}
                 required
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="from_email">Email</label>
               <input
                 type="email"
-                id="email"
-                name="email"
-                value={formData.email}
+                id="from_email"
+                name="from_email"
+                value={formData.from_email}
                 onChange={handleChange}
                 required
               />
@@ -87,13 +117,21 @@ const Contact = React.forwardRef((props, ref) => {
               />
             </div>
             <div className="submitBtn">
-              <button type="submit" className="submit-button">
-                Send Message
+              <button type="submit" className="submit-button" disabled={loading}>
+                {loading ? 'Sending message...' : 'Send Message'}
               </button>
             </div>
           </form>
         </div>
       </div>
+
+      {/* Notification for success or failure */}
+      {showNotification && (
+        <div className="notification contact-sent">
+          <img src={MarkIC} className="img-notif" alt="notification mark" />
+          <p className="text-notif notif-sent">{notificationMessage}</p>
+        </div>
+      )}
     </section>
   );
 });

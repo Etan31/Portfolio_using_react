@@ -183,6 +183,10 @@ svg,
    transition: opacity 1s ease-out, top 1s ease-out;
 }
 
+/* .notification.contact-sent {
+   width: 260px;
+} */
+
 .notification .text-notif {
    font-size: 12px;
    font-weight: 600;

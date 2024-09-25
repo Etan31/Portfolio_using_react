@@ -55,6 +55,21 @@
 .form-group textarea {
   resize: vertical;
   min-height: 150px;
+  background-color: var(--on-primary);
+}
+
+.form-group textarea::-webkit-scrollbar {
+    width: 8px;
+}
+.form-group textarea::-webkit-scrollbar-track {
+    background: var(--bg-scroll);
+}
+.form-group textarea::-webkit-scrollbar-thumb {
+    background: var(--on-tertiary);
+    border-radius: 10px; 
+}
+.form-group textarea::-webkit-scrollbar-thumb:hover {
+    background: darken(var(--on-tertiary), 10%);
 }
 
 .submit-button {
