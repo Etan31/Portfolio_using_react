@@ -6,7 +6,7 @@ import MarkIC from './imgs/optimized/mark.png';
 
 const Contact = React.forwardRef((props, ref) => {
   const [showNotification, setShowNotification] = useState(false);
-  const [notificationMessage, setNotificationMessage] = useState(''); // Notification message
+  const [notificationMessage, setNotificationMessage] = useState(''); 
   const [loading, setLoading] = useState(false); // Loading state
 
   const [formData, setFormData] = useState({
@@ -47,19 +47,19 @@ const Contact = React.forwardRef((props, ref) => {
     )
     .then((result) => {
       console.log('Email sent successfully:', result.text);
-      setLoading(false);  // Stop loading
-      setNotificationMessage('Email sent successfully, Thank you!');  // Success message
-      setShowNotification(true);  // Show notification
+      setLoading(false);  
+      setNotificationMessage('Email sent successfully, Thank you!');  
+      setShowNotification(true);  
       setTimeout(() => {
-        setShowNotification(false);  // Hide notification after 5 seconds
+        setShowNotification(false);  
       }, 5000);
     }, (error) => {
       console.log('Failed to send email:', error.text);
-      setLoading(false);  // Stop loading
-      setNotificationMessage('Email sent unsuccessfully, please try again later.');  // Error message
-      setShowNotification(true);  // Show notification
+      setLoading(false);  
+      setNotificationMessage('Email sent unsuccessfully, please try again later.');  
+      setShowNotification(true);  
       setTimeout(() => {
-        setShowNotification(false);  // Hide notification after 5 seconds
+        setShowNotification(false);  
       }, 5000);
     });
 
@@ -127,11 +127,14 @@ const Contact = React.forwardRef((props, ref) => {
 
       {/* Notification for success or failure */}
       {showNotification && (
-        <div className="notification contact-sent">
-          <img src={MarkIC} className="img-notif" alt="notification mark" />
-          <p className="text-notif notif-sent">{notificationMessage}</p>
-        </div>
-      )}
+  <div className="notification2">
+    <img src={MarkIC} className="img-notif" alt="notification mark" />
+    <p className="text-notif notif-sent">{notificationMessage}</p>
+  </div>
+
+)}
+
+
     </section>
   );
 });
