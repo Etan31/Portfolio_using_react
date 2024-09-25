@@ -83,10 +83,6 @@
 
 /* //////////// GENERAL STYLES /////////////// */
 
-section.Contact {
-   border: 1px solid red;
-}
-
 
 * {
    box-sizing: border-box;
@@ -253,9 +249,9 @@ body {
 
 }
 
-/* .home {
-   height: 100vh;
-} */
+section.main_section {
+   padding-bottom: unset;
+}
 
 .paragraph {
    font-weight: 600;
@@ -276,6 +272,8 @@ body {
    text-decoration: none solid var(--gray);
    word-spacing: 2px;
 }
+
+
 
 .paragraph.name{
    /* color: var(--white-60); */
@@ -299,6 +297,12 @@ p.short-intro {
     margin: 20px 0px 0px;
     width: clamp(250px, 80vw, 685px);
     font-size: clamp(11px, 10vw, 20px);
+}
+
+p.credits {
+   font-size: 15px;
+   text-align: center;
+   padding-block: 20px;
 }
 
 

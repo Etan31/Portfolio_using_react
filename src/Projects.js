@@ -109,7 +109,7 @@ return (
           <p className="project-overline">Featured Project</p>
           <h3 className="project-title">Speech2Text</h3>
           <div className="project-description">This project allows you to record your speech, convert it into text,
-             and save it as a `.txt` file. It was developed as a school project by Arca, Dolim, Vergara, and myself.
+             and save it as a `.txt` file. A school project that was developed by Arca, Dolim, Vergara, and myself.
 </div>
           <ul className="project-tech-list">
             <li>Nodejs</li>

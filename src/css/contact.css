@@ -37,8 +37,8 @@
   display: block;
   color: var(--on-tertiary);
   margin-bottom: 8px;
-  font-weight: 500;
-  font-size: 17px;
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .form-group input,

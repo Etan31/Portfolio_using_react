@@ -195,6 +195,10 @@ const [menuVisible, setMenuVisible] = useState(false);
           <Contact ref={contactRef} />
         </section>
       </main>
+      <footer>
+        <p className="credits">Design inspired by <a href="https://brittanychiang.com/" target="_blank" rel="noopener noreferrer">Brittany Chiang</a>.</p>
+      </footer>
+
     </div>
 
   );
