@@ -61,7 +61,7 @@ const Testimonials = React.forwardRef((props, ref) => {
               <img src={Quote_ic} alt="Testimony Qoute icon" />
             </div>
             <p className="testimony-p">
-              Etan was very cute and i like him
+              Etan was very cute and I like him.
             </p>
           </div>
         </div>
