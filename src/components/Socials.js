@@ -15,14 +15,18 @@ const Socials = () => {
             </svg>
          </a>
 
-         {/* <a target="_blank" rel="noreferrer" href="https://twitter.com/">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-twitter-x"
-               viewBox="0 0 16 16">
-               <path
-                  d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+         <a target="_blank" rel="noreferrer" href="https://stackoverflow.com/users/17609111/tristan-ehron-tumbaga">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="50px" height="50px" fillRule="evenodd">
+               <g fill="#8892b0" fillRule="evenodd" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter"
+                  strokeMiterlimit="10" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{ mixBlendMode: 'normal' }}>
+                  <g transform="scale(5.12,5.12)">
+                  <path d="M40.92578,1.89063l-3.06641,0.52734l3.32813,18.20703l2.84375,-0.37109zM29.96875,6.35156l-2.86719,1.72656l10.19922,14.95703l2.51953,-1.55469zM20.79688,15.03125l-1.68359,2.67188l15.38672,9.29688l1.40234,-2.42187zM16.375,24.40234l-0.74609,3l17.73047,4.49219l0.28125,-2.69141zM9,29v18.98438l29.90234,0.01563v-0.01562c0.03125,0 0.09766,-18.98437 0.09766,-18.98437h-3v16h-24v-16zM15.15234,32.35547l-0.25,2.98438l18.09766,1.66016l0.20313,-2.5zM14.90234,39l0.09766,3l18,-0.07031v-2.92969z">
+                  </path>
+                  </g>
+               </g>
             </svg>
-         </a> */}
-
+         </a>
+         
          <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tristan-ehron-tumbaga-b42478175/">
             <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-linkedin">

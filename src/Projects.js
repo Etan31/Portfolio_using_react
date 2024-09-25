@@ -226,8 +226,8 @@ return (
             <li>Node.js</li>
             <li>Git</li>
             <li>React</li>
-            <li>Framer Motion</li>
             <li>EmailJS</li>
+            <li>AWS Amplify</li>
           </ul>
 
           <div className="project-links">
