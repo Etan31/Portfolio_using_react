@@ -9,13 +9,13 @@ import Contact from './Contact';
 
 import Socials from './components/Socials';
 import Mailto from './components/mailto';
-import MarkIC from './imgs/optimized/mark.png';
+// import MarkIC from './imgs/optimized/mark.png';
 import MenuBtn from './icons/ic_menu.jpg';
 import CloseBtn from './icons/ic_x_close.png';
 
 function Main() {
 
-const [showNotification, setShowNotification] = useState(true);
+// const [showNotification, setShowNotification] = useState(true);
 const [menuVisible, setMenuVisible] = useState(false);
 
 
@@ -75,9 +75,9 @@ const [menuVisible, setMenuVisible] = useState(false);
 
 
     //notif to show my porfolio under development
-    setTimeout(() => {
-      setShowNotification(false);
-    }, 5000);
+    // setTimeout(() => {
+    //   setShowNotification(false);
+    // }, 5000);
 
 
     sr.reveal(aboutRef.current, { delay: 100, viewFactor: 0.2 });
@@ -98,12 +98,12 @@ const [menuVisible, setMenuVisible] = useState(false);
 
   return (
     <div className="Main">
-      {showNotification && (
+      {/* {showNotification && (
         <div className="notification">
           <img src={MarkIC} className="img-notif" alt="exclamation mark"/>
           <p className="text-notif">Under Development — Stay Tuned!</p>
         </div>
-      )}
+      )} */}
 
       <div className="cursor" ref={cursorRef}></div>
       <header className="heading-nav" ref={headerRef}>
@@ -195,6 +195,10 @@ const [menuVisible, setMenuVisible] = useState(false);
           <Contact ref={contactRef} />
         </section>
       </main>
+      <footer>
+        <p className="credits">Design inspired by <a href="https://brittanychiang.com/" target="_blank" rel="noopener noreferrer">Brittany Chiang</a>.</p>
+      </footer>
+
     </div>
 
   );

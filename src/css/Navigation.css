@@ -30,7 +30,6 @@ aside.menuAside {
    height: 100%;
    backdrop-filter: blur(10px);
    /* display: none; */
-   /* TODO: change this display later */
 }
 
 .navto {
