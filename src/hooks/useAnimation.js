@@ -30,6 +30,8 @@ export const useAnimations = () => {
   const [schedBin4Ref, inViewSchedBin4] = useInView({ triggerOnce: true, threshold: 0.95 });
   const [trackRecordRef, inViewTrackRecord] = useInView({ triggerOnce: true, threshold: 0.8 });
 
+
+  // TODO: Optimized this function
   useEffect(() => {
     if (inViewSkycast1) {
       controls.skycast1.start({ y: -60, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } });

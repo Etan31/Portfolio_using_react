@@ -66,7 +66,6 @@ const Testimonials = React.forwardRef((props, ref) => {
           </div> */}
         </div>
 
-        {/* TODO: Change this if there are multiple Testimony */}
         {/* <button className="carousel-control prev" onClick={handlePrev}>‹</button>
         <button className="carousel-control next" onClick={handleNext}>›</button> */}
       </div>
