@@ -38,7 +38,7 @@ const Testimonials = React.forwardRef((props, ref) => {
           <div className="testimony-wrapper">
             <img src={Armand} alt="sample profile" className="img-profile"></img>
             <div className="user-name"><span className="highlight">Armand Ralph Anacta</span></div>
-            <div className="user-profession">QCBOT WEB DEVELOPER</div>
+            <div className="user-profession">QCKBOT WEB DEVELOPER</div>
             <div className="qoutes_c">
               <img src={Quote_ic} alt="Testimony Qoute icon" />
               <img src={Quote_ic} alt="Testimony Qoute icon" />
