@@ -141,7 +141,7 @@ const [menuVisible, setMenuVisible] = useState(false);
                   </li>
 
                   <div className="resumebtn-div">
-                    <a className="resume-button" href='https://drive.google.com/file/d/1ciqtADCcW8O6NQI2sx_n4QYm90daNxA1/view?usp=sharing'
+                    <a className="resume-button" href='https://drive.google.com/file/d/1tWxgfEGZ9yVPBmhRCfoOvN9XDNtzFtsB/view?usp=sharing'
                       rel="noopener noreferrer" target="_blank">
                       Resume
                     </a>
