@@ -74,9 +74,11 @@ const Contact = React.forwardRef((props, ref) => {
 
   return (
     <section className="contact" ref={ref}>
-      <h2 className="numbered-heading">Contact Me</h2>
+      <h2 className="numbered-heading">Get In Touch</h2>
       <div className="contact-container">
-        <div className="contact-text">
+
+        {/* When Unemployed */}
+        {/* <div className="contact-text">
           <img src={massageGif} className="message_gif" alt="contact me gif" />
           <p>
             I'm currently looking for new opportunities. Feel free to reach out if you have any questions or just want to say hi!
@@ -122,6 +124,13 @@ const Contact = React.forwardRef((props, ref) => {
               </button>
             </div>
           </form>
+        </div> */}
+
+        <div className='employed-contact-me'>
+          <p>
+          Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+          </p>
+          <button className="get-in-touch" >Say Hello</button>
         </div>
       </div>
 

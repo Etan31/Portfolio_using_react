@@ -106,6 +106,16 @@
 a.getInTouch{
   text-decoration: none;
 }
+
+
+.employed-contact-me {
+  display: flex;
+  max-width: 600px;
+  margin: 0px auto 100px;
+  text-align: center;
+}
+
+
 @media (max-width: 768px) {
 
   .message_gif{
