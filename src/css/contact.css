@@ -113,6 +113,8 @@ a.getInTouch{
   max-width: 600px;
   margin: 0px auto 100px;
   text-align: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 
