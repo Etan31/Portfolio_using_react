@@ -19,7 +19,7 @@ const About = React.forwardRef((props, ref) => {
               user-friendly products and experiences.
             </p>
             <p className="me">
-              While I am not currently employed, I'm constantly developing my skills and working on projects to keep up
+              I'm constantly developing my skills and working on projects to keep up
               with the latest technology advancements.
             </p>
             <p>Here are a few tools & technologies I have been working with recently:</p>
