@@ -179,13 +179,14 @@ const [menuVisible, setMenuVisible] = useState(false);
                 solid server-side solutions as well as exceptional websites. Building scalable, <br />
                  effective, and high-quality applications br is my area of expertise, <br />
                  and I constantly provide amazing online experiences. */}
-                 {/* I am a junior web developer who specializes in creating
+                 I am a junior web developer who specializes in creating
                 solid server-side solutions as well as exceptional websites. Building scalable, 
                  effective, and high-quality applications is my area of expertise, 
-                 and I constantly provide amazing online experiences. */}
+                 and I constantly provide amazing online experiences.
                 
-                 I am a software engineer who specializes in creating
-                 solid server-side solutions as well as exceptional websites. Currently, I’m focused on building accessible, human-centered system at <a href="https://www.avaloq.com/"><span class="highlight">Avaloq</span></a>.
+                 {/* I am a software engineer who specializes in creating
+                 solid server-side solutions as well as exceptional websites. Currently, I’m focused on building accessible, human-centered system at <a href="">
+                  <span class="highlight">Avaloq</span></a>. */}
               </p>
             </div>
             <div className="fadeup-enter-done" ><a className="getInTouch" href="mailto:tristan.ehron.tumbaga@gmail.com"><button className="get-in-touch" >Get In Touch</button></a></div>
