@@ -29,7 +29,7 @@ const Navbar = ({ aboutRef, projectsRef, testimonialsRef, contactRef }) => {
     <li className="navMenu" onClick={()=> handleClick(contactRef)}>Contact</li>
     <div className="resumebtn-div">
       
-      <a className="resume-button" href='https://github.com/Etan31/resume_file/blob/5991ab67c9682be63599b9b02abc3455add10662/Tristan_Ehron_Tumbaga_Resume.pdf'
+      <a className="resume-button" href='https://github.com/Etan31/resume_file/blob/b5449df9b8806be9a56822b1e114f94f750a4bbf/TristanEhron_Tumbaga_Resume.pdf'
         rel="noopener noreferrer" target="_blank">
         Resume
       </a>
