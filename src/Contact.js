@@ -7,8 +7,7 @@ import MarkIC from './imgs/optimized/mark.png';
 const Contact = React.forwardRef((props, ref) => {
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState(''); 
-  const [loading, setLoading] = useState(false); // Loading state
-
+  const [loading, setLoading] = useState(false); 
   const [formData, setFormData] = useState({
     from_name: '',
     from_email: '',
@@ -30,8 +29,7 @@ const Contact = React.forwardRef((props, ref) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);  // Start loading, change button text to "Sending message..."
-
+    setLoading(true); 
     const lastName = getLastName(formData.from_name); // Extract last name
 
     const templateParams = {
@@ -78,7 +76,7 @@ const Contact = React.forwardRef((props, ref) => {
       <div className="contact-container">
 
         {/* When Unemployed */}
-        {/* <div className="contact-text">
+        <div className="contact-text">
           <img src={massageGif} className="message_gif" alt="contact me gif" />
           <p>
             I'm currently looking for new opportunities. Feel free to reach out if you have any questions or just want to say hi!
@@ -124,14 +122,14 @@ const Contact = React.forwardRef((props, ref) => {
               </button>
             </div>
           </form>
-        </div> */}
+        </div>
 
-        <div className='employed-contact-me'>
+        {/* <div className='employed-contact-me'>
           <p>
           Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!
           </p>
           <button className="get-in-touch" >Say Hello</button>
-        </div>
+        </div> */}
       </div>
 
       {/* Notification for success or failure */}
