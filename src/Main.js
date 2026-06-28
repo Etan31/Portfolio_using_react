@@ -11,7 +11,7 @@ import calculatorLaptop from "./imgs/calculator/calculator-laptop.png";
 import calculatorMobile from "./imgs/calculator/calculator-mobile.png";
 
 const resumeUrl =
-  "https://github.com/Etan31/resume_file/blob/b5449df9b8806be9a56822b1e114f94f750a4bbf/TristanEhron_Tumbaga_Resume.pdf";
+  "https://github.com/Etan31/resume_file/blob/main/Tristan-Ehron-Tumbaga-Resume.pdf";
 
 const projects = [
   {
@@ -48,11 +48,62 @@ const projects = [
   },
 ];
 
+const experience = [
+  {
+    company: "Delbros Waterfront Leasing Co. Inc.",
+    role: "Junior Programmer",
+    period: "Mar 2026 — Present",
+    summary:
+      "Building internal automation and single-page tools on Google Workspace, and keeping core data clean in MySQL.",
+    points: [
+      "Design and maintain automation trackers across Sheets, Gmail, and Drive.",
+      "Ship single-page web apps with Google Apps Script, JavaScript, and CSS.",
+      "Document each tracker with clear MOPs in Google Docs and Draw.io.",
+    ],
+  },
+  {
+    company: "Avaloq",
+    role: "Software Engineer (Developer Associate)",
+    period: "Feb 2025 — Aug 2025",
+    summary:
+      "Worked on core banking systems—shipping features, fixing bugs, and protecting data integrity across legacy structures.",
+    points: [
+      "Delivered features and bug fixes from Jira against real user requirements.",
+      "Maintained core banking systems through careful root-cause analysis.",
+      "Integrated new query logic with legacy structures to prevent failures.",
+    ],
+  },
+  {
+    company: "Bytewise",
+    role: "Backend Web Developer",
+    period: "Jul 2023 — Jul 2024",
+    summary:
+      "Built responsive web apps and secure back ends, including the ESSU student portal and Borongan Smart City features.",
+    points: [
+      "Built the ESSU web portal in React for a fully responsive experience.",
+      "Implemented secure auth in Node.js and PDF report uploads to AWS S3.",
+      "Developed transport-management features for the Borongan Smart City app.",
+    ],
+  },
+  {
+    company: "DOST — Provincial Science & Technology Office",
+    role: "Backend Developer Intern",
+    period: "Jun 2023 — Jul 2023",
+    summary:
+      "Helped digitize local government records with a legislative management system and faster, cleaner APIs.",
+    points: [
+      "Built a web-based legislative management system for local ordinances.",
+      "Optimized SQL queries and backend logic for faster response times.",
+      "Streamlined REST API responses and JSON structures across the stack.",
+    ],
+  },
+];
+
 const capabilities = [
   [
     "01",
     "Back-end systems",
-    "APIs, databases, authentication, and the logic that keeps products dependable.",
+    "APIs, databases, authentication, and secure logic that keeps products dependable.",
   ],
   [
     "02",
@@ -105,6 +156,7 @@ function Header() {
   const navItems = [
     ["Work", "#work"],
     ["About", "#about"],
+    ["Experience", "#experience"],
     ["Notes", "#testimonial"],
     ["Contact", "#contact"],
   ];
@@ -174,10 +226,10 @@ function Hero() {
       >
         <motion.div className="eyebrow" variants={line}>
           <span className="status-dot" /> Available for the right opportunity
-          <span className="coordinates">11.6081° N · 125.4319° E</span>
+          <span className="coordinates">14.4081° N · 121.0415° E</span>
         </motion.div>
         <motion.p className="hero-intro" variants={line}>
-          Hi, I’m Tristan—a full-stack developer in the Philippines.
+          Hi, I’m Tristan—a full-stack developer based in Metro Manila.
         </motion.p>
         <motion.h1 variants={line}>
           I engineer useful <span>systems</span> for the web.
@@ -395,15 +447,16 @@ function About() {
           </h2>
           <div className="about-columns">
             <p>
-              I’m Tristan, a junior web developer from Eastern Samar. I enjoy
-              the full path from shaping an idea to building the server-side
-              logic and polishing the interface people actually touch.
+              I’m Tristan, a full-stack developer based in Metro Manila with
+              around two years of experience. I enjoy the full path from
+              shaping an idea to building the server-side logic and polishing
+              the interface people actually touch.
             </p>
             <p>
-              Experience with Bytewise Information Technology Solutions and DOST
-              PSTO–Eastern Samar taught me to value useful software, direct
-              communication, and the small details that make systems easier to
-              trust.
+              Building core banking systems at Avaloq and web platforms at
+              Bytewise and DOST taught me to value clean, secure software,
+              direct communication, and the small details that make systems
+              easier to trust.
             </p>
           </div>
           <div className="tool-row" aria-label="Technologies I use">
@@ -411,11 +464,11 @@ function About() {
               "JavaScript",
               "React",
               "Node.js",
+              "Express",
+              "RESTful APIs",
               "PostgreSQL",
-              "Claude Code",
-              "AWS",
-              "Vercel",
               "Git",
+              "Claude Code",
             ].map((tool) => (
               <span key={tool}>{tool}</span>
             ))}
@@ -428,6 +481,51 @@ function About() {
             <span>{number}</span>
             <h3>{title}</h3>
             <p>{copy}</p>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Experience() {
+  return (
+    <section className="experience section-shell" id="experience">
+      <Reveal className="section-heading">
+        <div>
+          <span className="section-label">Where I’ve worked</span>
+          <h2>
+            Two years of
+            <br />
+            shipping real systems.
+          </h2>
+        </div>
+        <p>
+          From core banking at Avaloq to government and city platforms—building
+          dependable, secure software end to end.
+        </p>
+      </Reveal>
+      <div className="timeline">
+        {experience.map((job, index) => (
+          <Reveal
+            className="timeline-item"
+            delay={index * 0.05}
+            key={job.company}
+          >
+            <div className="timeline-period">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <time>{job.period}</time>
+            </div>
+            <div className="timeline-body">
+              <h3>{job.role}</h3>
+              <p className="timeline-company">{job.company}</p>
+              <p className="timeline-summary">{job.summary}</p>
+              <ul>
+                {job.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+            </div>
           </Reveal>
         ))}
       </div>
@@ -570,7 +668,7 @@ function Footer() {
           Tumbaga
         </strong>
         <span>
-          Building from Eastern Samar
+          Building from Metro Manila
           <br />
           for the wide, wide web.
         </span>
@@ -614,6 +712,7 @@ export default function Main() {
         <Hero />
         <Work />
         <About />
+        <Experience />
         <Testimonial />
         <Contact />
       </main>

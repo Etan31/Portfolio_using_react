@@ -138,6 +138,19 @@ h1, h2, h3, p { margin-top: 0; }
 .capability h3 { margin: 0; font: 500 clamp(23px, 2.3vw, 34px) var(--display); letter-spacing: -.035em; }
 .capability p { max-width: 440px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
 
+.timeline { border-top: 1px solid var(--line); }
+.timeline-item { display: grid; grid-template-columns: 200px 1fr; gap: 40px; padding: 48px 0; border-bottom: 1px solid var(--line); transition: background 250ms ease, padding 350ms var(--ease); }
+.timeline-item:hover { padding-inline: 18px; background: rgba(255,255,255,.02); }
+.timeline-period { display: flex; flex-direction: column; gap: 10px; }
+.timeline-period span { color: var(--signal); font: 10px var(--mono); }
+.timeline-period time { color: var(--quiet); font: 10px var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+.timeline-body h3 { margin: 0 0 6px; font: 500 clamp(22px, 2.2vw, 30px) var(--display); letter-spacing: -.035em; }
+.timeline-company { margin: 0 0 16px; color: var(--signal); font: 10px var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+.timeline-summary { max-width: 620px; margin: 0 0 18px; color: var(--fog); font-size: 15px; line-height: 1.6; }
+.timeline-body ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+.timeline-body li { position: relative; max-width: 640px; padding-left: 20px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.timeline-body li::before { content: ''; position: absolute; left: 0; top: 9px; width: 7px; height: 1px; background: var(--signal); }
+
 .testimonial { position: relative; padding: 150px 0; background: var(--fog); color: var(--ink); overflow: hidden; }
 .testimonial::before { content: 'FIELD NOTE'; position: absolute; left: -2vw; bottom: -4vw; color: transparent; -webkit-text-stroke: 1px rgba(9,11,15,.09); font: 700 15vw/.8 var(--display); letter-spacing: -.08em; white-space: nowrap; }
 .quote-card { position: relative; display: grid; grid-template-columns: 130px 1fr; gap: 50px; }
@@ -232,6 +245,9 @@ footer { padding: 90px 48px 30px; border-top: 1px solid var(--line); }
   .capability { padding: 28px 0; grid-template-columns: 38px 1fr; gap: 15px; }
   .capability:hover { padding-inline: 0; }
   .capability p { grid-column: 2; }
+  .timeline-item { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
+  .timeline-item:hover { padding-inline: 0; }
+  .timeline-period { flex-direction: row; align-items: center; gap: 14px; }
   .testimonial { padding: 100px 0; }
   .quote-card { grid-template-columns: 1fr; gap: 10px; }
   .quote-mark { font-size: 115px; }
