@@ -32,6 +32,9 @@ const About = React.forwardRef((props, ref) => {
             <li>PostgreSQL</li>
             <li>Git</li>
             <li>Postman</li>
+            <li>Claude Code</li>
+            <li>AWS</li>
+            <li>Vercel</li>
           </ul>
 
           
