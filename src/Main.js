@@ -1,208 +1,320 @@
-import Navbar from './components/Navbar';
-import { useRef, useEffect ,useState } from 'react';
-import ScrollReveal from 'scrollreveal';
+import { useEffect, useState } from 'react';
+import { motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
+import emailjs from 'emailjs-com';
 
-import About from './About';
-import Projects from './Projects';
-import Testimonials from './Testimonials';
-import Contact from './Contact';
+import profile from './imgs/profile-1by1.jpg';
+import skycast from './imgs/skycast/skycast1.png';
+import portfolio from './imgs/Portfolio.png';
+import armand from './imgs/profiles/Armand.jpg';
 
-import Socials from './components/Socials';
-import Mailto from './components/mailto';
-// import MarkIC from './imgs/optimized/mark.png';
-import MenuBtn from './icons/ic_menu.jpg';
-import CloseBtn from './icons/ic_x_close.png';
+const resumeUrl = 'https://github.com/Etan31/resume_file/blob/b5449df9b8806be9a56822b1e114f94f750a4bbf/TristanEhron_Tumbaga_Resume.pdf';
 
-function Main() {
+const projects = [
+  {
+    title: 'Skycast',
+    kicker: 'Weather intelligence',
+    description: 'A location-aware weather experience that turns live forecast, air quality, humidity, and pressure data into a clear daily briefing.',
+    tags: ['JavaScript', 'OpenWeather API', 'Responsive UI'],
+    image: skycast,
+    url: 'https://github.com/Etan31/skycast',
+    tone: 'violet',
+  },
+  {
+    title: 'Employee Portal',
+    kicker: 'Workplace operations',
+    description: 'Nexus Employee Hub is a full-stack workspace where employees can manage tasks, view their calendar, and keep track of their time in one focused place.',
+    tags: ['React', 'Supabase', 'Full stack'],
+    preview: 'employee',
+    liveUrl: 'https://employee-portal-server.vercel.app/',
+    url: 'https://github.com/Etan31/Employee_portal',
+    tone: 'orange',
+  },
+  {
+    title: 'Randomized Calculator',
+    kicker: 'Playful interaction',
+    description: 'A React calculator with a mischievous twist: number buttons change position while operators stay fixed, turning familiar arithmetic into a small attention game.',
+    tags: ['React', 'JavaScript', 'CSS'],
+    preview: 'calculator',
+    liveUrl: 'https://etan315.github.io/calculator/',
+    url: 'https://github.com/Etan315/calculator',
+    tone: 'blue',
+  },
+  {
+    title: 'TrackRecord',
+    kicker: 'Personal publishing',
+    description: 'The earlier iteration of this portfolio: a record of experiments in interface design, motion, and front-end architecture.',
+    tags: ['React', 'Framer Motion', 'CSS'],
+    image: portfolio,
+    url: 'https://github.com/Etan31/TrackRecord',
+    tone: 'rose',
+  },
+];
 
-// const [showNotification, setShowNotification] = useState(true);
-const [menuVisible, setMenuVisible] = useState(false);
+const capabilities = [
+  ['01', 'Back-end systems', 'APIs, databases, authentication, and the logic that keeps products dependable.'],
+  ['02', 'Front-end craft', 'Responsive React interfaces with strong hierarchy, accessibility, and considered motion.'],
+  ['03', 'Product thinking', 'Turning ambiguous needs into simple flows, useful features, and maintainable decisions.'],
+];
 
+const ArrowIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M8 5h11v11" /></svg>
+);
 
-  const aboutRef = useRef(null);
-  const projectsRef = useRef(null);
-  const testimonialsRef = useRef(null);
-  const contactRef = useRef(null);
-  const cursorRef = useRef(null);
-  const headerRef = useRef(null);
-  
+const GitHubIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-3.9c.04-1-.35-1.96-1.1-2.62 3.68-.41 7.55-1.8 7.55-8.18A6.4 6.4 0 0 0 19.75 3a5.94 5.94 0 0 0-.16-4s-1.34-.43-4.4 1.64a15.2 15.2 0 0 0-8 0C4.13-1.43 2.79-1 2.79-1a5.94 5.94 0 0 0-.16 4A6.4 6.4 0 0 0 .93 7.3c0 6.36 3.87 7.75 7.55 8.18A3.72 3.72 0 0 0 7.38 18v4M7.4 19c-3.32 1-3.32-1.66-4.65-2.08" /></svg>
+);
 
-  useEffect(() => {
-
-    const handleMouseMove = (event) => {
-      const { clientX, clientY } = event;
-      const cursor = cursorRef.current;
-      cursor.style.left = `${clientX}px`;
-      cursor.style.top = `${clientY}px`;
-    };
-
-  let prevScrollY = 0;
-
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY < prevScrollY && currentScrollY < 200) {
-      headerRef.current.classList.remove('hidden');
-    }
-    if (currentScrollY > prevScrollY) {
-      // Scrolling down
-      if (currentScrollY > 200) {
-        headerRef.current.classList.add('hidden');
-      }
-    } else {
-      // Scrolling up
-      headerRef.current.classList.remove('hidden');
-    }
-    if (currentScrollY > 0) {
-      headerRef.current.classList.add('scrolled');
-    } else {
-      headerRef.current.classList.remove('scrolled');
-    }
-
-    prevScrollY = currentScrollY;
-  };
-    document.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('scroll', handleScroll);
-    
-
-    const sr = ScrollReveal({
-      origin: 'bottom',
-      distance: '70px',
-      duration: 500,
-      delay: 200,
-      reset: false,
-    });
-
-
-    //notif to show my porfolio under development
-    // setTimeout(() => {
-    //   setShowNotification(false);
-    // }, 5000);
-
-
-    sr.reveal(aboutRef.current, { delay: 100, viewFactor: 0.2 });
-    sr.reveal(projectsRef.current, { delay: 200, viewFactor: 0.05 });
-    sr.reveal(testimonialsRef.current, { delay: 300, viewFactor: 0.2 });
-    sr.reveal(contactRef.current, { delay: 400, viewFactor: 0.2 });
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const toggleMenu = () => {
-    setMenuVisible(prev => !prev);
-  };
-
-
+function Reveal({ children, className = '', delay = 0 }) {
+  const reduceMotion = useReducedMotion();
   return (
-    <div className="Main">
-      {/* {showNotification && (
-        <div className="notification">
-          <img src={MarkIC} className="img-notif" alt="exclamation mark"/>
-          <p className="text-notif">Under Development — Stay Tuned!</p>
-        </div>
-      )} */}
-
-      <div className="cursor" ref={cursorRef}></div>
-      <header className="heading-nav" ref={headerRef}>
-        <Navbar 
-          aboutRef={aboutRef}
-          projectsRef={projectsRef}
-          testimonialsRef={testimonialsRef}
-          contactRef={contactRef} 
-        />
-        <button className="menubtn123 menubtnNotclose" onClick={toggleMenu}> 
-          <img src={MenuBtn} className="Menubtn" alt="Humberger menu" />
-        </button>
-      </header>
-      
-      <main>
-        {menuVisible && (
-          <aside className="menuAside">
-            <div className="navto">
-              <nav className="sideNav navMobile">
-                <button className="menubtn123 menubtnIsclose" onClick={toggleMenu}> 
-                  <img src={CloseBtn} className="Menubtn closeBtn" alt="Close menu" />
-                </button>
-                <ol className="sideMenu-ol">
-                  <li className="navMenu sidemenu2" onClick={()=> {aboutRef.current.scrollIntoView({ behavior: 'smooth' }); toggleMenu();}}>
-                    About
-                  </li>
-                  <li className="navMenu sidemenu2" onClick={()=> {projectsRef.current.scrollIntoView({ behavior: 'smooth' }); toggleMenu();}}>
-                    Projects
-                  </li>
-                  <li className="navMenu sidemenu2" onClick={()=> {testimonialsRef.current.scrollIntoView({ behavior: 'smooth' }); toggleMenu();}}>
-                    Testimonials
-                  </li>
-                  <li className="navMenu sidemenu2" onClick={()=> {contactRef.current.scrollIntoView({ behavior: 'smooth' }); toggleMenu();}}>
-                    Contact
-                  </li>
-
-                  <div className="resumebtn-div">
-                    <a className="resume-button" href='https://github.com/Etan31/resume_file/blob/5991ab67c9682be63599b9b02abc3455add10662/Tristan_Ehron_Tumbaga_Resume.pdf'
-                      rel="noopener noreferrer" target="_blank">
-                      Resume
-                    </a>
-                  </div>
-                  
-                </ol>
-              </nav>
-            </div>
-          </aside>
-        )}
-
-        < Socials />
-        < Mailto />
-
-        <section className="main_section">
-          <section className="home">
-            <div className="fadeup-enter-done">
-              <p className="paragraph highlight">Hi, my name is </p>
-            </div>
-            <div className="fadeup-enter-done">
-              <h1 className="name">Tristan Tumbaga.</h1>
-            </div>
-            <div className="fadeup-enter-done">
-              <h2 className="paragraph name">I build things for the web.</h2>
-            </div>
-            {/* <div className="fadeup-enter-done">
-              <p className="short-intro">I'm a software developer who specializes in developing the server-side <br/>
-              (and occasionally designing) remarkable web experiences.<br/>
-              Currently, I'm a backend developer at <span className="highlight">xXxXxXxXxXx</span> focused on building <br/>
-              high-quality, scalable, and efficient applications.</p>
-            </div> */}
-            <div className="fadeup-enter-done">
-              <p className="short-intro">
-                {/* I work as a backend developer full-time, and capable of creating <br />
-                solid server-side solutions as well as exceptional websites. Building scalable, <br />
-                 effective, and high-quality applications br is my area of expertise, <br />
-                 and I constantly provide amazing online experiences. */}
-                 I am a junior web developer who specializes in creating
-                solid server-side solutions as well as exceptional websites. Building scalable, 
-                 effective, and high-quality applications is my area of expertise, 
-                 and I constantly provide amazing online experiences.
-                
-                 {/* I am a software engineer who specializes in creating
-                 solid server-side solutions as well as exceptional websites. Currently, I’m focused on building accessible, human-centered system at <a href="">
-                  <span class="highlight">Avaloq</span></a>. */}
-              </p>
-            </div>
-            <div className="fadeup-enter-done" ><a className="getInTouch" href="mailto:tristan.ehron.tumbaga@gmail.com"><button className="get-in-touch" >Get In Touch</button></a></div>
-          </section>
-
-          {/* Pages */}
-          <About ref={(element) => aboutRef.current = element} /> 
-          <Projects ref={projectsRef} />
-          <Testimonials ref={testimonialsRef} />
-          <Contact ref={contactRef} />
-        </section>
-      </main>
-
-    </div>
-
+    <motion.div
+      className={className}
+      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+      whileInView={reduceMotion ? {} : { opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
   );
 }
 
-export default Main;
+function Header() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const close = () => setOpen(false);
+    window.addEventListener('resize', close);
+    return () => window.removeEventListener('resize', close);
+  }, []);
+
+  const navItems = [['Work', '#work'], ['About', '#about'], ['Notes', '#testimonial'], ['Contact', '#contact']];
+
+  return (
+    <header className="site-header">
+      <a className="brand" href="#top" aria-label="Back to top">
+        <span>T</span><i>/31</i>
+      </a>
+      <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="site-nav" onClick={() => setOpen(!open)}>
+        <span>{open ? 'Close' : 'Menu'}</span>
+        <i aria-hidden="true" />
+      </button>
+      <nav id="site-nav" className={open ? 'site-nav is-open' : 'site-nav'} aria-label="Primary navigation">
+        {navItems.map(([label, href]) => <a href={href} key={href} onClick={() => setOpen(false)}>{label}</a>)}
+        <a className="nav-resume" href={resumeUrl} target="_blank" rel="noreferrer">Résumé <ArrowIcon /></a>
+      </nav>
+    </header>
+  );
+}
+
+function Hero() {
+  const reduceMotion = useReducedMotion();
+  const intro = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.11, delayChildren: 0.08 } },
+  };
+  const line = {
+    hidden: reduceMotion ? {} : { opacity: 0, y: 34 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] } },
+  };
+
+  return (
+    <section className="hero" id="top">
+      <div className="hero-grid" aria-hidden="true" />
+      <motion.div className="hero-content" variants={intro} initial="hidden" animate="show">
+        <motion.div className="eyebrow" variants={line}>
+          <span className="status-dot" /> Available for the right opportunity
+          <span className="coordinates">11.6081° N · 125.4319° E</span>
+        </motion.div>
+        <motion.p className="hero-intro" variants={line}>Hi, I’m Tristan—a full-stack developer in the Philippines.</motion.p>
+        <motion.h1 variants={line}>I engineer useful <span>systems</span> for the web.</motion.h1>
+        <motion.div className="hero-foot" variants={line}>
+          <p>I build dependable back ends and thoughtful interfaces, with a soft spot for products that make everyday work feel lighter.</p>
+          <a className="round-link" href="#work" aria-label="Explore selected projects">
+            <span>Explore work</span><ArrowIcon />
+          </a>
+        </motion.div>
+      </motion.div>
+      <motion.div className="signal-path" aria-hidden="true" initial={reduceMotion ? false : { scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.2, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}>
+        <span />
+      </motion.div>
+      <div className="hero-index" aria-hidden="true"><span>Portfolio / 2026</span><span>Scroll to inspect ↓</span></div>
+    </section>
+  );
+}
+
+function Work() {
+  return (
+    <section className="work section-shell" id="work">
+      <Reveal className="section-heading">
+        <div><span className="section-label">Selected work</span><h2>Built to be used,<br />not just viewed.</h2></div>
+        <p>Four projects across public data, accessibility, community operations, and product storytelling.</p>
+      </Reveal>
+      <div className="project-list">
+        {projects.map((project, index) => (
+          <Reveal className={`project project--${project.tone}`} key={project.title}>
+            <a className="project-visual" href={project.liveUrl || project.url} target="_blank" rel="noreferrer" aria-label={`Open ${project.title}${project.liveUrl ? ' live demo' : ' on GitHub'}`}>
+              <div className="browser-bar"><span /><span /><span /><small>{project.liveUrl ? new URL(project.liveUrl).hostname : 'github.com/Etan31'}</small></div>
+              {project.image && <img src={project.image} alt={`${project.title} project interface`} loading={index === 0 ? 'eager' : 'lazy'} />}
+              {project.preview === 'employee' && (
+                <div className="project-preview employee-preview" aria-hidden="true">
+                  <div className="employee-sidebar"><b>N</b><i /><i /><i /><i /></div>
+                  <div className="employee-dashboard">
+                    <div className="preview-greeting"><div><small>Good morning, Tristan</small><strong>Welcome back to Nexus.</strong></div><span>TE</span></div>
+                    <div className="preview-stats"><div><small>Tasks today</small><b>08</b></div><div><small>Hours this week</small><b>32.5</b></div><div><small>Next event</small><b>10:30</b></div></div>
+                    <div className="preview-agenda"><strong>Today’s agenda</strong><span><i /> Design review <small>09:00</small></span><span><i /> API handoff <small>13:30</small></span><span><i /> Weekly sync <small>16:00</small></span></div>
+                  </div>
+                </div>
+              )}
+              {project.preview === 'calculator' && (
+                <div className="project-preview calculator-preview" aria-hidden="true">
+                  <div className="calculator-shell">
+                    <div className="calculator-theme">Randomized keypad <span>Dark</span></div>
+                    <div className="calculator-display"><small>18 × 4</small><strong>72</strong></div>
+                    <div className="calculator-keys">
+                      {['CE', 'DEL', '+', '3', '2', '0', '−', '4', '8', '5', '×', '6', '9', '1', '÷', '7', '.', '='].map(key => <span className={key === '=' ? 'equals' : ''} key={key}>{key}</span>)}
+                    </div>
+                  </div>
+                  <div className="shuffle-note">Numbers reshuffle <ArrowIcon /></div>
+                </div>
+              )}
+              <span className="project-open"><ArrowIcon /></span>
+            </a>
+            <div className="project-copy">
+              <div className="project-meta"><span>{String(index + 1).padStart(2, '0')}</span><span>{project.kicker}</span></div>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <ul aria-label={`${project.title} technologies`}>{project.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+              <div className="project-actions">
+                {project.liveUrl && <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">Live demo <ArrowIcon /></a>}
+                <a className="text-link" href={project.url} target="_blank" rel="noreferrer"><GitHubIcon /> Source <ArrowIcon /></a>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function About() {
+  return (
+    <section className="about section-shell" id="about">
+      <Reveal className="about-layout">
+        <div className="portrait-wrap">
+          <div className="portrait-frame"><img src={profile} alt="Tristan Tumbaga" loading="lazy" /></div>
+          <span className="portrait-caption">Tristan Tumbaga · developer</span>
+        </div>
+        <div className="about-copy">
+          <span className="section-label">A little context</span>
+          <h2>Code is the material.<br /><em>Clarity</em> is the job.</h2>
+          <div className="about-columns">
+            <p>I’m Tristan, a junior web developer from Eastern Samar. I enjoy the full path from shaping an idea to building the server-side logic and polishing the interface people actually touch.</p>
+            <p>Experience with Bytewise Information Technology Solutions and DOST PSTO–Eastern Samar taught me to value useful software, direct communication, and the small details that make systems easier to trust.</p>
+          </div>
+          <div className="tool-row" aria-label="Technologies I use">
+            {['JavaScript', 'React', 'Node.js', 'PostgreSQL', 'Java', 'Git'].map(tool => <span key={tool}>{tool}</span>)}
+          </div>
+        </div>
+      </Reveal>
+      <div className="capability-list">
+        {capabilities.map(([number, title, copy], index) => (
+          <Reveal className="capability" delay={index * 0.06} key={title}>
+            <span>{number}</span><h3>{title}</h3><p>{copy}</p>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Testimonial() {
+  return (
+    <section className="testimonial" id="testimonial">
+      <div className="section-shell">
+        <Reveal className="quote-card">
+          <span className="quote-mark" aria-hidden="true">“</span>
+          <blockquote>Tristan consistently delivers outstanding web solutions, demonstrating both skill and innovation. Working with him has always been a smooth and enjoyable experience.</blockquote>
+          <div className="quote-person">
+            <img src={armand} alt="Armand Ralph Anacta" loading="lazy" />
+            <div><strong>Armand Ralph Anacta</strong><span>Web developer, QCKBOT</span></div>
+          </div>
+          <div className="quote-note">A note from a collaborator</div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function Contact() {
+  const [form, setForm] = useState({ from_name: '', from_email: '', message: '' });
+  const [status, setStatus] = useState('idle');
+
+  const submit = async (event) => {
+    event.preventDefault();
+    setStatus('loading');
+    try {
+      await emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form, process.env.REACT_APP_PUBLIC_KEY);
+      setStatus('success');
+      setForm({ from_name: '', from_email: '', message: '' });
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
+  const update = ({ target }) => setForm(current => ({ ...current, [target.name]: target.value }));
+
+  return (
+    <section className="contact section-shell" id="contact">
+      <Reveal className="contact-intro">
+        <span className="section-label">Start a conversation</span>
+        <h2>Have a problem worth<br /><em>untangling?</em></h2>
+        <p>I’m currently open to new opportunities and thoughtful collaborations. Tell me what you’re working on.</p>
+        <a href="mailto:tristan.ehron.tumbaga@gmail.com">tristan.ehron.tumbaga@gmail.com <ArrowIcon /></a>
+      </Reveal>
+      <Reveal className="contact-panel" delay={0.08}>
+        <form onSubmit={submit}>
+          <div className="field-row">
+            <label><span>Name</span><input name="from_name" value={form.from_name} onChange={update} autoComplete="name" required placeholder="Your name" /></label>
+            <label><span>Email</span><input type="email" name="from_email" value={form.from_email} onChange={update} autoComplete="email" required placeholder="you@example.com" /></label>
+          </div>
+          <label><span>What can I help with?</span><textarea name="message" value={form.message} onChange={update} required placeholder="A little about your project, role, or idea…" /></label>
+          <div className="form-foot">
+            <p aria-live="polite">
+              {status === 'success' && 'Message sent. I’ll be in touch soon.'}
+              {status === 'error' && 'That didn’t send. Please email me directly.'}
+            </p>
+            <button type="submit" disabled={status === 'loading'}>{status === 'loading' ? 'Sending…' : 'Send message'} <ArrowIcon /></button>
+          </div>
+        </form>
+      </Reveal>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer>
+      <div className="footer-top"><strong>Tristan<br />Tumbaga</strong><span>Building from Eastern Samar<br />for the wide, wide web.</span></div>
+      <div className="footer-bottom">
+        <span>© {new Date().getFullYear()} / Built with React and intent.</span>
+        <div><a href="https://github.com/Etan31" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/tristan-ehron-tumbaga-b42478175/" target="_blank" rel="noreferrer">LinkedIn</a><a href="#top">Back to top ↑</a></div>
+      </div>
+    </footer>
+  );
+}
+
+export default function Main() {
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 28, restDelta: 0.001 });
+
+  return (
+    <div className="site">
+      <motion.div className="scroll-progress" style={{ scaleX: progress }} />
+      <a className="skip-link" href="#work">Skip to work</a>
+      <Header />
+      <main><Hero /><Work /><About /><Testimonial /><Contact /></main>
+      <Footer />
+    </div>
+  );
+}
