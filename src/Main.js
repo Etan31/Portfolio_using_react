@@ -10,6 +10,12 @@ import employeeTask from "./imgs/employee/employee-task.png";
 import calculatorLaptop from "./imgs/calculator/calculator-laptop.png";
 import calculatorMobile from "./imgs/calculator/calculator-mobile.png";
 
+const emailJsConfig = {
+  serviceId: process.env.REACT_APP_SERVICE_ID?.trim(),
+  templateId: process.env.REACT_APP_TEMPLATE_ID?.trim(),
+  publicKey: process.env.REACT_APP_PUBLIC_KEY?.trim(),
+};
+
 const resumeUrl =
   "https://github.com/Etan31/resume_file/blob/main/Tristan-Ehron-Tumbaga-Resume.pdf";
 
@@ -570,17 +576,41 @@ function Contact() {
 
   const submit = async (event) => {
     event.preventDefault();
+
+    if (status === "loading") return;
+
+    const missingConfig = Object.entries(emailJsConfig)
+      .filter(([, value]) => !value)
+      .map(([key]) => key);
+
+    if (missingConfig.length > 0) {
+      console.error(
+        `EmailJS is missing configuration: ${missingConfig.join(", ")}`,
+      );
+      setStatus("configuration-error");
+      return;
+    }
+
     setStatus("loading");
+
+    const templateParams = {
+      ...form,
+      name: form.from_name,
+      email: form.from_email,
+      reply_to: form.from_email,
+    };
+
     try {
       await emailjs.send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        form,
-        process.env.REACT_APP_PUBLIC_KEY,
+        emailJsConfig.serviceId,
+        emailJsConfig.templateId,
+        templateParams,
+        emailJsConfig.publicKey,
       );
       setStatus("success");
       setForm({ from_name: "", from_email: "", message: "" });
     } catch (error) {
+      console.error("EmailJS failed to send the contact form:", error);
       setStatus("error");
     }
   };
@@ -645,6 +675,8 @@ function Contact() {
           <div className="form-foot">
             <p aria-live="polite">
               {status === "success" && "Message sent. I’ll be in touch soon."}
+              {status === "configuration-error" &&
+                "The contact form isn’t configured yet. Please email me directly."}
               {status === "error" &&
                 "That didn’t send. Please email me directly."}
             </p>
