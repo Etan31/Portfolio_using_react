@@ -1,5 +1,11 @@
-import { useEffect, useState } from "react";
-import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+} from "framer-motion";
 import emailjs from "emailjs-com";
 
 import profile from "./imgs/profile-1by1.jpg";
@@ -58,7 +64,7 @@ const experience = [
   {
     company: "Delbros Waterfront Leasing Co. Inc.",
     role: "Junior Programmer",
-    period: "Mar 2026 — Present",
+    period: "Mar 2026 - Present",
     summary:
       "Building internal automation and single-page tools on Google Workspace, and keeping core data clean in MySQL.",
     points: [
@@ -70,9 +76,9 @@ const experience = [
   {
     company: "Avaloq",
     role: "Software Engineer (Developer Associate)",
-    period: "Feb 2025 — Aug 2025",
+    period: "Feb 2025 - Aug 2025",
     summary:
-      "Worked on core banking systems—shipping features, fixing bugs, and protecting data integrity across legacy structures.",
+      "Worked on core banking systems, shipping features, fixing bugs, and protecting data integrity across legacy structures.",
     points: [
       "Delivered features and bug fixes from Jira against real user requirements.",
       "Maintained core banking systems through careful root-cause analysis.",
@@ -82,7 +88,7 @@ const experience = [
   {
     company: "Bytewise",
     role: "Backend Web Developer",
-    period: "Jul 2023 — Jul 2024",
+    period: "Jul 2023 - Jul 2024",
     summary:
       "Built responsive web apps and secure back ends, including the ESSU student portal and Borongan Smart City features.",
     points: [
@@ -92,9 +98,9 @@ const experience = [
     ],
   },
   {
-    company: "DOST — Provincial Science & Technology Office",
+    company: "DOST - Provincial Science & Technology Office",
     role: "Backend Developer Intern",
-    period: "Jun 2023 — Jul 2023",
+    period: "Jun 2023 - Jul 2023",
     summary:
       "Helped digitize local government records with a legislative management system and faster, cleaner APIs.",
     points: [
@@ -149,6 +155,55 @@ function Reveal({ children, className = "", delay = 0 }) {
     </motion.div>
   );
 }
+
+function ExploreButton() {
+  const reduceMotion = useReducedMotion();
+  const ref = useRef(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { stiffness: 170, damping: 15, mass: 0.18 });
+  const springY = useSpring(y, { stiffness: 170, damping: 15, mass: 0.18 });
+
+  const handleMove = (event) => {
+    if (reduceMotion || !ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    x.set((event.clientX - (rect.left + rect.width / 2)) * 0.28);
+    y.set((event.clientY - (rect.top + rect.height / 2)) * 0.28);
+  };
+
+  const reset = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.a
+      ref={ref}
+      className="round-link"
+      href="#work"
+      aria-label="Explore selected projects"
+      onMouseMove={handleMove}
+      onMouseLeave={reset}
+      style={reduceMotion ? undefined : { x: springX, y: springY }}
+      whileTap={reduceMotion ? undefined : { scale: 0.96 }}
+    >
+      <span className="round-link-label">Explore work</span>
+      <span className="round-link-icon">
+        <ArrowIcon />
+      </span>
+    </motion.a>
+  );
+}
+
+const headlineWords = [
+  { text: "I" },
+  { text: "engineer" },
+  { text: "useful" },
+  { text: "systems", accent: true },
+  { text: "for" },
+  { text: "the" },
+  { text: "web." },
+];
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -220,6 +275,18 @@ function Hero() {
       transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
     },
   };
+  const headline = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.07 } },
+  };
+  const word = {
+    hidden: reduceMotion ? {} : { opacity: 0, y: 28 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    },
+  };
 
   return (
     <section className="hero" id="top">
@@ -232,27 +299,27 @@ function Hero() {
       >
         <motion.div className="eyebrow" variants={line}>
           <span className="status-dot" /> Available for the right opportunity
-          <span className="coordinates">14.4081° N · 121.0415° E</span>
         </motion.div>
         <motion.p className="hero-intro" variants={line}>
-          Hi, I’m Tristan—a full-stack developer based in Metro Manila.
+          Hi, I’m Tristan, a full-stack developer based in Metro Manila.
         </motion.p>
-        <motion.h1 variants={line}>
-          I engineer useful <span>systems</span> for the web.
+        <motion.h1 variants={headline}>
+          {headlineWords.map(({ text, accent }, index) => (
+            <motion.span
+              className={accent ? "h1-word accent" : "h1-word"}
+              variants={word}
+              key={`${text}-${index}`}
+            >
+              {text}
+            </motion.span>
+          ))}
         </motion.h1>
         <motion.div className="hero-foot" variants={line}>
           <p>
             I build dependable back ends and thoughtful interfaces, with a soft
             spot for products that make everyday work feel lighter.
           </p>
-          <a
-            className="round-link"
-            href="#work"
-            aria-label="Explore selected projects"
-          >
-            <span>Explore work</span>
-            <ArrowIcon />
-          </a>
+          <ExploreButton />
         </motion.div>
       </motion.div>
       <motion.div
@@ -265,8 +332,7 @@ function Hero() {
         <span />
       </motion.div>
       <div className="hero-index" aria-hidden="true">
-        <span>Portfolio / 2026</span>
-        <span>Scroll to inspect ↓</span>
+        <span>Portfolio 2026</span>
       </div>
     </section>
   );
@@ -302,6 +368,21 @@ function Work() {
               target="_blank"
               rel="noreferrer"
               aria-label={`Open ${project.title}${project.liveUrl ? " live demo" : " on GitHub"}`}
+              onMouseMove={
+                reduceMotion
+                  ? undefined
+                  : (event) => {
+                      const rect = event.currentTarget.getBoundingClientRect();
+                      event.currentTarget.style.setProperty(
+                        "--mx",
+                        `${event.clientX - rect.left}px`,
+                      );
+                      event.currentTarget.style.setProperty(
+                        "--my",
+                        `${event.clientY - rect.top}px`,
+                      );
+                    }
+              }
             >
               <div className="browser-bar">
                 <span />
@@ -507,8 +588,8 @@ function Experience() {
           </h2>
         </div>
         <p>
-          From core banking at Avaloq to government and city platforms—building
-          dependable, secure software end to end.
+          From core banking at Avaloq to government and city platforms,
+          building dependable, secure software end to end.
         </p>
       </Reveal>
       <div className="timeline">
